@@ -8,7 +8,7 @@ import {
   ArrowUpRight, 
   ExternalLink,
 } from "lucide-react";
-import { projects } from "./data/projects";
+import { projects } from "./projects";
 
 const contactInfo = [
   { label: "电子邮箱", value: "YIJIA012@e.ntu.edu.sg", icon: Mail },

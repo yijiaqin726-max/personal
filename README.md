@@ -1,20 +1,39 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 秦艺家 | Portfolio
 
-# Run and deploy your AI Studio app
+个人作品集展示网站，基于 React + Tailwind CSS + Vite 构建，通过 GitHub Pages 部署。
 
-This contains everything you need to run your app locally.
+## 在线访问
 
-View your app in AI Studio: https://ai.studio/apps/206a9dd4-d294-4476-97fc-e59121d14ade
+https://yijiaqin726-max.github.io/personal/
 
-## Run Locally
+## 新增项目
 
-**Prerequisites:**  Node.js
+编辑 `src/projects.ts`，在数组中添加一个新对象即可：
 
+```ts
+{
+  title: "项目名称",
+  subtitle: "English Name",
+  description: "项目简介",
+  tags: ["标签1", "标签2"],
+  links: [
+    { label: "在线演示", url: "https://...", type: "demo" },
+  ],
+}
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+推送到 `main` 分支后会自动部署。
+
+## 本地开发
+
+```bash
+npm install
+npm run dev
+```
+
+## 技术栈
+
+- React 19
+- Tailwind CSS 4
+- Vite 6
+- GitHub Actions + GitHub Pages
