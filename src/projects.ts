@@ -54,7 +54,6 @@ export const projects: Project[] = [
         label: "在线演示",
         url: "https://yijiaqin726-max.github.io/AI-/",
         type: "demo",
-        disabled: true,
       },
     ],
   },

@@ -151,7 +151,7 @@ personal/
 | # | 项目名 | subtitle | GitHub | 在线演示 | 演示状态 |
 |---|---|---|---|---|---|
 | 1 | 自律 Quest | 游戏化人生管理系统 | https://github.com/yijiaqin726-max/Qin-Yijia | https://yijiaqin726-max.github.io/Qin-Yijia/self-discipline-quest/ | ✅ 已上线 |
-| 2 | AI 智能记账助手 | 开发中 | https://github.com/yijiaqin726-max/AI- | https://yijiaqin726-max.github.io/AI-/ | ⏳ 未上线（灰色） |
+| 2 | AI 智能记账助手 | 开发中 | https://github.com/yijiaqin726-max/AI- | https://yijiaqin726-max.github.io/AI-/ | ✅ 已上线 |
 | 3 | NoteFlow | Markdown 笔记应用 | https://github.com/yijiaqin726-max | # | ⏳ 未上线（灰色） |
 
 ### 6.4 技能展示区域
