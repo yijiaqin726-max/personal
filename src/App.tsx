@@ -153,20 +153,30 @@ export default function App() {
                       {project.links.map((link, linkIndex) => (
                         <span key={linkIndex} className="flex items-center gap-3">
                           {linkIndex > 0 && <span className="w-[1px] h-3 bg-slate-200"></span>}
-                          <a
-                            href={link.url}
-                            target="_blank"
-                            rel="noreferrer"
-                            className={`text-xs font-bold flex items-center gap-1 ${
-                              link.type === "demo"
-                                ? "text-secondary hover:underline underline-offset-4"
-                                : "text-slate-500 hover:text-slate-900 transition-colors"
-                            }`}
-                          >
-                            {link.label}
-                            {link.type === "demo" && <ArrowUpRight className="w-3 h-3" />}
-                            {link.type === "github" && <ExternalLink className="w-3 h-3" />}
-                          </a>
+                          {link.disabled ? (
+                            <span
+                              className="text-xs font-bold flex items-center gap-1 text-slate-300 cursor-default"
+                            >
+                              {link.label}
+                              {link.type === "demo" && <ArrowUpRight className="w-3 h-3" />}
+                              {link.type === "github" && <ExternalLink className="w-3 h-3" />}
+                            </span>
+                          ) : (
+                            <a
+                              href={link.url}
+                              target="_blank"
+                              rel="noreferrer"
+                              className={`text-xs font-bold flex items-center gap-1 ${
+                                link.type === "demo"
+                                  ? "text-secondary hover:underline underline-offset-4"
+                                  : "text-slate-500 hover:text-slate-900 transition-colors"
+                              }`}
+                            >
+                              {link.label}
+                              {link.type === "demo" && <ArrowUpRight className="w-3 h-3" />}
+                              {link.type === "github" && <ExternalLink className="w-3 h-3" />}
+                            </a>
+                          )}
                         </span>
                       ))}
                     </div>

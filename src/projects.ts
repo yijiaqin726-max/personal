@@ -7,6 +7,7 @@ export interface ProjectLink {
   label: string;
   url: string;
   type: "demo" | "github" | "doc" | "video";
+  disabled?: boolean;
 }
 
 export interface Project {
@@ -25,6 +26,11 @@ export const projects: Project[] = [
       "基于 Vue3 + Pinia 构建多页面前端应用，完成任务看板、连续打卡统计、经验值增长与技能升级等核心模块。通过游戏化反馈机制增强用户参与感，加入动画反馈、成长可视化与任务联动记录。",
     tags: ["Vue3", "Pinia", "Vue Router", "Vite"],
     links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/yijiaqin726-max/Qin-Yijia",
+        type: "github",
+      },
       {
         label: "在线演示",
         url: "https://yijiaqin726-max.github.io/Qin-Yijia/self-discipline-quest/",
@@ -48,6 +54,7 @@ export const projects: Project[] = [
         label: "在线演示",
         url: "https://yijiaqin726-max.github.io/AI-/",
         type: "demo",
+        disabled: true,
       },
     ],
   },
@@ -63,11 +70,12 @@ export const projects: Project[] = [
         url: "https://github.com/yijiaqin726-max",
         type: "github",
       },
-      // {
-      //   label: "在线演示",
-      //   url: "https://yijiaqin726-max.github.io/personal/",
-      //   type: "demo",
-      // },
+      {
+        label: "在线演示",
+        url: "#",
+        type: "demo",
+        disabled: true,
+      },
     ],
   },
 ];

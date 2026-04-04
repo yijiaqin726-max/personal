@@ -8,14 +8,16 @@
 
 ## 2. 项目背景
 
-为了更方便地展示个人项目、作品链接、GitHub 仓库、在线演示和个人经历，计划基于现有 GitHub 远程仓库配置一个 GitHub Pages 网站，作为统一的作品集主页。
+为了更方便地展示个人项目、作品链接、GitHub 仓库、在线演示和个人经历，基于 GitHub Pages 部署了一个统一的作品集主页。
 
-该主页主要用于：
+该主页用于：
 
 1. 对外展示个人身份与方向
-2. 集中管理和展示作品链接
-3. 方便后续持续新增项目，不需要频繁重构代码
+2. 集中管理和展示作品链接（GitHub + 在线演示）
+3. 方便后续持续新增项目，只需修改数据文件
 4. 作为求职时可直接分享的个人主页链接
+
+**线上地址：** https://yijiaqin726-max.github.io/personal/
 
 ---
 
@@ -63,140 +65,161 @@
 
 ---
 
-## 5. 页面定位
+## 5. 技术架构
 
-该网站不是复杂的企业官网，而是一个**轻量级个人作品集主页**。
+### 5.1 技术栈
 
-整体定位：
+| 类别 | 技术 |
+|---|---|
+| 框架 | React 19 + TypeScript |
+| 构建 | Vite 6 |
+| 样式 | Tailwind CSS 4（`@tailwindcss/vite` 插件） |
+| 动画 | Motion（`motion/react`） |
+| 图标 | Lucide React |
+| 字体 | Inter + Manrope（Google Fonts） |
+| 部署 | GitHub Pages（`base: '/personal/'`） |
 
-* 简洁
-* 直观
-* 易维护
-* 求职友好
-* 以"个人介绍 + 作品链接展示"为主
+### 5.2 项目结构
 
----
+```
+personal/
+├── index.html              # 入口 HTML
+├── metadata.json           # 项目元信息
+├── package.json
+├── tsconfig.json
+├── vite.config.ts          # Vite 配置（base: /personal/）
+├── public/
+│   └── 秦艺家_ai应用开发_resume.pdf   # 可下载简历
+└── src/
+    ├── main.tsx            # React 挂载入口
+    ├── index.css           # 全局样式 + Tailwind 主题变量
+    ├── App.tsx             # 主页面组件（布局 + 所有区块）
+    └── projects.ts         # 作品集数据配置（新增项目只改这里）
+```
 
-## 6. 功能需求
+### 5.3 设计主题
 
-## 6.1 首页抬头区域
-
-页面顶部展示个人简介，内容简洁明确，让访问者第一眼知道你的背景和求职方向。
-
-### 展示内容建议
-
-* 姓名：秦艺家
-* 出生年月：2003年8月
-* 一句话身份介绍
-* 教育背景摘要
-* 求职方向
-* GitHub / 邮箱 / 简历入口
-
-### 教育背景
-
-* **南洋理工大学（NTU）** | 硕士・计算机控制与自动化 | 2025.08–2027.01（预计）| 新加坡
-  - 2026年5月起可全职实习
-* **安徽大学** | 本科・数字媒体技术（计算机方向）| 2021.09–2025.06 | 中国合肥
-  - 对外交流奖学金（TOP3%）；核心课程：数据结构、计算机网络、Web开发、数据库
-* **纽约州石溪大学** | 交换生・信息系统 | 2023.09–2025.06 | 美国
-
-### 首页文案建议
-
-> 秦艺家 | 2003年8月
-> 计算机硕士生｜NTU 硕士（预计2027）｜安徽大学本科｜石溪大学交换
-> 希望从事 AI 应用开发 / AI 产品经理，持续探索 AI 技术与产品场景结合。
+* 主色：`#000000`（黑）
+* 强调色：`#2563eb`（蓝）
+* 背景色：`#ffffff`（白）
+* 标题字体：Manrope
+* 正文字体：Inter + PingFang SC
 
 ---
 
-## 6.2 作品集展示区域
+## 6. 页面结构与功能
 
-主页主体部分用于展示作品链接，每个作品以统一卡片或列表形式展示。
+### 6.1 导航栏（固定顶部）
 
-每个作品建议包含：
+毛玻璃半透明导航，包含锚点链接：
 
-* 项目名称
-* 项目简介
-* 技术栈 / 标签
-* 链接按钮
-* 可选内容：GitHub、Live Demo、项目文档、视频介绍
+* 首页（`#home`）
+* 作品（`#projects`）
+* 技能（`#skills`）
+* 联系方式（`#contact`）
 
-### 单个作品推荐字段
+### 6.2 左侧栏（桌面端 sticky）
 
+采用 12 栏网格布局，左 4 栏 sticky 固定：
+
+* **姓名**：秦艺家（大字标题）
+* **出生年月**：2003年8月
+* **教育背景**：NTU 硕士（预计2027）、安徽大学本科、石溪大学交换生
+* **所在地**：上海 / 新加坡
+* **方向标签**：AI 应用开发 / AI 产品经理
+* **个人简介**：一段话描述
+* **操作按钮**：
+  - 获取简历（下载 PDF）
+  - GitHub（跳转主页）
+  - 联系我（锚点到联系方式区域）
+
+### 6.3 作品集展示区域（右 8 栏）
+
+每个作品以列表行形式展示，hover 有浅灰背景，带入场动画。
+
+每个作品包含：
 * `title`：项目名称
-* `subtitle`：英文名或补充名
+* `subtitle`：补充说明或状态（如"开发中"）
 * `description`：项目简介
-* `tags`：技术标签或方向标签
-* `links`：
+* `tags`：技术标签（大写小字灰底）
+* `links`：GitHub 链接 + 在线演示链接
+  - 已上线链接：可点击，演示为蓝色带箭头，GitHub 为灰色带外链图标
+  - 未上线链接：灰色禁用态（`disabled: true`），不可点击
 
-  * GitHub
-  * Live Demo
-  * 文档
-  * 视频
+#### 当前作品列表
 
----
+| # | 项目名 | subtitle | GitHub | 在线演示 | 演示状态 |
+|---|---|---|---|---|---|
+| 1 | 自律 Quest | 游戏化人生管理系统 | https://github.com/yijiaqin726-max/Qin-Yijia | https://yijiaqin726-max.github.io/Qin-Yijia/self-discipline-quest/ | ✅ 已上线 |
+| 2 | AI 智能记账助手 | 开发中 | https://github.com/yijiaqin726-max/AI- | https://yijiaqin726-max.github.io/AI-/ | ⏳ 未上线（灰色） |
+| 3 | NoteFlow | Markdown 笔记应用 | https://github.com/yijiaqin726-max | # | ⏳ 未上线（灰色） |
 
-## 6.3 首个已确定项目内容
+### 6.4 技能展示区域
 
-网站第一版需先展示至少 1 个已完成作品，作为核心展示案例。
+2×2 网格卡片布局，每个分类一张卡片：
 
-### 项目 1
+| 分类 | 图标 | 技能项 |
+|---|---|---|
+| AI 应用 | Cpu | OpenAI API, Prompt Engineering, Function Calling, JSON Schema 输出约束, 结构化信息抽取 |
+| 前端 | Layout | React, Vue3, JavaScript (ES6+), HTML/CSS, Zustand, Pinia, Vue Router, Vite |
+| 后端 | Server | Node.js, Express, Python, RESTful API |
+| 工具 | Wrench | Git, GitHub, GitHub Pages, Chrome DevTools |
 
-**项目名称：** 自律游戏化人生
-**英文名：** Self-Discipline Quest
+### 6.5 联系方式区域
 
-**项目简介：**
-A gamified self-discipline tracker built with React + Tailwind CSS.
-这是一个以"游戏化自律"为核心概念的个人成长追踪项目，用任务、成长、激励反馈等方式提升日常自律体验，体现前端开发与产品设计结合能力。
+2×2 网格卡片，hover 放大效果：
 
-**技术栈：**
+* 电子邮箱：YIJIA012@e.ntu.edu.sg
+* 电话：19355179852
+* GitHub：github.com/yijiaqin726-max
+* 所在地：上海 / 新加坡
 
-* React
-* Tailwind CSS
+### 6.6 页脚
 
-**链接：**
-
-* Live Demo:
-  `https://yijiaqin726-max.github.io/Qin-Yijia/self-discipline-quest/`
-
-### 展示目标
-
-这个项目在首页中应作为优先展示内容，用于体现：
-
-* 前端项目开发能力
-* 产品化思维
-* 个人兴趣与项目表达能力
-* GitHub Pages 在线展示能力
+居中三栏：品牌名 | 版权信息 | 外链（GitHub / Email / LinkedIn）
 
 ---
 
-## 6.4 新增链接要方便
+## 7. 数据驱动设计
 
-这是本项目的重要要求。
+作品数据集中维护在 `src/projects.ts`，数据结构：
 
-为了便于后续新增作品，作品数据不应写死在多个页面位置，而应尽量集中管理。推荐方式：
+```typescript
+interface ProjectLink {
+  label: string;      // "GitHub" | "在线演示"
+  url: string;
+  type: "demo" | "github" | "doc" | "video";
+  disabled?: boolean; // true = 灰色不可点击
+}
 
-### 方案 A：数据集中配置
+interface Project {
+  title: string;
+  subtitle: string;
+  description: string;
+  tags: string[];
+  links: ProjectLink[];
+}
+```
 
-将所有作品信息统一写在一个数据文件里，例如：
+### 新增项目操作步骤
 
-* `projects.js`
-* `projects.json`
-
-后续新增项目时，只需要复制一段固定格式内容，改一下标题、描述和链接即可。
-
-### 目标效果
-
-新增项目时只需要做一件事：
-
-* 在数据列表中新增一个对象
-
-而不需要：
-
-* 改很多 HTML
-* 改很多 CSS
-* 手动复制整段页面结构
+1. 打开 `src/projects.ts`
+2. 在 `projects` 数组末尾新增一个对象
+3. 填写 title / subtitle / description / tags / links
+4. 若演示未上线，在 demo link 上加 `disabled: true`
+5. 提交部署即可
 
 ---
+
+## 8. 后续迭代方向
+
+- [ ] 深色模式支持
+- [ ] 移动端汉堡菜单
+- [ ] 项目详情页（点击跳转详细介绍）
+- [ ] 访客统计（Google Analytics / Umami）
+- [ ] 多语言支持（中/英切换）
+- [ ] SEO 优化（meta tags、Open Graph）
+- [ ] 个人博客模块
 
 ## 6.5 响应式显示
 
