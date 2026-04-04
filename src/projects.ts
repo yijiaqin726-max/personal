@@ -34,11 +34,22 @@ export const projects: Project[] = [
   },
   {
     title: "AI 智能记账助手",
-    subtitle: "AI Accounting Assistant",
+    subtitle: "开发中",
     description:
       "基于 Prompt 和 JSON Schema 约束，将用户自由文本解析为金额、日期、消费类别等结构化字段。构建 React 前端、Node.js 中间层和 OpenAI API 的完整链路，前端渲染分类统计与月度支出趋势图表。",
     tags: ["React", "Node.js", "OpenAI API", "Prompt Engineering"],
-    links: [],
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/yijiaqin726-max/AI-",
+        type: "github",
+      },
+      {
+        label: "在线演示",
+        url: "https://yijiaqin726-max.github.io/AI-/",
+        type: "demo",
+      },
+    ],
   },
   {
     title: "NoteFlow",
