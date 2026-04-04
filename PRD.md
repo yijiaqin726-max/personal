@@ -86,23 +86,24 @@
 ### 展示内容建议
 
 * 姓名：秦艺家
+* 出生年月：2003年8月
 * 一句话身份介绍
 * 教育背景摘要
 * 求职方向
-* GitHub / 邮箱 / 简历入口（可后续补充）
+* GitHub / 邮箱 / 简历入口
+
+### 教育背景
+
+* **南洋理工大学（NTU）** | 硕士・计算机控制与自动化 | 2025.08–2027.01（预计）| 新加坡
+  - 2026年5月起可全职实习
+* **安徽大学** | 本科・数字媒体技术（计算机方向）| 2021.09–2025.06 | 中国合肥
+  - 对外交流奖学金（TOP3%）；核心课程：数据结构、计算机网络、Web开发、数据库
+* **纽约州石溪大学** | 交换生・信息系统 | 2023.09–2025.06 | 美国
 
 ### 首页文案建议
 
-**版本 A：简洁正式**
-
-> 秦艺家
-> 计算机硕士生，NTU 硕士毕业，安徽大学本科。
-> 希望从事 AI 应用开发、AI 产品经理相关工作，关注智能应用设计、产品落地与用户体验。
-
-**版本 B：更适合主页标题**
-
-> 秦艺家
-> 计算机硕士生｜NTU 硕士毕业｜安徽大学本科
+> 秦艺家 | 2003年8月
+> 计算机硕士生｜NTU 硕士（预计2027）｜安徽大学本科｜石溪大学交换
 > 希望从事 AI 应用开发 / AI 产品经理，持续探索 AI 技术与产品场景结合。
 
 ---
@@ -235,7 +236,16 @@ A gamified self-discipline tracker built with React + Tailwind CSS.
 
 展示多个作品项目卡片。
 
-### 模块 3：联系方式区 Contact Section
+### 模块 3：个人技能区 Skills Section
+
+位于作品列表区下方，展示个人技术技能，按类别分组展示：
+
+* **AI 应用**：基于 OpenAI API 实现结构化信息抽取、Prompt 模板设计、Function Calling、JSON Schema 输出约束
+* **前端**：React、Vue3、JavaScript (ES6+)、HTML/CSS、Zustand、Pinia、Vue Router、Vite
+* **后端**：Node.js、Express、Python、RESTful API
+* **工具**：Git、GitHub、GitHub Pages、Chrome DevTools
+
+### 模块 4：联系方式区 Contact Section
 
 展示 GitHub、邮箱、简历链接、LinkedIn（如有）。
 
@@ -245,10 +255,11 @@ A gamified self-discipline tracker built with React + Tailwind CSS.
 
 访问者进入页面后的阅读顺序应为：
 
-1. 先看到你是谁
-2. 再知道你的目标方向
+1. 先看到你是谁（包含出生年月 2003年8月）
+2. 再知道你的目标方向和教育背景
 3. 再浏览你的项目
-4. 最后找到联系方式
+4. 查看个人技术技能
+5. 最后找到联系方式
 
 ---
 

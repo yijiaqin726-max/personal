@@ -7,8 +7,36 @@ import {
   MapPin, 
   ArrowUpRight, 
   ExternalLink,
+  Calendar,
+  Cpu,
+  Layout,
+  Server,
+  Wrench,
 } from "lucide-react";
 import { projects } from "./projects";
+
+const skills = [
+  {
+    category: "AI 应用",
+    icon: Cpu,
+    items: ["OpenAI API", "Prompt Engineering", "Function Calling", "JSON Schema 输出约束", "结构化信息抽取"],
+  },
+  {
+    category: "前端",
+    icon: Layout,
+    items: ["React", "Vue3", "JavaScript (ES6+)", "HTML/CSS", "Zustand", "Pinia", "Vue Router", "Vite"],
+  },
+  {
+    category: "后端",
+    icon: Server,
+    items: ["Node.js", "Express", "Python", "RESTful API"],
+  },
+  {
+    category: "工具",
+    icon: Wrench,
+    items: ["Git", "GitHub", "GitHub Pages", "Chrome DevTools"],
+  },
+];
 
 const contactInfo = [
   { label: "电子邮箱", value: "YIJIA012@e.ntu.edu.sg", icon: Mail },
@@ -31,6 +59,7 @@ export default function App() {
           <div className="hidden md:flex items-center space-x-10">
             <a href="#home" className="text-sm font-medium text-slate-900 hover:text-secondary transition-colors">首页</a>
             <a href="#projects" className="text-sm font-medium text-slate-500 hover:text-secondary transition-colors">作品</a>
+            <a href="#skills" className="text-sm font-medium text-slate-500 hover:text-secondary transition-colors">技能</a>
             <a href="#contact" className="text-sm font-medium text-slate-500 hover:text-secondary transition-colors">联系方式</a>
           </div>
         </div>
@@ -50,8 +79,13 @@ export default function App() {
               <div className="space-y-2">
                 <h1 className="font-headline text-5xl font-extrabold tracking-tight text-slate-900">秦艺家</h1>
                 <div className="flex flex-col text-slate-500 font-medium">
-                  <span>NTU 硕士</span>
+                  <div className="flex items-center gap-2 text-xs text-slate-400 mb-1">
+                    <Calendar className="w-3.5 h-3.5" />
+                    <span>2003年8月</span>
+                  </div>
+                  <span>NTU 硕士（预计2027）</span>
                   <span>安徽大学本科</span>
+                  <span className="text-sm text-slate-400">纽约州石溪大学 交换生</span>
                   <div className="flex items-center gap-2 mt-2 text-xs text-slate-400">
                     <MapPin className="w-3.5 h-3.5" />
                     <span>上海 / 新加坡</span>
@@ -66,7 +100,7 @@ export default function App() {
               </p>
               <div className="flex flex-col gap-3 pt-4">
                 <div className="flex gap-3">
-                  <a href="#" className="flex-1 bg-slate-900 text-white text-center py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-800 transition-all flex items-center justify-center gap-2">
+                  <a href={`${import.meta.env.BASE_URL}秦艺家_ai应用开发_resume.pdf`} download className="flex-1 bg-slate-900 text-white text-center py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-800 transition-all flex items-center justify-center gap-2">
                     <FileText className="w-4 h-4" />
                     获取简历
                   </a>
@@ -138,6 +172,37 @@ export default function App() {
                     </div>
                   </motion.div>
                 ))}
+              </div>
+
+              {/* Skills Section */}
+              <div id="skills" className="pt-12 space-y-8">
+                <div className="border-b border-slate-100 pb-4">
+                  <h2 className="font-headline text-xs font-bold tracking-[0.2em] uppercase text-slate-400">个人技能 / Skills</h2>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {skills.map((skill, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: index * 0.1 }}
+                      className="p-5 border border-slate-100 rounded-xl hover:border-slate-200 transition-colors bg-white"
+                    >
+                      <div className="flex items-center gap-2 mb-3">
+                        <skill.icon className="w-4 h-4 text-slate-400" />
+                        <p className="text-sm font-bold text-slate-900">{skill.category}</p>
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {skill.items.map((item, itemIndex) => (
+                          <span key={itemIndex} className="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-50 px-2 py-0.5 rounded">
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
 
               {/* Contact Grid */}
