@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Manrope", "PingFang SC", sans-serif;
+  --font-body: "Inter", "PingFang SC", sans-serif;
+
+  --color-primary: #000000;
+  --color-secondary: #2563eb;
+  --color-background: #ffffff;
+  --color-surface: #ffffff;
+  --color-on-surface: #0f172a;
+  --color-on-surface-variant: #64748b;
+  --color-surface-container-low: #f8fafc;
+  --color-outline-variant: #e2e8f0;
+}
+
+@layer base {
+  body {
+    @apply font-body bg-background text-on-surface selection:bg-blue-100 selection:text-blue-900;
+  }
+}
+
+.Manrope {
+  font-family: var(--font-headline);
+}
