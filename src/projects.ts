@@ -1,8 +1,3 @@
-/**
- * 作品集数据配置文件
- * 新增项目时，只需在 projects 数组中添加一个新对象即可。
- */
-
 export interface ProjectLink {
   label: string;
   url: string;
@@ -17,6 +12,7 @@ export interface Project {
   highlights?: string[];
   tags: string[];
   links: ProjectLink[];
+  featured?: boolean;
 }
 
 export const projects: Project[] = [
@@ -24,6 +20,7 @@ export const projects: Project[] = [
     title: "破誓圣骑士",
     subtitle: "Roguelike 生存 Demo",
     tags: ["Roguelike", "Unity", "C#"],
+    featured: true,
     highlights: [
       "Roguelike 生存 Demo 的策划设计与原型推进，负责核心概念设定、PRD 撰写、功能拆分、UI 展示思路与实现协同。",
       "创新点聚焦“守誓 / 破誓”成长抉择：将传统肉鸽的数值三选一升级，改造为身份选择与风险收益选择，强化项目差异化表达。",
