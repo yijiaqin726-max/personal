@@ -9,14 +9,7 @@ export interface GameExperienceCategory {
 }
 
 export const gameExperienceIntro = {
-  title: "体验过的游戏",
-  description:
-    "这一页不是游戏库陈列，而是我基于长期体验整理出来的重点品类观察。相比单纯记录“玩过什么”，我更希望呈现自己长期投入过、能够拆解玩法结构、并且愿意继续深入分析的方向。",
-  highlights: [
-    "以策划求职相关品类为主，保留可展开分析的高价值内容。",
-    "强调长期体验、玩法理解和设计拆解能力，而不是数量展示。",
-    "聚焦我熟悉的类型、可分析的设计方向和真实观察视角。",
-  ],
+  title: "体验过的游戏类型",
 };
 
 export const gameExperienceCategories: GameExperienceCategory[] = [
