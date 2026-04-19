@@ -73,23 +73,23 @@ export function GameExperienceSection() {
                 </div>
               </div>
 
-              <div className="relative z-10 mt-6 grid gap-4 md:grid-cols-2">
-                <div className="game-chip-panel flex min-h-[112px] content-start flex-wrap items-start gap-2 rounded-[18px] border border-white/10 bg-white/5 p-3 backdrop-blur-sm">
+              <div className="relative z-10 mt-6 grid items-stretch gap-4 md:grid-cols-2">
+                <div className="game-chip-panel flex min-h-[132px] w-full content-start flex-wrap items-start gap-2 rounded-[18px] border border-white/10 bg-white/5 p-3 backdrop-blur-sm">
                   {category.representativeGames.map((game) => (
                     <span
                       key={game}
-                      className="rounded-full border border-white/14 bg-[#102030]/76 px-3 py-1.5 text-sm font-medium text-slate-100 backdrop-blur-sm"
+                      className="game-pill-primary rounded-full border border-white/14 bg-[#102030]/76 px-3 py-1.5 text-sm font-medium text-slate-100 backdrop-blur-sm"
                     >
                       {game}
                     </span>
                   ))}
                 </div>
 
-                <div className="game-chip-panel flex min-h-[112px] content-start flex-wrap items-start gap-2 rounded-[18px] border border-white/10 bg-white/5 p-3 backdrop-blur-sm">
+                <div className="game-chip-panel flex min-h-[132px] w-full content-start flex-wrap items-start gap-2 rounded-[18px] border border-white/10 bg-white/5 p-3 backdrop-blur-sm">
                   {category.observationAngles.map((point) => (
                     <span
                       key={point}
-                      className="rounded-full border border-white/12 bg-white/8 px-3 py-1.5 text-sm text-slate-100 backdrop-blur-sm"
+                      className="game-pill-secondary rounded-full border border-white/12 bg-white/8 px-3 py-1.5 text-sm text-slate-100 backdrop-blur-sm"
                     >
                       {point}
                     </span>
