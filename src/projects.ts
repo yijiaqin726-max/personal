@@ -13,12 +13,38 @@ export interface ProjectLink {
 export interface Project {
   title: string;
   subtitle: string;
-  description: string;
+  description?: string;
+  highlights?: string[];
   tags: string[];
   links: ProjectLink[];
 }
 
 export const projects: Project[] = [
+  {
+    title: "破誓圣骑士",
+    subtitle: "Roguelike 生存 Demo",
+    tags: ["Roguelike", "Unity", "C#"],
+    highlights: [
+      "Roguelike 生存 Demo 的策划设计与原型推进，负责核心概念设定、PRD 撰写、功能拆分、UI 展示思路与实现协同。",
+      "创新点聚焦“守誓 / 破誓”成长抉择：将传统肉鸽的数值三选一升级，改造为身份选择与风险收益选择，强化项目差异化表达。",
+      "设计“腐化值”系统：玩家破誓后获得更强黑暗能力，但会逐步触发随机黑暗脉冲，形成“力量提升与控制权丧失并存”的核心循环。",
+      "使用 Unity / C# 搭建原型，结合公共素材库完成基础视觉包装。",
+    ],
+    links: [
+      {
+        label: "GitHub",
+        url: "#",
+        type: "github",
+        disabled: true,
+      },
+      {
+        label: "在线演示",
+        url: "#",
+        type: "demo",
+        disabled: true,
+      },
+    ],
+  },
   {
     title: "自律 Quest",
     subtitle: "游戏化人生管理系统",
