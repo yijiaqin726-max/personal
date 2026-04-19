@@ -41,6 +41,19 @@
   isolation: isolate;
 }
 
+.interactive-lift {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.interactive-lift:hover {
+  transform: scale(1.02);
+}
+
 .panel-soft {
   border: 1px solid rgba(148, 163, 184, 0.18);
   background:
@@ -122,6 +135,13 @@
   box-shadow: 0 20px 48px rgba(8, 16, 28, 0.28);
 }
 
+.steam-hero.interactive-lift:hover,
+.steam-featured.interactive-lift:hover,
+.steam-card.interactive-lift:hover,
+.steam-cover-placeholder.interactive-lift:hover {
+  box-shadow: 0 26px 56px rgba(8, 16, 28, 0.34);
+}
+
 .steam-featured-media {
   background: linear-gradient(180deg, rgba(27, 40, 56, 0.32), rgba(15, 25, 35, 0.12));
 }
@@ -136,6 +156,22 @@
 
 .steam-card-media {
   background: linear-gradient(180deg, rgba(54, 84, 116, 0.3), rgba(19, 30, 42, 0.12));
+}
+
+.game-insight-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    linear-gradient(180deg, rgba(34, 50, 69, 0.96), rgba(22, 33, 46, 0.96)),
+    radial-gradient(circle at top right, rgba(102, 192, 244, 0.08), transparent 30%);
+  box-shadow:
+    0 18px 40px rgba(8, 16, 28, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.game-tag {
+  background:
+    linear-gradient(180deg, rgba(34, 55, 75, 0.92), rgba(23, 37, 51, 0.92)),
+    radial-gradient(circle at top, rgba(102, 192, 244, 0.08), transparent 60%);
 }
 
 .steam-cover-placeholder {

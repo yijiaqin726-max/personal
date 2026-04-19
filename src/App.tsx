@@ -13,6 +13,7 @@ import {
   Swords,
   Wrench,
 } from "lucide-react";
+import { GameExperienceSection } from "./GameExperienceSection";
 import { projects } from "./projects";
 import aiBookkeepingCover from "../记账首页图.jpg";
 import selfDisciplineQuestCover from "../自律首页图.jpg";
@@ -127,6 +128,9 @@ export default function App() {
             <a href="#projects" className="text-sm font-medium text-slate-400 transition-colors hover:text-secondary">
               作品
             </a>
+            <a href="#game-experience" className="text-sm font-medium text-slate-400 transition-colors hover:text-secondary">
+              体验过的游戏
+            </a>
             <a href="#skills" className="text-sm font-medium text-slate-400 transition-colors hover:text-secondary">
               技能
             </a>
@@ -143,7 +147,7 @@ export default function App() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55 }}
-            className="steam-hero rounded-[28px] p-8 md:p-10"
+            className="steam-hero interactive-lift rounded-[28px] p-8 md:p-10"
           >
             <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
               <div className="space-y-6">
@@ -156,19 +160,19 @@ export default function App() {
                 </div>
 
                 <div className="grid gap-3 sm:grid-cols-3">
-                  <div className="rounded-2xl border border-white/10 bg-black/15 p-4">
+                  <div className="interactive-lift rounded-2xl border border-white/10 bg-black/15 p-4">
                     <div className="flex items-center gap-2 text-xs text-slate-300">
                       <Calendar className="h-3.5 w-3.5" />
                       <span>硕士</span>
                     </div>
                     <p className="mt-3 text-sm font-semibold text-white">南洋理工大学-计算机控制与自动化</p>
                   </div>
-                  <div className="rounded-2xl border border-white/10 bg-black/15 p-4">
+                  <div className="interactive-lift rounded-2xl border border-white/10 bg-black/15 p-4">
                     <p className="text-xs text-slate-300">本科</p>
                     <p className="mt-3 text-sm font-semibold text-white"> 安徽大学-数字媒体技术（计算机方向）</p>
                     <p className="mt-1 text-xs text-slate-400">美国信息系统交换生</p>
                   </div>
-                  <div className="rounded-2xl border border-white/10 bg-black/15 p-4">
+                  <div className="interactive-lift rounded-2xl border border-white/10 bg-black/15 p-4">
                     <div className="flex items-center gap-2 text-xs text-slate-300">
                       <MapPin className="h-3.5 w-3.5" />
                       <span>期望职位</span>
@@ -193,10 +197,16 @@ export default function App() {
                   >
                     联系我
                   </a>
+                  <a
+                    href="#game-experience"
+                    className="steam-button-secondary rounded-md px-5 py-3 text-sm font-semibold"
+                  >
+                    体验过的游戏
+                  </a>
                 </div>
               </div>
 
-              <div className="steam-cover-placeholder h-fit self-center justify-self-center rounded-[20px] p-2 lg:w-[72%]">
+              <div className="steam-cover-placeholder interactive-lift h-fit self-center justify-self-center rounded-[20px] p-2 lg:w-[72%]">
                 <div className="student-id-card relative w-full overflow-hidden rounded-[16px] border border-white/10 shadow-[0_14px_30px_rgba(8,16,28,0.26)]">
                   <img
                     src={profileCover}
@@ -232,7 +242,7 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="steam-featured overflow-hidden rounded-[24px]"
+              className="steam-featured interactive-lift overflow-hidden rounded-[24px]"
             >
               <div className="grid gap-0 lg:grid-cols-[1.15fr_0.85fr]">
                 <div className="steam-featured-media min-h-[360px] overflow-hidden rounded-l-[24px]">
@@ -264,7 +274,7 @@ export default function App() {
 
                   <div className="grid gap-3 md:grid-cols-3">
                     {featuredSignals.map((signal) => (
-                      <div key={signal.label} className="rounded-2xl border border-white/10 bg-[#16202d] p-4">
+                      <div key={signal.label} className="interactive-lift rounded-2xl border border-white/10 bg-[#16202d] p-4">
                         <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-400">{signal.label}</p>
                         <p className="mt-2 text-sm font-medium leading-6 text-white">{signal.value}</p>
                       </div>
@@ -287,7 +297,7 @@ export default function App() {
                     <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">玩法流程</p>
                     <div className="mt-4 grid gap-3 sm:grid-cols-2">
                       {oathSteps.map((step, index) => (
-                        <div key={step} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                        <div key={step} className="interactive-lift flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
                           <div className="flex h-8 w-8 items-center justify-center rounded-full border border-[#ffd27a]/40 bg-[#f0ad2c]/10 text-xs font-bold text-[#ffd27a]">
                             0{index + 1}
                           </div>
@@ -324,7 +334,7 @@ export default function App() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.45, delay: index * 0.08 }}
-                  className="steam-card overflow-hidden rounded-[20px]"
+                  className="steam-card interactive-lift overflow-hidden rounded-[20px]"
                 >
                   {projectImage ? (
                     <div className="steam-card-media p-4">
@@ -361,6 +371,8 @@ export default function App() {
               })}
             </div>
 
+            <GameExperienceSection />
+
             <div id="skills" className="space-y-8 pt-12">
               <div className="border-b border-white/10 pb-4">
                 <h2 className="font-headline text-xs font-bold uppercase tracking-[0.24em] text-slate-300">
@@ -375,7 +387,7 @@ export default function App() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.08 }}
-                    className="steam-card rounded-[20px] p-6"
+                    className="steam-card interactive-lift rounded-[20px] p-6"
                   >
                     <div className="mb-4 flex items-center gap-2">
                       <skill.icon className="h-4 w-4 text-[#66c0f4]" />
@@ -406,8 +418,7 @@ export default function App() {
                 {contactInfo.map((info, index) => (
                   <motion.div
                     key={`${info.label}-${index}`}
-                    whileHover={{ scale: 1.02 }}
-                    className="steam-card rounded-[20px] p-5"
+                    className="steam-card interactive-lift rounded-[20px] p-5"
                   >
                     <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">{info.label}</p>
                     <p className="text-sm font-medium text-white">{info.value}</p>
