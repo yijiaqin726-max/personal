@@ -151,7 +151,7 @@ export default function App() {
                   <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#66c0f4]">Game Portfolio</p>
                   <h1 className="font-headline text-5xl font-extrabold tracking-tight text-white md:text-6xl">秦艺家</h1>
                   <p className="max-w-2xl text-base leading-8 text-slate-200">
-                    游戏策划方向作品集，聚焦 Roguelike、生存循环、数值抉择与原型落地。
+                    游戏策划方向作品集。
                   </p>
                 </div>
 
@@ -161,17 +161,17 @@ export default function App() {
                       <Calendar className="h-3.5 w-3.5" />
                       <span>2003年8月</span>
                     </div>
-                    <p className="mt-3 text-sm font-semibold text-white">NTU 硕士（预计 2027）</p>
+                    <p className="mt-3 text-sm font-semibold text-white">硕士：南洋理工大学（预计 2027年1月毕业，2026年6月可以全职实习，没有课业压力）</p>
                   </div>
                   <div className="rounded-2xl border border-white/10 bg-black/15 p-4">
                     <p className="text-xs text-slate-300">教育经历</p>
-                    <p className="mt-3 text-sm font-semibold text-white">安徽大学本科</p>
+                    <p className="mt-3 text-sm font-semibold text-white">本科：安徽大学211数字媒体技术（计算机方向）</p>
                     <p className="mt-1 text-xs text-slate-400">纽约石溪大学交换生</p>
                   </div>
                   <div className="rounded-2xl border border-white/10 bg-black/15 p-4">
                     <div className="flex items-center gap-2 text-xs text-slate-300">
                       <MapPin className="h-3.5 w-3.5" />
-                      <span>上海 / 新加坡</span>
+                      <span>上海</span>
                     </div>
                     <p className="mt-3 text-sm font-semibold text-white">系统策划 / 原型推进 / PRD</p>
                   </div>
@@ -197,12 +197,23 @@ export default function App() {
               </div>
 
               <div className="steam-cover-placeholder h-fit self-center justify-self-center rounded-[20px] p-2 lg:w-[72%]">
-                <div className="w-full overflow-hidden rounded-[16px] border border-white/10 shadow-[0_14px_30px_rgba(8,16,28,0.26)]">
+                <div className="student-id-card relative w-full overflow-hidden rounded-[16px] border border-white/10 shadow-[0_14px_30px_rgba(8,16,28,0.26)]">
                   <img
                     src={profileCover}
                     alt="个人简介配图"
                     className="block aspect-[3/2] w-full object-cover object-center"
                   />
+                  <div className="pointer-events-none absolute inset-x-0 top-0 flex items-start justify-between p-3">
+                    <span className="rounded-full border border-white/25 bg-white/8 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-white shadow-[0_4px_16px_rgba(8,16,28,0.22)] backdrop-blur-sm">
+                      ID: Qin Yijia
+                    </span>
+                  </div>
+                  <div className="pointer-events-none absolute bottom-3 right-3 flex flex-col items-end gap-1">
+                    <div className="student-id-barcode h-8 w-24 rounded-sm opacity-95" />
+                    <span className="text-[8px] font-medium uppercase tracking-[0.28em] text-white/88">
+                      Student Card
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
