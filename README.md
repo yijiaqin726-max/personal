@@ -89,6 +89,7 @@ npm run preview
 
 | 项目 | 状态 | GitHub | 演示 |
 |---|---|---|---|
+| 破誓圣骑士 | 🚧 开发中 | [Repo](https://github.com/yijiaqin726-max/roguelike_demo) | 未上线 |
 | 自律 Quest | ✅ 已上线 | [Repo](https://github.com/yijiaqin726-max/Qin-Yijia) | [Demo](https://yijiaqin726-max.github.io/Qin-Yijia/self-discipline-quest/) |
 | AI 智能记账助手 | 🚧 开发中 | [Repo](https://github.com/yijiaqin726-max/AI-) | [Demo](https://yijiaqin726-max.github.io/AI-/) |
 | NoteFlow | 🚧 开发中 | [Repo](https://github.com/yijiaqin726-max) | 未上线 |

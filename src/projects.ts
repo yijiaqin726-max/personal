@@ -30,9 +30,8 @@ export const projects: Project[] = [
     links: [
       {
         label: "GitHub",
-        url: "#",
+        url: "https://github.com/yijiaqin726-max/roguelike_demo",
         type: "github",
-        disabled: true,
       },
       {
         label: "在线演示",
