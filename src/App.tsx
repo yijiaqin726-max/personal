@@ -10,7 +10,6 @@ import {
   MapPin,
   Phone,
   Server,
-  Sparkles,
   Swords,
   Wrench,
 } from "lucide-react";
@@ -140,14 +139,7 @@ export default function App() {
               className="panel-soft space-y-7 rounded-[28px] p-8"
             >
               <div className="space-y-3">
-                <div className="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
-                  <Sparkles className="h-3.5 w-3.5 text-amber-500" />
-                  Game Design Portfolio
-                </div>
                 <h1 className="font-headline text-5xl font-extrabold tracking-tight text-slate-950">秦艺家</h1>
-                <p className="max-w-sm text-sm font-medium leading-7 text-slate-600">
-                  游戏系统策划 / 交互与原型驱动。关注玩法机制、风险收益决策和玩家反馈的可感知表达。
-                </p>
               </div>
 
               <div className="space-y-3 text-slate-500">
@@ -163,17 +155,6 @@ export default function App() {
                 <div className="flex items-center gap-2 text-xs text-slate-400">
                   <MapPin className="h-3.5 w-3.5" />
                   <span>上海 / 新加坡</span>
-                </div>
-              </div>
-
-              <div className="rounded-2xl border border-slate-200/80 bg-white/80 p-4">
-                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">关注方向</p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {["系统策划", "玩法原型", "Roguelike", "游戏化设计"].map((item) => (
-                    <span key={item} className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">
-                      {item}
-                    </span>
-                  ))}
                 </div>
               </div>
 
