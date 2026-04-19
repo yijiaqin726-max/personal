@@ -304,11 +304,11 @@ export default function App() {
                 >
                   {projectImage ? (
                     <div className="steam-card-media p-4">
-                      <div className="flex min-h-[220px] items-center justify-center overflow-hidden rounded-[18px] border border-white/10 bg-[#101822] p-3 shadow-[0_18px_36px_rgba(8,16,28,0.28)]">
+                      <div className="relative aspect-[16/9] overflow-hidden rounded-[18px] border border-white/10 bg-[#101822] shadow-[0_18px_36px_rgba(8,16,28,0.28)]">
                         <img
                           src={projectImage}
                           alt={`${project.title} 项目封面`}
-                          className="max-h-[190px] w-auto max-w-full object-contain"
+                          className="h-full w-full object-cover object-center"
                         />
                       </div>
                     </div>
