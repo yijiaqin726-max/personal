@@ -297,7 +297,10 @@ export default function App() {
             </motion.article>
 
             <div className="grid gap-6 lg:grid-cols-2">
-              {otherProjects.map((project, index) => (
+              {otherProjects.map((project, index) => {
+                const projectImage = projectImages[project.title];
+
+                return (
                 <motion.article
                   key={project.title}
                   initial={{ opacity: 0, y: 18 }}
@@ -306,20 +309,18 @@ export default function App() {
                   transition={{ duration: 0.45, delay: index * 0.08 }}
                   className="steam-card overflow-hidden rounded-[20px]"
                 >
-                  <div className="steam-card-media flex min-h-[180px] items-end p-5">
-                    {projectImages[project.title] ? (
-                      <img
-                        src={projectImages[project.title]}
-                        alt={`${project.title} 项目封面`}
-                        className="h-full min-h-[140px] w-full rounded-2xl border border-white/10 object-cover object-top shadow-[0_18px_36px_rgba(8,16,28,0.28)]"
-                      />
-                    ) : (
-                      <div className="w-full rounded-2xl border border-white/10 bg-[#101822]/72 p-4">
-                        <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#66c0f4]">预留项目图片</p>
-                        <p className="mt-2 text-sm text-slate-200">这里替换为 {project.title} 的封面或项目截图。</p>
+                  {projectImage ? (
+                    <div className="steam-card-media p-4">
+                      <div className="relative aspect-[16/9] overflow-hidden rounded-[18px] border border-white/10 shadow-[0_18px_36px_rgba(8,16,28,0.28)]">
+                        <img
+                          src={projectImage}
+                          alt={`${project.title} 项目封面`}
+                          className="h-full w-full object-cover object-center"
+                        />
+                        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(12,18,26,0.04),rgba(12,18,26,0.28))]" />
                       </div>
-                    )}
-                  </div>
+                    </div>
+                  ) : null}
                   <div className="space-y-4 p-6">
                     <div className="flex flex-wrap items-center gap-3">
                       <h3 className="text-2xl font-bold text-white">{project.title}</h3>
@@ -339,7 +340,8 @@ export default function App() {
                     {renderLinks(project.title, project.links)}
                   </div>
                 </motion.article>
-              ))}
+                );
+              })}
             </div>
 
             <div id="skills" className="space-y-8 pt-12">
