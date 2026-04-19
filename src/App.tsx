@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import {
   ArrowUpRight,
@@ -8,8 +9,10 @@ import {
   Layout,
   Mail,
   MapPin,
+  Moon,
   Phone,
   Server,
+  Sun,
   Swords,
   Wrench,
 } from "lucide-react";
@@ -103,10 +106,22 @@ function renderLinks(projectTitle: string, links: (typeof projects)[number]["lin
 }
 
 export default function App() {
+  const [theme, setTheme] = useState<"dark" | "light">(() => {
+    if (typeof window === "undefined") {
+      return "dark";
+    }
+
+    return window.localStorage.getItem("portfolio-theme") === "light" ? "light" : "dark";
+  });
   const [featuredProject, ...otherProjects] = projects;
 
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    window.localStorage.setItem("portfolio-theme", theme);
+  }, [theme]);
+
   return (
-    <div className="page-shell min-h-screen font-body text-on-surface">
+    <div className={`page-shell theme-${theme} min-h-screen font-body text-on-surface`}>
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
         <div className="ambient-orb ambient-orb-left" />
         <div className="ambient-orb ambient-orb-right" />
@@ -120,6 +135,15 @@ export default function App() {
               秦艺家
               <span className="ml-1 text-sm font-normal uppercase text-[#66c0f4]">Portfolio</span>
             </span>
+            <button
+              type="button"
+              onClick={() => setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark"))}
+              className="theme-toggle-button inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold"
+              aria-label={theme === "dark" ? "切换到日间模式" : "切换到夜间模式"}
+            >
+              {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+              <span>{theme === "dark" ? "日间" : "夜间"}</span>
+            </button>
           </div>
           <div className="hidden items-center space-x-10 md:flex">
             <a href="#home" className="text-sm font-medium text-slate-100 transition-colors hover:text-secondary">
