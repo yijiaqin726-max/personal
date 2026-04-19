@@ -159,21 +159,21 @@ export default function App() {
                   <div className="rounded-2xl border border-white/10 bg-black/15 p-4">
                     <div className="flex items-center gap-2 text-xs text-slate-300">
                       <Calendar className="h-3.5 w-3.5" />
-                      <span>2003年8月</span>
+                      <span>2003年8月出生</span>
                     </div>
-                    <p className="mt-3 text-sm font-semibold text-white">硕士：南洋理工大学（预计 2027年1月毕业，2026年6月可以全职实习，没有课业压力）</p>
+                    <p className="mt-3 text-sm font-semibold text-white">南洋理工大学-计算机控制与自动化</p>
                   </div>
                   <div className="rounded-2xl border border-white/10 bg-black/15 p-4">
                     <p className="text-xs text-slate-300">教育经历</p>
-                    <p className="mt-3 text-sm font-semibold text-white">本科：安徽大学211数字媒体技术（计算机方向）</p>
-                    <p className="mt-1 text-xs text-slate-400">纽约石溪大学交换生</p>
+                    <p className="mt-3 text-sm font-semibold text-white"> 安徽大学-数字媒体技术（计算机方向）</p>
+                    <p className="mt-1 text-xs text-slate-400">美国信息系统交换生</p>
                   </div>
                   <div className="rounded-2xl border border-white/10 bg-black/15 p-4">
                     <div className="flex items-center gap-2 text-xs text-slate-300">
                       <MapPin className="h-3.5 w-3.5" />
                       <span>上海</span>
                     </div>
-                    <p className="mt-3 text-sm font-semibold text-white">系统策划 / 原型推进 / PRD</p>
+                    <p className="mt-3 text-sm font-semibold text-white">系统策划/AI </p>
                   </div>
                 </div>
 
