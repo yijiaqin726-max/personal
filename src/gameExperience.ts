@@ -1,3 +1,9 @@
+import fpsBackground from "../fps板块背景图.png";
+import multiplayerBackground from "../多人联机背景图.png";
+import daughterBackground from "../火山的女儿背景图.png";
+import raisingBackground from "../培育类背景图.png";
+import textBackground from "../文字游戏背景图.png";
+
 export interface GameExperienceCategory {
   title: string;
   subtitle: string;
@@ -6,6 +12,7 @@ export interface GameExperienceCategory {
   summary: string;
   designFocus: string;
   observationAngles: string[];
+  backgroundImage?: string;
 }
 
 export const gameExperienceIntro = {
@@ -23,6 +30,7 @@ export const gameExperienceCategories: GameExperienceCategory[] = [
     designFocus:
       "我参加过线下比赛，也在这类游戏上投入了较长时间，因此会更自然地从玩家生态、排位环境、版本变化和团队协作角度理解设计取舍。",
     observationAngles: ["角色定位", "枪械手感", "地图博弈", "竞技反馈", "商业化与用户粘性"],
+    backgroundImage: fpsBackground,
   },
   {
     title: "多人联机 / 生存合作",
@@ -34,6 +42,7 @@ export const gameExperienceCategories: GameExperienceCategory[] = [
     designFocus:
       "相比单纯生存压力，我更在意游戏如何通过信息差、协作成本和阶段目标让团队关系不断变化，以及玩家之间如何形成自然分工。",
     observationAngles: ["信息不对称", "协作成本", "目标设计", "节奏控制", "联机体验"],
+    backgroundImage: multiplayerBackground,
   },
   {
     title: "养成 / 叙事 / 情感驱动",
@@ -45,6 +54,7 @@ export const gameExperienceCategories: GameExperienceCategory[] = [
     designFocus:
       "这类作品让我更注意轻数值系统如何服务情绪表达，以及成长曲线、事件分支和角色塑造之间是否形成统一体验。",
     observationAngles: ["养成反馈", "事件分支", "文本表达", "成长曲线", "陪伴感设计"],
+    backgroundImage: daughterBackground,
   },
   {
     title: "单机 / 角色扮演 / 强叙事",
@@ -67,6 +77,7 @@ export const gameExperienceCategories: GameExperienceCategory[] = [
     designFocus:
       "我会特别关注收集系统如何建立中长期动机，以及养成、生态和经营目标是否能形成持续推进的反馈循环。",
     observationAngles: ["收集驱动", "养成目标", "生态设计", "长期目标感", "反馈循环"],
+    backgroundImage: raisingBackground,
   },
   {
     title: "文字 / 文本驱动游戏",
@@ -78,6 +89,7 @@ export const gameExperienceCategories: GameExperienceCategory[] = [
     designFocus:
       "这一类作品会让我思考，当视觉和系统资源更克制时，文案、设定和信息投放节奏如何承担更多的情绪表达任务。",
     observationAngles: ["文本表现", "氛围塑造", "设定传达", "节奏控制"],
+    backgroundImage: textBackground,
   },
 ];
 
