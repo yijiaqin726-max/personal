@@ -14,6 +14,8 @@ import {
   Wrench,
 } from "lucide-react";
 import { projects } from "./projects";
+import aiBookkeepingCover from "../ai智能记账助手.png";
+import selfDisciplineQuestCover from "../自律quest.png";
 
 const skills = [
   {
@@ -57,6 +59,11 @@ const featuredSignals = [
   { label: "玩法方向", value: "战斗生存 + 成长路线选择" },
   { label: "负责内容", value: "系统设计、PRD、功能拆分、原型推进" },
 ];
+
+const projectImages: Record<string, string> = {
+  自律Quest: selfDisciplineQuestCover,
+  "AI 智能记账助手": aiBookkeepingCover,
+};
 
 function renderLinks(projectTitle: string, links: (typeof projects)[number]["links"]) {
   return (
@@ -300,10 +307,18 @@ export default function App() {
                   className="steam-card overflow-hidden rounded-[20px]"
                 >
                   <div className="steam-card-media flex min-h-[180px] items-end p-5">
-                    <div className="w-full rounded-2xl border border-white/10 bg-[#101822]/72 p-4">
-                      <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#66c0f4]">预留项目图片</p>
-                      <p className="mt-2 text-sm text-slate-200">这里替换为 {project.title} 的封面或项目截图。</p>
-                    </div>
+                    {projectImages[project.title] ? (
+                      <img
+                        src={projectImages[project.title]}
+                        alt={`${project.title} 项目封面`}
+                        className="h-full min-h-[140px] w-full rounded-2xl border border-white/10 object-cover object-top shadow-[0_18px_36px_rgba(8,16,28,0.28)]"
+                      />
+                    ) : (
+                      <div className="w-full rounded-2xl border border-white/10 bg-[#101822]/72 p-4">
+                        <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#66c0f4]">预留项目图片</p>
+                        <p className="mt-2 text-sm text-slate-200">这里替换为 {project.title} 的封面或项目截图。</p>
+                      </div>
+                    )}
                   </div>
                   <div className="space-y-4 p-6">
                     <div className="flex flex-wrap items-center gap-3">
