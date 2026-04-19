@@ -240,6 +240,7 @@ html[data-theme="light"] .ambient-grid {
 
 .game-chip-panel {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  align-content: flex-start;
 }
 
 .game-copy-panel {

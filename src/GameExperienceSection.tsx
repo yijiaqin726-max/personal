@@ -40,7 +40,7 @@ export function GameExperienceSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: index * 0.05 }}
-              className="game-insight-card interactive-lift relative flex h-full min-h-[520px] flex-col overflow-hidden rounded-[24px] p-6 md:p-7"
+              className="game-insight-card interactive-lift relative flex h-full min-h-[560px] flex-col overflow-hidden rounded-[24px] p-6 md:min-h-[580px] md:p-7"
             >
               {category.backgroundImage ? (
                 <div
@@ -50,7 +50,7 @@ export function GameExperienceSection() {
               ) : null}
               <div className="game-insight-overlay" />
 
-              <div className="relative z-10 space-y-2">
+              <div className="relative z-10 flex min-h-[112px] flex-col justify-between gap-4">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/8 backdrop-blur-sm">
                     <Icon className="h-[18px] w-[18px] text-[#8fd7ff]" />
@@ -61,7 +61,7 @@ export function GameExperienceSection() {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex min-h-[56px] flex-wrap content-start gap-2">
                   {category.tags.map((tag) => (
                     <span
                       key={tag}
@@ -74,7 +74,7 @@ export function GameExperienceSection() {
               </div>
 
               <div className="relative z-10 mt-6 grid gap-4 md:grid-cols-2">
-                <div className="game-chip-panel flex min-h-[84px] content-start flex-wrap gap-2 rounded-[18px] border border-white/10 bg-white/5 p-3 backdrop-blur-sm">
+                <div className="game-chip-panel flex min-h-[112px] content-start flex-wrap items-start gap-2 rounded-[18px] border border-white/10 bg-white/5 p-3 backdrop-blur-sm">
                   {category.representativeGames.map((game) => (
                     <span
                       key={game}
@@ -85,7 +85,7 @@ export function GameExperienceSection() {
                   ))}
                 </div>
 
-                <div className="game-chip-panel flex min-h-[84px] content-start flex-wrap gap-2 rounded-[18px] border border-white/10 bg-white/5 p-3 backdrop-blur-sm">
+                <div className="game-chip-panel flex min-h-[112px] content-start flex-wrap items-start gap-2 rounded-[18px] border border-white/10 bg-white/5 p-3 backdrop-blur-sm">
                   {category.observationAngles.map((point) => (
                     <span
                       key={point}
@@ -98,10 +98,10 @@ export function GameExperienceSection() {
               </div>
 
               <div className="relative z-10 mt-6 flex flex-1 flex-col justify-end space-y-4">
-                <div className="game-copy-panel flex min-h-[108px] w-full items-center rounded-[20px] border border-white/10 bg-[#0d1722]/72 p-5 backdrop-blur-sm">
+                <div className="game-copy-panel flex min-h-[116px] w-full items-center rounded-[20px] border border-white/10 bg-[#0d1722]/72 p-5 backdrop-blur-sm">
                   <p className="text-sm leading-7 text-slate-100">{category.summary}</p>
                 </div>
-                <div className="game-copy-panel flex min-h-[108px] w-full items-center rounded-[20px] border border-white/10 bg-[#111c28]/68 p-5 backdrop-blur-sm">
+                <div className="game-copy-panel flex min-h-[116px] w-full items-center rounded-[20px] border border-white/10 bg-[#111c28]/68 p-5 backdrop-blur-sm">
                   <p className="text-sm leading-7 text-slate-200">{category.designFocus}</p>
                 </div>
               </div>
