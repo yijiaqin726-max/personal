@@ -53,9 +53,9 @@ const oathSteps = [
 ];
 
 const featuredSignals = [
-  { label: "项目定位", value: "黑暗奇幻 Roguelike 生存原型" },
-  { label: "核心命题", value: "更强力量是否值得失控风险" },
-  { label: "负责内容", value: "概念、PRD、拆分、原型与展示协同" },
+  { label: "项目类型", value: "黑暗奇幻 Roguelike 生存 Demo" },
+  { label: "核心玩法", value: "通过守誓 / 破誓选择影响成长路线与战斗风险" },
+  { label: "我的职责", value: "负责策划设计、PRD 撰写、功能拆分和原型推进" },
 ];
 
 function renderLinks(projectTitle: string, links: (typeof projects)[number]["links"]) {
@@ -206,7 +206,7 @@ export default function App() {
                     <div className="space-y-3">
                       <h3 className="text-3xl font-bold tracking-tight text-slate-950">{featuredProject.title}</h3>
                       <p className="max-w-2xl text-sm leading-7 text-slate-600">
-                        围绕“守誓 / 破誓”的身份抉择，构建带有风险收益张力的 Roguelike 生存体验，让成长选择本身成为叙事与玩法的一部分。
+                        这是一个 Roguelike 生存 Demo，核心设计是把传统肉鸽的升级三选一，改成“守誓 / 破誓”的路线选择，让玩家在成长收益和失控风险之间做取舍。
                       </p>
                     </div>
 
@@ -220,7 +220,7 @@ export default function App() {
                     </div>
 
                     <div className="space-y-3">
-                      <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">设计亮点</p>
+                      <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">项目亮点</p>
                       <ul className="space-y-3 text-sm leading-7 text-slate-650">
                         {featuredProject.highlights?.map((highlight) => (
                           <li key={highlight} className="flex gap-3">
@@ -249,17 +249,17 @@ export default function App() {
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(245,158,11,0.16),transparent_42%),radial-gradient(circle_at_bottom,rgba(15,23,42,0.7),rgba(15,23,42,0.96))]" />
                     <div className="relative flex h-full flex-col justify-between gap-4">
                       <div className="rounded-[28px] border border-white/10 bg-white/8 p-5 backdrop-blur-sm">
-                        <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-300">概念展示位</p>
+                        <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-300">项目展示区</p>
                         <div className="mt-4 grid gap-3">
                           <div className="rounded-2xl border border-white/10 bg-white/8 p-4">
-                            <p className="text-xs font-semibold text-amber-200">主视觉 / 角色立绘</p>
+                            <p className="text-xs font-semibold text-amber-200">项目封面 / 游戏截图</p>
                             <p className="mt-2 text-sm leading-6 text-slate-300">
-                              这里后续可以替换为项目封面、主角立绘或战斗场景截图。
+                              这里后续可以替换为项目封面、实机截图，或者能够体现玩法氛围的核心画面。
                             </p>
                           </div>
                           <div className="grid grid-cols-2 gap-3">
                             <div className="rounded-2xl border border-white/10 bg-slate-950/35 p-4">
-                              <p className="text-xs font-semibold text-slate-200">UI 草图</p>
+                              <p className="text-xs font-semibold text-slate-200">UI 示意</p>
                               <div className="mt-3 space-y-2">
                                 <div className="h-2 rounded-full bg-slate-700/70" />
                                 <div className="h-2 w-3/4 rounded-full bg-slate-700/50" />
@@ -267,7 +267,7 @@ export default function App() {
                               </div>
                             </div>
                             <div className="rounded-2xl border border-white/10 bg-slate-950/35 p-4">
-                              <p className="text-xs font-semibold text-slate-200">战斗截图</p>
+                              <p className="text-xs font-semibold text-slate-200">战斗画面</p>
                               <div className="mt-3 h-[92px] rounded-2xl bg-[radial-gradient(circle_at_center,rgba(251,191,36,0.18),rgba(30,41,59,0.9))]" />
                             </div>
                           </div>
@@ -275,7 +275,7 @@ export default function App() {
                       </div>
 
                       <div className="rounded-[28px] border border-white/10 bg-slate-950/40 p-5 backdrop-blur-sm">
-                        <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-300">核心循环</p>
+                        <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-300">玩法流程</p>
                         <div className="mt-4 space-y-3">
                           {oathSteps.map((step, index) => (
                             <div key={step} className="flex items-center gap-3">
