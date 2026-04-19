@@ -53,9 +53,9 @@ const oathSteps = [
 ];
 
 const featuredSignals = [
-  { label: "项目类型", value: "黑暗奇幻 Roguelike 生存 Demo" },
-  { label: "核心玩法", value: "通过守誓 / 破誓选择影响成长路线与战斗风险" },
-  { label: "我的职责", value: "负责策划设计、PRD 撰写、功能拆分和原型推进" },
+  { label: "项目类型", value: "个人 Roguelike 生存 Demo" },
+  { label: "玩法方向", value: "战斗生存 + 成长路线选择" },
+  { label: "负责内容", value: "系统设计、PRD、功能拆分、原型推进" },
 ];
 
 function renderLinks(projectTitle: string, links: (typeof projects)[number]["links"]) {
@@ -206,7 +206,7 @@ export default function App() {
                     <div className="space-y-3">
                       <h3 className="text-3xl font-bold tracking-tight text-slate-950">{featuredProject.title}</h3>
                       <p className="max-w-2xl text-sm leading-7 text-slate-600">
-                        这是一个 Roguelike 生存 Demo，核心设计是把传统肉鸽的升级三选一，改成“守誓 / 破誓”的路线选择，让玩家在成长收益和失控风险之间做取舍。
+                        这是一个个人 Roguelike 生存 Demo，核心玩法是在战斗成长中加入“守誓 / 破誓”路线选择，让玩家在收益和风险之间做判断。
                       </p>
                     </div>
 
