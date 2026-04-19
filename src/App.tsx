@@ -218,7 +218,7 @@ export default function App() {
             >
               <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
                 <div className="steam-featured-media min-h-[360px] p-5 md:p-6">
-                  <div className="steam-screenshot-placeholder relative mx-auto aspect-[3/4] h-full min-h-[320px] max-w-[420px] overflow-hidden rounded-[20px] border border-white/10 bg-[#101822] shadow-[0_24px_50px_rgba(8,16,28,0.38)]">
+                  <div className="steam-screenshot-placeholder relative mx-auto aspect-[3/4] h-full min-h-[320px] w-full max-w-[500px] overflow-hidden rounded-[20px] border border-white/10 bg-[#101822] shadow-[0_24px_50px_rgba(8,16,28,0.38)]">
                     <img
                       src={roguelikeCover}
                       alt={`${featuredProject.title} 项目封面`}
