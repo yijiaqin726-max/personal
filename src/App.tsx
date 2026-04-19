@@ -216,13 +216,13 @@ export default function App() {
               transition={{ duration: 0.6 }}
               className="steam-featured overflow-hidden rounded-[24px]"
             >
-              <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
+              <div className="grid gap-0 lg:grid-cols-[1.15fr_0.85fr]">
                 <div className="steam-featured-media min-h-[360px] p-5 md:p-6">
-                  <div className="steam-screenshot-placeholder relative mx-auto aspect-[3/4] h-full min-h-[320px] w-full max-w-[500px] overflow-hidden rounded-[20px] border border-white/10 bg-[#101822] shadow-[0_24px_50px_rgba(8,16,28,0.38)]">
+                  <div className="steam-screenshot-placeholder relative mx-auto aspect-[2/3] h-full min-h-[320px] w-full max-w-[560px] overflow-hidden rounded-[20px] border border-white/10 bg-[#101822] shadow-[0_24px_50px_rgba(8,16,28,0.38)]">
                     <img
                       src={roguelikeCover}
                       alt={`${featuredProject.title} 项目封面`}
-                      className="h-full w-full object-cover object-center"
+                      className="h-full w-full object-contain object-center"
                     />
                     <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(12,18,26,0.12),rgba(12,18,26,0)_18%,rgba(12,18,26,0)_82%,rgba(12,18,26,0.22)),linear-gradient(90deg,rgba(12,18,26,0.12),rgba(12,18,26,0)_12%,rgba(12,18,26,0)_88%,rgba(12,18,26,0.18))]" />
                   </div>
