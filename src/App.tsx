@@ -196,8 +196,8 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="steam-cover-placeholder flex min-h-[320px] items-center justify-center rounded-[24px] p-2 md:p-2.5">
-                <div className="w-1/2 overflow-hidden rounded-[20px] border border-white/10 shadow-[0_18px_40px_rgba(8,16,28,0.3)]">
+              <div className="steam-cover-placeholder flex min-h-[240px] items-center justify-center rounded-[20px] p-2">
+                <div className="w-[44%] overflow-hidden rounded-[16px] border border-white/10 shadow-[0_14px_30px_rgba(8,16,28,0.26)]">
                   <img
                     src={profileCover}
                     alt="个人简介配图"
