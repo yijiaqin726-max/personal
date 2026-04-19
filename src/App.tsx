@@ -103,12 +103,12 @@ export default function App() {
         <div className="ambient-grid" />
       </div>
 
-      <nav className="fixed top-0 z-50 flex w-full justify-center border-b border-white/10 bg-[#0f1923]/80 px-8 py-4 backdrop-blur-xl">
-        <div className="flex w-full max-w-[1200px] items-center justify-between">
+      <nav className="fixed top-0 z-50 flex w-full justify-center border-b border-white/10 bg-[#1b2838]/88 px-6 py-4 backdrop-blur-xl">
+        <div className="flex w-full max-w-[1280px] items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="Manrope text-lg font-bold tracking-tight text-slate-100">
               秦艺家
-              <span className="ml-1 text-sm font-normal uppercase text-slate-400">Portfolio</span>
+              <span className="ml-1 text-sm font-normal uppercase text-[#66c0f4]">Portfolio</span>
             </span>
           </div>
           <div className="hidden items-center space-x-10 md:flex">
@@ -128,247 +128,261 @@ export default function App() {
         </div>
       </nav>
 
-      <main className="relative mx-auto max-w-[1200px] px-8 pb-24 pt-32">
-        <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
-          <aside className="h-fit space-y-10 lg:col-span-4 lg:sticky lg:top-32">
-            <motion.section
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55 }}
-              id="home"
-              className="panel-soft space-y-7 rounded-[28px] p-8"
-            >
-              <div className="space-y-3">
-                <h1 className="font-headline text-5xl font-extrabold tracking-tight text-slate-50">秦艺家</h1>
-              </div>
-
-              <div className="space-y-3 text-slate-300">
-                <div className="flex items-center gap-2 text-xs text-slate-400">
-                  <Calendar className="h-3.5 w-3.5" />
-                  <span>2003年8月</span>
+      <main className="relative mx-auto max-w-[1280px] px-6 pb-24 pt-28">
+        <section id="home" className="space-y-10">
+          <motion.section
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55 }}
+            className="steam-hero rounded-[28px] p-8 md:p-10"
+          >
+            <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+              <div className="space-y-6">
+                <div className="space-y-3">
+                  <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#66c0f4]">Game Portfolio</p>
+                  <h1 className="font-headline text-5xl font-extrabold tracking-tight text-white md:text-6xl">秦艺家</h1>
+                  <p className="max-w-2xl text-base leading-8 text-slate-200">
+                    游戏策划方向作品集，聚焦 Roguelike、生存循环、数值抉择与原型落地。页面布局参考 Steam 商店展示逻辑，方便你在汇报时快速呈现项目气质与重点。
+                  </p>
                 </div>
-                <div className="space-y-1.5 font-medium">
-                  <p>NTU 硕士（预计 2027）</p>
-                  <p>安徽大学本科</p>
-                  <p className="text-sm text-slate-400">纽约石溪大学交换生</p>
-                </div>
-                <div className="flex items-center gap-2 text-xs text-slate-400">
-                  <MapPin className="h-3.5 w-3.5" />
-                  <span>上海 / 新加坡</span>
-                </div>
-              </div>
 
-              <div className="flex flex-col gap-3 pt-2">
-                <a
-                  href="https://github.com/yijiaqin726-max"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-xl bg-secondary py-3 text-sm font-semibold text-[#0b141d] transition-all hover:-translate-y-0.5 hover:brightness-110"
-                >
-                  <Github className="h-4 w-4" />
-                  GitHub
-                </a>
-                <a
-                  href="#contact"
-                  className="rounded-xl border border-white/12 bg-white/6 py-3 text-center text-sm font-semibold text-slate-200 transition-all hover:border-white/20 hover:text-white"
-                >
-                  联系我
-                </a>
-              </div>
-            </motion.section>
-          </aside>
-
-          <div className="lg:col-span-8">
-            <section id="projects" className="space-y-12">
-              <div className="border-b border-white/10 pb-4">
-                <h2 className="font-headline text-xs font-bold uppercase tracking-[0.24em] text-slate-400">
-                  精选作品 / Project Portfolio
-                </h2>
-              </div>
-
-              <motion.article
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="featured-panel overflow-hidden rounded-[32px] border border-white/10"
-              >
-                <div className="grid gap-0 lg:grid-cols-[1.15fr_0.85fr]">
-                  <div className="space-y-6 p-8 md:p-10">
-                    <div className="flex flex-wrap items-center gap-3">
-                      <span className="inline-flex items-center gap-2 rounded-full border border-amber-200/80 bg-amber-50 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-amber-700">
-                        <Swords className="h-3.5 w-3.5" />
-                        Featured Project
-                      </span>
-                      <span className="text-sm font-medium text-slate-400">{featuredProject.subtitle}</span>
+                <div className="grid gap-3 sm:grid-cols-3">
+                  <div className="rounded-2xl border border-white/10 bg-black/15 p-4">
+                    <div className="flex items-center gap-2 text-xs text-slate-300">
+                      <Calendar className="h-3.5 w-3.5" />
+                      <span>2003年8月</span>
                     </div>
+                    <p className="mt-3 text-sm font-semibold text-white">NTU 硕士（预计 2027）</p>
+                  </div>
+                  <div className="rounded-2xl border border-white/10 bg-black/15 p-4">
+                    <p className="text-xs text-slate-300">教育经历</p>
+                    <p className="mt-3 text-sm font-semibold text-white">安徽大学本科</p>
+                    <p className="mt-1 text-xs text-slate-400">纽约石溪大学交换生</p>
+                  </div>
+                  <div className="rounded-2xl border border-white/10 bg-black/15 p-4">
+                    <div className="flex items-center gap-2 text-xs text-slate-300">
+                      <MapPin className="h-3.5 w-3.5" />
+                      <span>上海 / 新加坡</span>
+                    </div>
+                    <p className="mt-3 text-sm font-semibold text-white">系统策划 / 原型推进 / PRD</p>
+                  </div>
+                </div>
 
-                    <div className="space-y-3">
-                      <h3 className="text-3xl font-bold tracking-tight text-slate-50">{featuredProject.title}</h3>
-                      <p className="max-w-2xl text-sm leading-7 text-slate-300">
-                        一款黑暗幻想风格的 Roguelike 生存 Demo。你将在持续升压的战场中决定坚守誓言，或主动拥抱代价更高的力量。
+                <div className="flex flex-wrap gap-3 pt-2">
+                  <a
+                    href="https://github.com/yijiaqin726-max"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="steam-button-primary flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold"
+                  >
+                    <Github className="h-4 w-4" />
+                    GitHub
+                  </a>
+                  <a
+                    href="#contact"
+                    className="steam-button-secondary rounded-md px-5 py-3 text-sm font-semibold"
+                  >
+                    联系我
+                  </a>
+                </div>
+              </div>
+
+              <div className="steam-cover-placeholder flex min-h-[320px] items-end rounded-[24px] p-6">
+                <div className="w-full rounded-2xl border border-white/10 bg-[#0f1a24]/72 p-5">
+                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#66c0f4]">预留主视觉图片</p>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          <section id="projects" className="space-y-8">
+            <div className="flex items-center justify-between border-b border-white/10 pb-4">
+              <h2 className="font-headline text-xs font-bold uppercase tracking-[0.24em] text-slate-300">
+                精选作品 / Project Portfolio
+              </h2>
+              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[#66c0f4]">Recent Project</span>
+            </div>
+
+            <motion.article
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="steam-featured overflow-hidden rounded-[24px]"
+            >
+              <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
+                <div className="steam-featured-media min-h-[360px] p-5 md:p-6">
+                  <div className="steam-screenshot-placeholder flex h-full min-h-[320px] items-end rounded-[20px] p-5">
+                    <div className="w-full rounded-2xl border border-white/10 bg-[#101822]/72 p-4">
+                      <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#66c0f4]">替换项目大图</p>
+                      <p className="mt-2 text-sm leading-6 text-slate-200">
+                        建议使用 16:9 游戏截图、横版 key art 或玩法演示图。
                       </p>
                     </div>
+                  </div>
+                </div>
 
-                    <div className="grid gap-3 md:grid-cols-3">
-                      {featuredSignals.map((signal) => (
-                        <div key={signal.label} className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                          <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-400">{signal.label}</p>
-                          <p className="mt-2 text-sm font-medium leading-6 text-slate-200">{signal.value}</p>
+                <div className="space-y-6 p-8 md:p-10">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="inline-flex items-center gap-2 rounded-full border border-[#e7a843]/40 bg-[#f0ad2c]/12 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-[#ffd27a]">
+                      <Swords className="h-3.5 w-3.5" />
+                      Featured Project
+                    </span>
+                    <span className="text-sm font-medium text-slate-300">{featuredProject.subtitle}</span>
+                  </div>
+
+                  <div className="space-y-3">
+                    <h3 className="text-4xl font-bold tracking-tight text-white">{featuredProject.title}</h3>
+                    <p className="max-w-2xl text-sm leading-7 text-slate-200">
+                      一款黑暗幻想风格的 Roguelike 生存 Demo。你将在持续升压的战场中决定坚守誓言，或主动拥抱代价更高的力量。
+                    </p>
+                  </div>
+
+                  <div className="grid gap-3 md:grid-cols-3">
+                    {featuredSignals.map((signal) => (
+                      <div key={signal.label} className="rounded-2xl border border-white/10 bg-[#16202d] p-4">
+                        <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-400">{signal.label}</p>
+                        <p className="mt-2 text-sm font-medium leading-6 text-white">{signal.value}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="space-y-3">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">项目亮点</p>
+                    <ul className="space-y-3 text-sm leading-7 text-slate-100">
+                      {featuredProject.highlights?.map((highlight) => (
+                        <li key={highlight} className="flex gap-3">
+                          <span className="mt-2 h-2 w-2 rounded-full bg-[#ffd27a] shadow-[0_0_12px_rgba(255,210,122,0.45)]" />
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="rounded-[20px] border border-white/10 bg-[#101822]/70 p-5">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">玩法流程</p>
+                    <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                      {oathSteps.map((step, index) => (
+                        <div key={step} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                          <div className="flex h-8 w-8 items-center justify-center rounded-full border border-[#ffd27a]/40 bg-[#f0ad2c]/10 text-xs font-bold text-[#ffd27a]">
+                            0{index + 1}
+                          </div>
+                          <div className="text-sm text-slate-100">{step}</div>
                         </div>
                       ))}
                     </div>
+                  </div>
 
-                    <div className="space-y-3">
-                      <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">项目亮点</p>
-                      <ul className="space-y-3 text-sm leading-7 text-slate-300">
-                        {featuredProject.highlights?.map((highlight) => (
-                          <li key={highlight} className="flex gap-3">
-                            <span className="mt-2 h-2 w-2 rounded-full bg-amber-400 shadow-[0_0_12px_rgba(245,158,11,0.55)]" />
-                            <span>{highlight}</span>
-                          </li>
-                        ))}
-                      </ul>
+                  <div className="flex flex-wrap gap-2">
+                    {featuredProject.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-white/10 bg-[#1f2f42] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-slate-100"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {renderLinks(featuredProject.title, featuredProject.links)}
+                </div>
+              </div>
+            </motion.article>
+
+            <div className="grid gap-6 lg:grid-cols-2">
+              {otherProjects.map((project, index) => (
+                <motion.article
+                  key={project.title}
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: index * 0.08 }}
+                  className="steam-card overflow-hidden rounded-[20px]"
+                >
+                  <div className="steam-card-media flex min-h-[180px] items-end p-5">
+                    <div className="w-full rounded-2xl border border-white/10 bg-[#101822]/72 p-4">
+                      <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#66c0f4]">预留项目图片</p>
+                      <p className="mt-2 text-sm text-slate-200">这里替换为 {project.title} 的封面或项目截图。</p>
                     </div>
-
+                  </div>
+                  <div className="space-y-4 p-6">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <h3 className="text-2xl font-bold text-white">{project.title}</h3>
+                      <span className="text-sm font-medium text-slate-400">{project.subtitle}</span>
+                    </div>
+                    {project.description ? <p className="text-sm leading-7 text-slate-200">{project.description}</p> : null}
                     <div className="flex flex-wrap gap-2">
-                      {featuredProject.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="rounded-full border border-white/10 bg-white/6 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-slate-300"
-                          >
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full border border-white/10 bg-[#1f2f42] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-slate-100"
+                        >
                           {tag}
                         </span>
                       ))}
                     </div>
-
-                    {renderLinks(featuredProject.title, featuredProject.links)}
+                    {renderLinks(project.title, project.links)}
                   </div>
+                </motion.article>
+              ))}
+            </div>
 
-                  <div className="featured-visual relative min-h-[420px] overflow-hidden p-6 md:p-8">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(103,232,249,0.14),transparent_42%),radial-gradient(circle_at_bottom,rgba(10,17,28,0.82),rgba(10,17,28,0.98))]" />
-                    <div className="relative flex h-full flex-col justify-between gap-4">
-                      <div className="rounded-[28px] border border-white/10 bg-white/8 p-5 backdrop-blur-sm">
-                        <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-300">开发中内容</p>
-                        <div className="mt-4 rounded-2xl border border-white/10 bg-white/8 p-5">
-                          <p className="text-xs font-semibold text-cyan-200">项目展示素材暂未公开</p>
-                          <p className="mt-3 text-sm leading-6 text-slate-300">
-                            为保证明天汇报版本更完整稳定，当前先隐藏 UI 示意与战斗画面，后续将替换为正式封面、实机截图与核心玩法展示。
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="rounded-[28px] border border-white/10 bg-slate-950/40 p-5 backdrop-blur-sm">
-                        <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-300">玩法流程</p>
-                        <div className="mt-4 space-y-3">
-                          {oathSteps.map((step, index) => (
-                            <div key={step} className="flex items-center gap-3">
-                              <div className="flex h-8 w-8 items-center justify-center rounded-full border border-amber-300/30 bg-amber-300/10 text-xs font-bold text-amber-200">
-                                0{index + 1}
-                              </div>
-                              <div className="flex-1 rounded-2xl border border-white/10 bg-white/6 px-4 py-3 text-sm text-slate-200">
-                                {step}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.article>
-
-              <div className="space-y-0">
-                {otherProjects.map((project, index) => (
+            <div id="skills" className="space-y-8 pt-12">
+              <div className="border-b border-white/10 pb-4">
+                <h2 className="font-headline text-xs font-bold uppercase tracking-[0.24em] text-slate-300">
+                  个人技能 / Skills
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                {skills.map((skill, index) => (
                   <motion.div
-                    key={project.title}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    key={skill.category}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.45, delay: index * 0.08 }}
-                    className="panel-soft -mx-2 mt-6 flex flex-col justify-between gap-6 rounded-[28px] p-8 transition-all hover:-translate-y-1 md:flex-row md:items-start"
+                    transition={{ duration: 0.4, delay: index * 0.08 }}
+                    className="steam-card rounded-[20px] p-6"
                   >
-                    <div className="flex-grow space-y-4">
-                      <div className="flex flex-wrap items-center gap-3">
-                        <h3 className="text-2xl font-bold text-slate-50">{project.title}</h3>
-                        <span className="text-sm font-medium text-slate-400">{project.subtitle}</span>
-                      </div>
-                      {project.description ? (
-                        <p className="max-w-2xl text-sm leading-7 text-slate-300">{project.description}</p>
-                      ) : null}
-                      <div className="flex flex-wrap gap-2">
-                        {project.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="rounded-full bg-white/6 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-slate-300"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
+                    <div className="mb-4 flex items-center gap-2">
+                      <skill.icon className="h-4 w-4 text-[#66c0f4]" />
+                      <p className="text-sm font-bold text-white">{skill.category}</p>
                     </div>
-                    <div className="shrink-0">{renderLinks(project.title, project.links)}</div>
+                    <div className="flex flex-wrap gap-2">
+                      {skill.items.map((item) => (
+                        <span
+                          key={item}
+                          className="rounded-full border border-white/10 bg-[#1f2f42] px-3 py-1 text-[11px] font-semibold text-slate-100"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
                   </motion.div>
                 ))}
               </div>
+            </div>
 
-              <div id="skills" className="space-y-8 pt-12">
-                <div className="border-b border-white/10 pb-4">
-                  <h2 className="font-headline text-xs font-bold uppercase tracking-[0.24em] text-slate-400">
-                    个人技能 / Skills
-                  </h2>
-                </div>
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                  {skills.map((skill, index) => (
-                    <motion.div
-                      key={skill.category}
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: index * 0.08 }}
-                      className="panel-soft rounded-[24px] p-6"
-                    >
-                      <div className="mb-4 flex items-center gap-2">
-                        <skill.icon className="h-4 w-4 text-slate-400" />
-                        <p className="text-sm font-bold text-slate-50">{skill.category}</p>
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        {skill.items.map((item) => (
-                          <span
-                            key={item}
-                            className="rounded-full bg-white/6 px-3 py-1 text-[11px] font-semibold text-slate-300"
-                          >
-                            {item}
-                          </span>
-                        ))}
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
+            <div id="contact" className="space-y-8 pt-12">
+              <div className="border-b border-white/10 pb-4">
+                <h2 className="font-headline text-xs font-bold uppercase tracking-[0.24em] text-slate-300">
+                  联系方式 / Contact
+                </h2>
               </div>
-
-              <div id="contact" className="space-y-8 pt-12">
-                <div className="border-b border-white/10 pb-4">
-                  <h2 className="font-headline text-xs font-bold uppercase tracking-[0.24em] text-slate-400">
-                    联系方式 / Contact
-                  </h2>
-                </div>
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                  {contactInfo.map((info, index) => (
-                    <motion.div
-                      key={`${info.label}-${index}`}
-                      whileHover={{ scale: 1.02 }}
-                      className="panel-soft rounded-[24px] p-5"
-                    >
-                      <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">{info.label}</p>
-                      <p className="text-sm font-medium text-slate-50">{info.value}</p>
-                    </motion.div>
-                  ))}
-                </div>
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                {contactInfo.map((info, index) => (
+                  <motion.div
+                    key={`${info.label}-${index}`}
+                    whileHover={{ scale: 1.02 }}
+                    className="steam-card rounded-[20px] p-5"
+                  >
+                    <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">{info.label}</p>
+                    <p className="text-sm font-medium text-white">{info.value}</p>
+                  </motion.div>
+                ))}
               </div>
-            </section>
-          </div>
-        </div>
+            </div>
+          </section>
+        </section>
       </main>
 
       <footer className="relative mt-20 border-t border-white/10 bg-[#0f1923]/72 py-16 backdrop-blur-xl">

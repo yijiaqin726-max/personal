@@ -61,7 +61,7 @@ export const projects: Project[] = [
   },
   {
     title: "AI 智能记账助手",
-    subtitle: "开发中",
+    subtitle: "未完成开发中，演示中只有前端",
     description:
       "基于 Prompt 和 JSON Schema 约束，将用户自由文本解析为金额、日期、消费类别等结构化字段。构建 React 前端、Node.js 中间层和 OpenAI API 的完整链路，前端渲染分类统计与月度支出趋势图表。",
     tags: ["React", "Node.js", "OpenAI API", "Prompt Engineering"],
