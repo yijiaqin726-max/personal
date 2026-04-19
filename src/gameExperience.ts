@@ -3,6 +3,7 @@ import multiplayerBackground from "../多人联机背景图.png";
 import daughterBackground from "../火山的女儿背景图.png";
 import raisingBackground from "../培育类背景图.png";
 import textBackground from "../文字游戏背景图.png";
+import singleplayerBackground from "../单机板块封面图.png";
 
 export interface GameExperienceCategory {
   title: string;
@@ -73,6 +74,7 @@ export const gameExperienceCategories: GameExperienceCategory[] = [
     designFocus:
       "这部分不是追求数量，而是通过少量代表作品观察 RPG 如何把世界观表达、角色塑造和选择后果落实到具体体验中。",
     observationAngles: ["世界观表达", "角色塑造", "选择反馈", "玩家代入感"],
+    backgroundImage: singleplayerBackground,
   },
   {
     title: "培育 / 模拟经营 / 怪物养成",
