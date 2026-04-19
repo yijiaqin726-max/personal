@@ -24,27 +24,9 @@ export function GameExperienceSection() {
         transition={{ duration: 0.5 }}
         className="steam-featured rounded-[26px] p-8 md:p-10"
       >
-        <div className="space-y-5">
-          <div className="space-y-3">
-            <h3 className="font-headline text-4xl font-extrabold tracking-tight text-white md:text-5xl">
-              {gameExperienceIntro.title}
-            </h3>
-            <p className="max-w-4xl text-sm leading-8 text-slate-200 md:text-base">
-              {gameExperienceIntro.description}
-            </p>
-          </div>
-
-          <div className="grid gap-3 md:grid-cols-3">
-            {gameExperienceIntro.highlights.map((item) => (
-              <div
-                key={item}
-                className="interactive-lift rounded-2xl border border-white/10 bg-white/5 px-4 py-4"
-              >
-                <p className="text-sm leading-7 text-slate-100">{item}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+        <h3 className="font-headline text-4xl font-extrabold tracking-tight text-white md:text-5xl">
+          {gameExperienceIntro.title}
+        </h3>
       </motion.section>
 
       <div className="grid gap-6 xl:grid-cols-2">
