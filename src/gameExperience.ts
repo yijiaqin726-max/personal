@@ -9,7 +9,6 @@ export interface GameExperienceCategory {
 }
 
 export const gameExperienceIntro = {
-  eyebrow: "Gameplay Research",
   title: "体验过的游戏",
   description:
     "这一页不是游戏库陈列，而是我基于长期体验整理出来的重点品类观察。相比单纯记录“玩过什么”，我更希望呈现自己长期投入过、能够拆解玩法结构、并且愿意继续深入分析的方向。",
