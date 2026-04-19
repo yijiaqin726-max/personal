@@ -58,16 +58,24 @@ export function GameExperienceSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: index * 0.05 }}
-              className="game-insight-card interactive-lift rounded-[24px] p-6 md:p-7"
+              className="game-insight-card interactive-lift relative overflow-hidden rounded-[24px] p-6 md:p-7"
             >
-              <div className="space-y-2">
+              {category.backgroundImage ? (
+                <div
+                  className="game-insight-backdrop"
+                  style={{ backgroundImage: `url(${category.backgroundImage})` }}
+                />
+              ) : null}
+              <div className="game-insight-overlay" />
+
+              <div className="relative z-10 space-y-2">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5">
-                    <Icon className="h-[18px] w-[18px] text-[#66c0f4]" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/8 backdrop-blur-sm">
+                    <Icon className="h-[18px] w-[18px] text-[#8fd7ff]" />
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold tracking-tight text-white">{category.title}</h3>
-                    <p className="text-sm text-slate-400">{category.subtitle}</p>
+                    <p className="text-sm text-slate-300">{category.subtitle}</p>
                   </div>
                 </div>
 
@@ -83,12 +91,12 @@ export function GameExperienceSection() {
                 </div>
               </div>
 
-              <div className="mt-6 grid gap-5 md:grid-cols-[1fr_1.1fr]">
+              <div className="relative z-10 mt-6 grid gap-5 md:grid-cols-[1fr_1.1fr]">
                 <div className="flex flex-wrap gap-2">
                   {category.representativeGames.map((game) => (
                     <span
                       key={game}
-                      className="rounded-full border border-[#66c0f4]/16 bg-[#132232] px-3 py-1.5 text-sm font-medium text-slate-100"
+                      className="rounded-full border border-white/14 bg-[#102030]/76 px-3 py-1.5 text-sm font-medium text-slate-100 backdrop-blur-sm"
                     >
                       {game}
                     </span>
@@ -99,7 +107,7 @@ export function GameExperienceSection() {
                   {category.observationAngles.map((point) => (
                     <span
                       key={point}
-                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-slate-200"
+                      className="rounded-full border border-white/12 bg-white/8 px-3 py-1.5 text-sm text-slate-100 backdrop-blur-sm"
                     >
                       {point}
                     </span>
@@ -107,11 +115,11 @@ export function GameExperienceSection() {
                 </div>
               </div>
 
-              <div className="mt-6 space-y-4">
-                <div className="rounded-[20px] border border-white/10 bg-[#0f1924]/58 p-5">
+              <div className="relative z-10 mt-6 space-y-4">
+                <div className="rounded-[20px] border border-white/10 bg-[#0d1722]/72 p-5 backdrop-blur-sm">
                   <p className="text-sm leading-7 text-slate-100">{category.summary}</p>
                 </div>
-                <div className="rounded-[20px] border border-white/10 bg-white/5 p-5">
+                <div className="rounded-[20px] border border-white/10 bg-[#111c28]/68 p-5 backdrop-blur-sm">
                   <p className="text-sm leading-7 text-slate-200">{category.designFocus}</p>
                 </div>
               </div>
