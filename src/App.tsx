@@ -310,6 +310,7 @@ export default function App() {
                           alt={`${project.title} 项目封面`}
                           className="h-full w-full object-cover object-center"
                         />
+                        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(16,24,34,0.22),rgba(16,24,34,0)_18%,rgba(16,24,34,0)_82%,rgba(16,24,34,0.22)),linear-gradient(90deg,rgba(16,24,34,0.22),rgba(16,24,34,0)_12%,rgba(16,24,34,0)_88%,rgba(16,24,34,0.22))]" />
                       </div>
                     </div>
                   ) : null}
