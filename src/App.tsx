@@ -78,7 +78,7 @@ function renderLinks(projectTitle: string, links: (typeof projects)[number]["lin
               className={`flex items-center gap-1 text-xs font-bold ${
                 link.type === "demo"
                   ? "text-secondary underline-offset-4 hover:underline"
-                  : "text-slate-500 transition-colors hover:text-slate-900"
+                  : "text-slate-400 transition-colors hover:text-slate-100"
               }`}
             >
               {link.label}
@@ -103,25 +103,25 @@ export default function App() {
         <div className="ambient-grid" />
       </div>
 
-      <nav className="fixed top-0 z-50 flex w-full justify-center border-b border-white/60 bg-white/75 px-8 py-4 backdrop-blur-xl">
+      <nav className="fixed top-0 z-50 flex w-full justify-center border-b border-white/10 bg-[#0f1923]/80 px-8 py-4 backdrop-blur-xl">
         <div className="flex w-full max-w-[1200px] items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="Manrope text-lg font-bold tracking-tight text-slate-900">
+            <span className="Manrope text-lg font-bold tracking-tight text-slate-100">
               秦艺家
               <span className="ml-1 text-sm font-normal uppercase text-slate-400">Portfolio</span>
             </span>
           </div>
           <div className="hidden items-center space-x-10 md:flex">
-            <a href="#home" className="text-sm font-medium text-slate-900 transition-colors hover:text-secondary">
+            <a href="#home" className="text-sm font-medium text-slate-100 transition-colors hover:text-secondary">
               首页
             </a>
-            <a href="#projects" className="text-sm font-medium text-slate-500 transition-colors hover:text-secondary">
+            <a href="#projects" className="text-sm font-medium text-slate-400 transition-colors hover:text-secondary">
               作品
             </a>
-            <a href="#skills" className="text-sm font-medium text-slate-500 transition-colors hover:text-secondary">
+            <a href="#skills" className="text-sm font-medium text-slate-400 transition-colors hover:text-secondary">
               技能
             </a>
-            <a href="#contact" className="text-sm font-medium text-slate-500 transition-colors hover:text-secondary">
+            <a href="#contact" className="text-sm font-medium text-slate-400 transition-colors hover:text-secondary">
               联系方式
             </a>
           </div>
@@ -139,10 +139,10 @@ export default function App() {
               className="panel-soft space-y-7 rounded-[28px] p-8"
             >
               <div className="space-y-3">
-                <h1 className="font-headline text-5xl font-extrabold tracking-tight text-slate-950">秦艺家</h1>
+                <h1 className="font-headline text-5xl font-extrabold tracking-tight text-slate-50">秦艺家</h1>
               </div>
 
-              <div className="space-y-3 text-slate-500">
+              <div className="space-y-3 text-slate-300">
                 <div className="flex items-center gap-2 text-xs text-slate-400">
                   <Calendar className="h-3.5 w-3.5" />
                   <span>2003年8月</span>
@@ -163,14 +163,14 @@ export default function App() {
                   href="https://github.com/yijiaqin726-max"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-xl bg-slate-900 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-slate-800"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-secondary py-3 text-sm font-semibold text-[#0b141d] transition-all hover:-translate-y-0.5 hover:brightness-110"
                 >
                   <Github className="h-4 w-4" />
                   GitHub
                 </a>
                 <a
                   href="#contact"
-                  className="rounded-xl border border-slate-200 bg-white/80 py-3 text-center text-sm font-semibold text-slate-600 transition-all hover:border-slate-300 hover:text-slate-900"
+                  className="rounded-xl border border-white/12 bg-white/6 py-3 text-center text-sm font-semibold text-slate-200 transition-all hover:border-white/20 hover:text-white"
                 >
                   联系我
                 </a>
@@ -180,7 +180,7 @@ export default function App() {
 
           <div className="lg:col-span-8">
             <section id="projects" className="space-y-12">
-              <div className="border-b border-slate-200/80 pb-4">
+              <div className="border-b border-white/10 pb-4">
                 <h2 className="font-headline text-xs font-bold uppercase tracking-[0.24em] text-slate-400">
                   精选作品 / Project Portfolio
                 </h2>
@@ -191,7 +191,7 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="featured-panel overflow-hidden rounded-[32px] border border-slate-200/80"
+                className="featured-panel overflow-hidden rounded-[32px] border border-white/10"
               >
                 <div className="grid gap-0 lg:grid-cols-[1.15fr_0.85fr]">
                   <div className="space-y-6 p-8 md:p-10">
@@ -204,24 +204,24 @@ export default function App() {
                     </div>
 
                     <div className="space-y-3">
-                      <h3 className="text-3xl font-bold tracking-tight text-slate-950">{featuredProject.title}</h3>
-                      <p className="max-w-2xl text-sm leading-7 text-slate-600">
+                      <h3 className="text-3xl font-bold tracking-tight text-slate-50">{featuredProject.title}</h3>
+                      <p className="max-w-2xl text-sm leading-7 text-slate-300">
                         一款黑暗幻想风格的 Roguelike 生存 Demo。你将在持续升压的战场中决定坚守誓言，或主动拥抱代价更高的力量。
                       </p>
                     </div>
 
                     <div className="grid gap-3 md:grid-cols-3">
                       {featuredSignals.map((signal) => (
-                        <div key={signal.label} className="rounded-2xl border border-slate-200/70 bg-white/70 p-4">
+                        <div key={signal.label} className="rounded-2xl border border-white/10 bg-white/5 p-4">
                           <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-400">{signal.label}</p>
-                          <p className="mt-2 text-sm font-medium leading-6 text-slate-700">{signal.value}</p>
+                          <p className="mt-2 text-sm font-medium leading-6 text-slate-200">{signal.value}</p>
                         </div>
                       ))}
                     </div>
 
                     <div className="space-y-3">
                       <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">项目亮点</p>
-                      <ul className="space-y-3 text-sm leading-7 text-slate-650">
+                      <ul className="space-y-3 text-sm leading-7 text-slate-300">
                         {featuredProject.highlights?.map((highlight) => (
                           <li key={highlight} className="flex gap-3">
                             <span className="mt-2 h-2 w-2 rounded-full bg-amber-400 shadow-[0_0_12px_rgba(245,158,11,0.55)]" />
@@ -233,10 +233,10 @@ export default function App() {
 
                     <div className="flex flex-wrap gap-2">
                       {featuredProject.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-slate-500"
-                        >
+                          <span
+                            key={tag}
+                            className="rounded-full border border-white/10 bg-white/6 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-slate-300"
+                          >
                           {tag}
                         </span>
                       ))}
@@ -290,17 +290,17 @@ export default function App() {
                   >
                     <div className="flex-grow space-y-4">
                       <div className="flex flex-wrap items-center gap-3">
-                        <h3 className="text-2xl font-bold text-slate-900">{project.title}</h3>
+                        <h3 className="text-2xl font-bold text-slate-50">{project.title}</h3>
                         <span className="text-sm font-medium text-slate-400">{project.subtitle}</span>
                       </div>
                       {project.description ? (
-                        <p className="max-w-2xl text-sm leading-7 text-slate-600">{project.description}</p>
+                        <p className="max-w-2xl text-sm leading-7 text-slate-300">{project.description}</p>
                       ) : null}
                       <div className="flex flex-wrap gap-2">
                         {project.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-slate-500"
+                            className="rounded-full bg-white/6 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-slate-300"
                           >
                             {tag}
                           </span>
@@ -313,7 +313,7 @@ export default function App() {
               </div>
 
               <div id="skills" className="space-y-8 pt-12">
-                <div className="border-b border-slate-200/80 pb-4">
+                <div className="border-b border-white/10 pb-4">
                   <h2 className="font-headline text-xs font-bold uppercase tracking-[0.24em] text-slate-400">
                     个人技能 / Skills
                   </h2>
@@ -330,13 +330,13 @@ export default function App() {
                     >
                       <div className="mb-4 flex items-center gap-2">
                         <skill.icon className="h-4 w-4 text-slate-400" />
-                        <p className="text-sm font-bold text-slate-900">{skill.category}</p>
+                        <p className="text-sm font-bold text-slate-50">{skill.category}</p>
                       </div>
                       <div className="flex flex-wrap gap-2">
                         {skill.items.map((item) => (
                           <span
                             key={item}
-                            className="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-semibold text-slate-500"
+                            className="rounded-full bg-white/6 px-3 py-1 text-[11px] font-semibold text-slate-300"
                           >
                             {item}
                           </span>
@@ -348,7 +348,7 @@ export default function App() {
               </div>
 
               <div id="contact" className="space-y-8 pt-12">
-                <div className="border-b border-slate-200/80 pb-4">
+                <div className="border-b border-white/10 pb-4">
                   <h2 className="font-headline text-xs font-bold uppercase tracking-[0.24em] text-slate-400">
                     联系方式 / Contact
                   </h2>
@@ -361,7 +361,7 @@ export default function App() {
                       className="panel-soft rounded-[24px] p-5"
                     >
                       <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">{info.label}</p>
-                      <p className="text-sm font-medium text-slate-900">{info.value}</p>
+                      <p className="text-sm font-medium text-slate-50">{info.value}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -371,23 +371,23 @@ export default function App() {
         </div>
       </main>
 
-      <footer className="relative mt-20 border-t border-white/60 bg-white/60 py-16 backdrop-blur-xl">
+      <footer className="relative mt-20 border-t border-white/10 bg-[#0f1923]/72 py-16 backdrop-blur-xl">
         <div className="mx-auto flex max-w-[1200px] flex-col items-center justify-between gap-6 px-8 md:flex-row">
-          <div className="text-xs font-bold uppercase tracking-[0.3em] text-slate-900">QIN YIJIA</div>
+          <div className="text-xs font-bold uppercase tracking-[0.3em] text-slate-100">QIN YIJIA</div>
           <p className="text-xs text-slate-400">© 2025 Qin Yijia. Built with design, systems, and interactive thinking.</p>
-          <div className="flex space-x-6 text-xs font-semibold uppercase tracking-widest text-slate-500">
+          <div className="flex space-x-6 text-xs font-semibold uppercase tracking-widest text-slate-400">
             <a
               href="https://github.com/yijiaqin726-max"
               target="_blank"
               rel="noreferrer"
-              className="transition-colors hover:text-slate-900"
+              className="transition-colors hover:text-slate-100"
             >
               GitHub
             </a>
-            <a href="mailto:YIJIA012@e.ntu.edu.sg" className="transition-colors hover:text-slate-900">
+            <a href="mailto:YIJIA012@e.ntu.edu.sg" className="transition-colors hover:text-slate-100">
               Email
             </a>
-            <a href="#" className="transition-colors hover:text-slate-900">
+            <a href="#" className="transition-colors hover:text-slate-100">
               LinkedIn
             </a>
           </div>
