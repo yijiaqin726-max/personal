@@ -16,6 +16,7 @@ import {
 import { projects } from "./projects";
 import aiBookkeepingCover from "../记账首页图.jpg";
 import selfDisciplineQuestCover from "../自律首页图.jpg";
+import roguelikeCover from "../肉鸽封面图.png";
 
 const skills = [
   {
@@ -217,8 +218,13 @@ export default function App() {
             >
               <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
                 <div className="steam-featured-media min-h-[360px] p-5 md:p-6">
-                  <div className="steam-screenshot-placeholder flex h-full min-h-[320px] items-end rounded-[20px] p-5">
-                    <div className="w-full rounded-2xl border border-white/10 bg-[#101822]/72 p-4" />
+                  <div className="steam-screenshot-placeholder relative mx-auto aspect-[3/4] h-full min-h-[320px] max-w-[420px] overflow-hidden rounded-[20px] border border-white/10 bg-[#101822] shadow-[0_24px_50px_rgba(8,16,28,0.38)]">
+                    <img
+                      src={roguelikeCover}
+                      alt={`${featuredProject.title} 项目封面`}
+                      className="h-full w-full object-cover object-center"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(12,18,26,0.12),rgba(12,18,26,0)_18%,rgba(12,18,26,0)_82%,rgba(12,18,26,0.22)),linear-gradient(90deg,rgba(12,18,26,0.12),rgba(12,18,26,0)_12%,rgba(12,18,26,0)_88%,rgba(12,18,26,0.18))]" />
                   </div>
                 </div>
 
