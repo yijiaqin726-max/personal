@@ -257,7 +257,9 @@ html[data-theme="light"] .ambient-grid {
 }
 
 .game-pill-primary {
-  background: linear-gradient(180deg, rgba(64, 81, 102, 0.94), rgba(45, 58, 76, 0.96));
+  background: linear-gradient(180deg, rgba(38, 57, 79, 0.96), rgba(27, 42, 59, 0.98));
+  border-color: rgba(140, 176, 205, 0.24);
+  color: #eff7ff;
 }
 
 .game-pill-secondary {
@@ -415,7 +417,9 @@ html[data-theme="light"] .game-copy-panel {
 }
 
 html[data-theme="light"] .game-pill-primary {
-  background: linear-gradient(180deg, rgba(79, 97, 120, 0.94), rgba(61, 78, 98, 0.96));
+  background: linear-gradient(180deg, rgba(222, 236, 246, 0.98), rgba(205, 224, 238, 0.98));
+  border-color: rgba(156, 187, 208, 0.9);
+  color: #24435e;
 }
 
 html[data-theme="light"] .game-pill-secondary {
