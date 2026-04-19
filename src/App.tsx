@@ -149,7 +149,7 @@ export default function App() {
                   <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#66c0f4]">Game Portfolio</p>
                   <h1 className="font-headline text-5xl font-extrabold tracking-tight text-white md:text-6xl">秦艺家</h1>
                   <p className="max-w-2xl text-base leading-8 text-slate-200">
-                    游戏策划方向作品集，聚焦 Roguelike、生存循环、数值抉择与原型落地。页面布局参考 Steam 商店展示逻辑，方便你在汇报时快速呈现项目气质与重点。
+                    游戏策划方向作品集，聚焦 Roguelike、生存循环、数值抉择与原型落地。
                   </p>
                 </div>
 
@@ -195,9 +195,7 @@ export default function App() {
               </div>
 
               <div className="steam-cover-placeholder flex min-h-[320px] items-end rounded-[24px] p-6">
-                <div className="w-full rounded-2xl border border-white/10 bg-[#0f1a24]/72 p-5">
-                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#66c0f4]">预留主视觉图片</p>
-                </div>
+                <div className="w-full rounded-2xl border border-white/10 bg-[#0f1a24]/72 p-5" />
               </div>
             </div>
           </motion.section>
@@ -220,12 +218,7 @@ export default function App() {
               <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
                 <div className="steam-featured-media min-h-[360px] p-5 md:p-6">
                   <div className="steam-screenshot-placeholder flex h-full min-h-[320px] items-end rounded-[20px] p-5">
-                    <div className="w-full rounded-2xl border border-white/10 bg-[#101822]/72 p-4">
-                      <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#66c0f4]">替换项目大图</p>
-                      <p className="mt-2 text-sm leading-6 text-slate-200">
-                        建议使用 16:9 游戏截图、横版 key art 或玩法演示图。
-                      </p>
-                    </div>
+                    <div className="w-full rounded-2xl border border-white/10 bg-[#101822]/72 p-4" />
                   </div>
                 </div>
 
