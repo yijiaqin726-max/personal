@@ -206,7 +206,7 @@ export default function App() {
                     <div className="space-y-3">
                       <h3 className="text-3xl font-bold tracking-tight text-slate-950">{featuredProject.title}</h3>
                       <p className="max-w-2xl text-sm leading-7 text-slate-600">
-                        这是一个个人 Roguelike 生存 Demo，核心玩法是在战斗成长中加入“守誓 / 破誓”路线选择，让玩家在收益和风险之间做判断。
+                        一款黑暗幻想风格的 Roguelike 生存 Demo。你将在持续升压的战场中决定坚守誓言，或主动拥抱代价更高的力量。
                       </p>
                     </div>
 
@@ -246,31 +246,15 @@ export default function App() {
                   </div>
 
                   <div className="featured-visual relative min-h-[420px] overflow-hidden p-6 md:p-8">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(245,158,11,0.16),transparent_42%),radial-gradient(circle_at_bottom,rgba(15,23,42,0.7),rgba(15,23,42,0.96))]" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(103,232,249,0.14),transparent_42%),radial-gradient(circle_at_bottom,rgba(10,17,28,0.82),rgba(10,17,28,0.98))]" />
                     <div className="relative flex h-full flex-col justify-between gap-4">
                       <div className="rounded-[28px] border border-white/10 bg-white/8 p-5 backdrop-blur-sm">
-                        <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-300">项目展示区</p>
-                        <div className="mt-4 grid gap-3">
-                          <div className="rounded-2xl border border-white/10 bg-white/8 p-4">
-                            <p className="text-xs font-semibold text-amber-200">项目封面 / 游戏截图</p>
-                            <p className="mt-2 text-sm leading-6 text-slate-300">
-                              这里后续可以替换为项目封面、实机截图，或者能够体现玩法氛围的核心画面。
-                            </p>
-                          </div>
-                          <div className="grid grid-cols-2 gap-3">
-                            <div className="rounded-2xl border border-white/10 bg-slate-950/35 p-4">
-                              <p className="text-xs font-semibold text-slate-200">UI 示意</p>
-                              <div className="mt-3 space-y-2">
-                                <div className="h-2 rounded-full bg-slate-700/70" />
-                                <div className="h-2 w-3/4 rounded-full bg-slate-700/50" />
-                                <div className="h-16 rounded-2xl bg-slate-800/60" />
-                              </div>
-                            </div>
-                            <div className="rounded-2xl border border-white/10 bg-slate-950/35 p-4">
-                              <p className="text-xs font-semibold text-slate-200">战斗画面</p>
-                              <div className="mt-3 h-[92px] rounded-2xl bg-[radial-gradient(circle_at_center,rgba(251,191,36,0.18),rgba(30,41,59,0.9))]" />
-                            </div>
-                          </div>
+                        <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-300">开发中内容</p>
+                        <div className="mt-4 rounded-2xl border border-white/10 bg-white/8 p-5">
+                          <p className="text-xs font-semibold text-cyan-200">项目展示素材暂未公开</p>
+                          <p className="mt-3 text-sm leading-6 text-slate-300">
+                            为保证明天汇报版本更完整稳定，当前先隐藏 UI 示意与战斗画面，后续将替换为正式封面、实机截图与核心玩法展示。
+                          </p>
                         </div>
                       </div>
 

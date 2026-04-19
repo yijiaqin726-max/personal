@@ -6,14 +6,14 @@
   --font-headline: "Manrope", "PingFang SC", sans-serif;
   --font-body: "Inter", "PingFang SC", sans-serif;
 
-  --color-primary: #0f172a;
-  --color-secondary: #2563eb;
-  --color-background: #f6f2e9;
-  --color-surface: rgba(255, 255, 255, 0.7);
-  --color-on-surface: #0f172a;
-  --color-on-surface-variant: #64748b;
-  --color-surface-container-low: #fcfaf6;
-  --color-outline-variant: #e5e7eb;
+  --color-primary: #0b1a2a;
+  --color-secondary: #66c0f4;
+  --color-background: #101822;
+  --color-surface: rgba(23, 34, 48, 0.76);
+  --color-on-surface: #e6edf5;
+  --color-on-surface-variant: #8fa3ba;
+  --color-surface-container-low: #16202d;
+  --color-outline-variant: rgba(148, 163, 184, 0.2);
 }
 
 @layer base {
@@ -22,11 +22,12 @@
   }
 
   body {
-    @apply bg-background font-body text-on-surface selection:bg-amber-100 selection:text-slate-900;
+    @apply bg-background font-body text-on-surface selection:bg-cyan-200/30 selection:text-white;
     background-image:
-      radial-gradient(circle at top left, rgba(251, 191, 36, 0.16), transparent 28%),
-      radial-gradient(circle at top right, rgba(59, 130, 246, 0.12), transparent 24%),
-      linear-gradient(180deg, #fbf8f1 0%, #f6f2e9 48%, #f5f3ee 100%);
+      radial-gradient(circle at top left, rgba(102, 192, 244, 0.12), transparent 26%),
+      radial-gradient(circle at top right, rgba(30, 58, 138, 0.22), transparent 24%),
+      radial-gradient(circle at bottom, rgba(22, 32, 45, 0.55), transparent 36%),
+      linear-gradient(180deg, #0f1923 0%, #101822 42%, #0b141d 100%);
     background-attachment: fixed;
   }
 }
@@ -41,21 +42,21 @@
 }
 
 .panel-soft {
-  border: 1px solid rgba(226, 232, 240, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.18);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.7)),
-    linear-gradient(120deg, rgba(255, 255, 255, 0.6), rgba(248, 250, 252, 0.4));
+    linear-gradient(180deg, rgba(24, 35, 49, 0.92), rgba(17, 25, 37, 0.86)),
+    linear-gradient(120deg, rgba(102, 192, 244, 0.08), rgba(15, 23, 42, 0.06));
   box-shadow:
-    0 18px 50px rgba(15, 23, 42, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    0 18px 50px rgba(3, 8, 18, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(18px);
 }
 
 .featured-panel {
   background:
-    radial-gradient(circle at top left, rgba(251, 191, 36, 0.15), transparent 25%),
-    linear-gradient(135deg, rgba(255, 251, 235, 0.86), rgba(255, 255, 255, 0.78));
-  box-shadow: 0 28px 80px rgba(15, 23, 42, 0.12);
+    radial-gradient(circle at top left, rgba(102, 192, 244, 0.16), transparent 25%),
+    linear-gradient(135deg, rgba(22, 32, 45, 0.96), rgba(11, 20, 31, 0.94));
+  box-shadow: 0 28px 80px rgba(3, 8, 18, 0.45);
 }
 
 .featured-visual::before {
@@ -65,10 +66,10 @@
   border-radius: 28px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background:
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   background-size: 22px 22px;
-  opacity: 0.28;
+  opacity: 0.22;
 }
 
 .ambient-orb {
@@ -83,7 +84,7 @@
   top: 120px;
   width: 280px;
   height: 280px;
-  background: rgba(251, 191, 36, 0.15);
+  background: rgba(102, 192, 244, 0.18);
 }
 
 .ambient-orb-right {
@@ -91,16 +92,16 @@
   top: 320px;
   width: 320px;
   height: 320px;
-  background: rgba(59, 130, 246, 0.12);
+  background: rgba(30, 58, 138, 0.18);
 }
 
 .ambient-grid {
   position: absolute;
   inset: 0;
-  opacity: 0.16;
+  opacity: 0.1;
   background-image:
-    linear-gradient(rgba(148, 163, 184, 0.18) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.18) 1px, transparent 1px);
+    linear-gradient(rgba(148, 163, 184, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.14) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent 78%);
 }
