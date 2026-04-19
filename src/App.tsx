@@ -14,8 +14,8 @@ import {
   Wrench,
 } from "lucide-react";
 import { projects } from "./projects";
-import aiBookkeepingCover from "../ai智能记账助手.png";
-import selfDisciplineQuestCover from "../自律quest.png";
+import aiBookkeepingCover from "../记账首页图.jpg";
+import selfDisciplineQuestCover from "../自律首页图.jpg";
 
 const skills = [
   {
