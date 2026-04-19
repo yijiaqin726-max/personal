@@ -61,7 +61,7 @@ const featuredSignals = [
 ];
 
 const projectImages: Record<string, string> = {
-  自律Quest: selfDisciplineQuestCover,
+  "自律 Quest": selfDisciplineQuestCover,
   "AI 智能记账助手": aiBookkeepingCover,
 };
 
