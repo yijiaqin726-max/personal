@@ -17,6 +17,7 @@ import { projects } from "./projects";
 import aiBookkeepingCover from "../记账首页图.jpg";
 import selfDisciplineQuestCover from "../自律首页图.jpg";
 import roguelikeCover from "../肉鸽封面图.png";
+import profileCover from "../简介图_ 三比二比例.jpg";
 
 const skills = [
   {
@@ -195,8 +196,14 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="steam-cover-placeholder flex min-h-[320px] items-end rounded-[24px] p-6">
-                <div className="w-full rounded-2xl border border-white/10 bg-[#0f1a24]/72 p-5" />
+              <div className="steam-cover-placeholder flex min-h-[320px] items-center rounded-[24px] p-4 md:p-5">
+                <div className="w-full overflow-hidden rounded-[20px] border border-white/10 shadow-[0_18px_40px_rgba(8,16,28,0.3)]">
+                  <img
+                    src={profileCover}
+                    alt="个人简介配图"
+                    className="block aspect-[3/2] w-full object-cover object-center"
+                  />
+                </div>
               </div>
             </div>
           </motion.section>
