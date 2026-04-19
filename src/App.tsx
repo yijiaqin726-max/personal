@@ -108,10 +108,11 @@ function renderLinks(projectTitle: string, links: (typeof projects)[number]["lin
 export default function App() {
   const [theme, setTheme] = useState<"dark" | "light">(() => {
     if (typeof window === "undefined") {
-      return "dark";
+      return "light";
     }
 
-    return window.localStorage.getItem("portfolio-theme") === "light" ? "light" : "dark";
+    const savedTheme = window.localStorage.getItem("portfolio-theme");
+    return savedTheme === "dark" ? "dark" : "light";
   });
   const [featuredProject, ...otherProjects] = projects;
 
@@ -184,19 +185,19 @@ export default function App() {
                 </div>
 
                 <div className="grid gap-3 sm:grid-cols-3">
-                  <div className="interactive-lift rounded-2xl border border-white/10 bg-black/15 p-4">
+                  <div className="profile-stat-card interactive-lift rounded-2xl border border-white/10 bg-black/15 p-4">
                     <div className="flex items-center gap-2 text-xs text-slate-300">
                       <Calendar className="h-3.5 w-3.5" />
                       <span>硕士</span>
                     </div>
                     <p className="mt-3 text-sm font-semibold text-white">南洋理工大学-计算机控制与自动化</p>
                   </div>
-                  <div className="interactive-lift rounded-2xl border border-white/10 bg-black/15 p-4">
+                  <div className="profile-stat-card interactive-lift rounded-2xl border border-white/10 bg-black/15 p-4">
                     <p className="text-xs text-slate-300">本科</p>
                     <p className="mt-3 text-sm font-semibold text-white"> 安徽大学-数字媒体技术（计算机方向）</p>
                     <p className="mt-1 text-xs text-slate-400">美国信息系统交换生</p>
                   </div>
-                  <div className="interactive-lift rounded-2xl border border-white/10 bg-black/15 p-4">
+                  <div className="profile-stat-card interactive-lift rounded-2xl border border-white/10 bg-black/15 p-4">
                     <div className="flex items-center gap-2 text-xs text-slate-300">
                       <MapPin className="h-3.5 w-3.5" />
                       <span>期望职位</span>
@@ -298,7 +299,7 @@ export default function App() {
 
                   <div className="grid gap-3 md:grid-cols-3">
                     {featuredSignals.map((signal) => (
-                      <div key={signal.label} className="interactive-lift rounded-2xl border border-white/10 bg-[#16202d] p-4">
+                      <div key={signal.label} className="featured-signal-card interactive-lift rounded-2xl border border-white/10 bg-[#16202d] p-4">
                         <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-400">{signal.label}</p>
                         <p className="mt-2 text-sm font-medium leading-6 text-white">{signal.value}</p>
                       </div>
@@ -317,11 +318,11 @@ export default function App() {
                     </ul>
                   </div>
 
-                  <div className="rounded-[20px] border border-white/10 bg-[#101822]/70 p-5">
+                  <div className="featured-flow-panel rounded-[20px] border border-white/10 bg-[#101822]/70 p-5">
                     <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">玩法流程</p>
                     <div className="mt-4 grid gap-3 sm:grid-cols-2">
                       {oathSteps.map((step, index) => (
-                        <div key={step} className="interactive-lift flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                        <div key={step} className="featured-flow-step interactive-lift flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
                           <div className="flex h-8 w-8 items-center justify-center rounded-full border border-[#ffd27a]/40 bg-[#f0ad2c]/10 text-xs font-bold text-[#ffd27a]">
                             0{index + 1}
                           </div>
@@ -335,7 +336,7 @@ export default function App() {
                     {featuredProject.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-white/10 bg-[#1f2f42] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-slate-100"
+                        className="dark-chip rounded-full border border-white/10 bg-[#1f2f42] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-slate-100"
                       >
                         {tag}
                       </span>
@@ -382,7 +383,7 @@ export default function App() {
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full border border-white/10 bg-[#1f2f42] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-slate-100"
+                          className="dark-chip rounded-full border border-white/10 bg-[#1f2f42] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-slate-100"
                         >
                           {tag}
                         </span>
@@ -421,7 +422,7 @@ export default function App() {
                       {skill.items.map((item) => (
                         <span
                           key={item}
-                          className="rounded-full border border-white/10 bg-[#1f2f42] px-3 py-1 text-[11px] font-semibold text-slate-100"
+                          className="dark-chip rounded-full border border-white/10 bg-[#1f2f42] px-3 py-1 text-[11px] font-semibold text-slate-100"
                         >
                           {item}
                         </span>
