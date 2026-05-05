@@ -17,6 +17,7 @@ import {
   Wrench,
 } from "lucide-react";
 import { GameExperienceSection } from "./GameExperienceSection";
+import { PlanningCaseSection } from "./PlanningCaseSection";
 import { projects } from "./projects";
 import aiBookkeepingCover from "../记账首页图.jpg";
 import selfDisciplineQuestCover from "../自律首页图.jpg";
@@ -156,6 +157,9 @@ export default function App() {
             <a href="#game-experience" className="text-sm font-medium text-slate-400 transition-colors hover:text-secondary">
               体验过的游戏
             </a>
+            <a href="#planning-cases" className="text-sm font-medium text-slate-400 transition-colors hover:text-secondary">
+              策划拆解案
+            </a>
             <a href="#skills" className="text-sm font-medium text-slate-400 transition-colors hover:text-secondary">
               技能
             </a>
@@ -227,6 +231,12 @@ export default function App() {
                     className="steam-button-secondary rounded-md px-5 py-3 text-sm font-semibold"
                   >
                     体验过的游戏
+                  </a>
+                  <a
+                    href="#planning-cases"
+                    className="steam-button-secondary rounded-md px-5 py-3 text-sm font-semibold"
+                  >
+                    策划拆解案
                   </a>
                 </div>
               </div>
@@ -397,6 +407,7 @@ export default function App() {
             </div>
 
             <GameExperienceSection />
+            <PlanningCaseSection />
 
             <div id="skills" className="space-y-8 pt-12">
               <div className="border-b border-white/10 pb-4">

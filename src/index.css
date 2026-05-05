@@ -276,6 +276,12 @@ html[data-theme="light"] .ambient-grid {
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
+.planning-case-link-disabled {
+  color: #b8c7d6;
+  border: 1px dashed rgba(184, 199, 214, 0.36);
+  background: linear-gradient(180deg, rgba(61, 92, 122, 0.32), rgba(41, 62, 85, 0.24));
+}
+
 .steam-cover-placeholder {
   border: 1px solid rgba(255, 255, 255, 0.12);
   background:
@@ -467,6 +473,12 @@ html[data-theme="light"] .featured-flow-step {
 html[data-theme="light"] .dark-chip {
   background: linear-gradient(180deg, rgba(255, 253, 249, 0.96), rgba(241, 248, 252, 0.94)) !important;
   color: #334155 !important;
+}
+
+html[data-theme="light"] .planning-case-link-disabled {
+  color: #526b80;
+  border-color: rgba(132, 157, 177, 0.54);
+  background: linear-gradient(180deg, rgba(255, 253, 249, 0.9), rgba(241, 248, 252, 0.86));
 }
 
 html[data-theme="light"] .text-secondary {
