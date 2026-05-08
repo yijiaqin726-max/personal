@@ -297,10 +297,9 @@ export default function App() {
                         key={cover.src}
                         src={cover.src}
                         alt={`${featuredProject.title} ${cover.alt}`}
-                        className="aspect-video w-full rounded-[12px] object-cover object-center shadow-[0_10px_24px_rgba(8,16,28,0.24)]"
+                        className="aspect-video w-full rounded-[12px] object-cover object-center shadow-[0_14px_28px_rgba(8,16,28,0.34)]"
                       />
                     ))}
-                    <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(12,18,26,0.12),rgba(12,18,26,0)_18%,rgba(12,18,26,0)_82%,rgba(12,18,26,0.22)),linear-gradient(90deg,rgba(12,18,26,0.12),rgba(12,18,26,0)_12%,rgba(12,18,26,0)_88%,rgba(12,18,26,0.18))]" />
                   </div>
                 </div>
 
@@ -386,13 +385,12 @@ export default function App() {
                 >
                   {projectImage ? (
                     <div className="steam-card-media p-4">
-                      <div className="relative aspect-[16/9] overflow-hidden rounded-[18px] border border-white/10 bg-[#101822] shadow-[0_18px_36px_rgba(8,16,28,0.28)]">
+                      <div className="relative aspect-[16/9] overflow-hidden rounded-[18px] border border-white/10 bg-[#101822] shadow-[0_18px_36px_rgba(8,16,28,0.34)]">
                         <img
                           src={projectImage}
                           alt={`${project.title} 项目封面`}
                           className="h-full w-full object-cover object-center"
                         />
-                        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(16,24,34,0.22),rgba(16,24,34,0)_18%,rgba(16,24,34,0)_82%,rgba(16,24,34,0.22)),linear-gradient(90deg,rgba(16,24,34,0.22),rgba(16,24,34,0)_12%,rgba(16,24,34,0)_88%,rgba(16,24,34,0.22))]" />
                       </div>
                     </div>
                   ) : null}
