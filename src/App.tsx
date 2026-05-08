@@ -291,13 +291,13 @@ export default function App() {
             >
               <div className="grid gap-0 lg:grid-cols-[1.15fr_0.85fr]">
                 <div className="steam-featured-media min-h-[360px] overflow-hidden rounded-l-[24px]">
-                  <div className="steam-screenshot-placeholder relative grid h-full min-h-[320px] w-full grid-cols-1 gap-2 overflow-hidden rounded-none border-0 bg-[#101822] p-2 shadow-none sm:grid-cols-2">
+                  <div className="steam-screenshot-placeholder relative flex h-full min-h-[320px] w-full flex-col gap-3 overflow-hidden rounded-none border-0 bg-[#101822] p-3 shadow-none">
                     {gameJamCovers.map((cover) => (
                       <img
                         key={cover.src}
                         src={cover.src}
                         alt={`${featuredProject.title} ${cover.alt}`}
-                        className="h-full min-h-[150px] w-full rounded-[12px] object-cover object-center"
+                        className="aspect-video w-full rounded-[12px] object-cover object-center shadow-[0_10px_24px_rgba(8,16,28,0.24)]"
                       />
                     ))}
                     <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(12,18,26,0.12),rgba(12,18,26,0)_18%,rgba(12,18,26,0)_82%,rgba(12,18,26,0.22)),linear-gradient(90deg,rgba(12,18,26,0.12),rgba(12,18,26,0)_12%,rgba(12,18,26,0)_88%,rgba(12,18,26,0.18))]" />
