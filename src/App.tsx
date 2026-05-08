@@ -21,7 +21,10 @@ import { PlanningCaseSection } from "./PlanningCaseSection";
 import { projects } from "./projects";
 import aiBookkeepingCover from "../记账首页图.jpg";
 import selfDisciplineQuestCover from "../自律首页图.jpg";
-import roguelikeCover from "../肉鸽封面图.png";
+import gameJamCoverOne from "../光子大赛GameJam封面1.png";
+import gameJamCoverTwo from "../光子大赛GameJam封面2.png";
+import gameJamCoverThree from "../光子大赛GameJam封面3.png";
+import gameJamCoverFour from "../光子大赛GameJam封面4.png";
 import profileCover from "../简介图_ 三比二比例.jpg";
 
 const skills = [
@@ -54,17 +57,24 @@ const contactInfo = [
   { label: "所在地", value: "上海 / 新加坡", icon: MapPin },
 ];
 
-const oathSteps = [
-  "探索与战斗",
-  "守誓 / 破誓抉择",
-  "能力成长与腐化累积",
-  "随机黑暗脉冲改变节奏",
+const gameJamSteps = [
+  "角色移动与跳跃手感",
+  "场景机关与关卡触发",
+  "全部关卡制作与调试",
+  "节奏打磨与提交整合",
 ];
 
 const featuredSignals = [
-  { label: "项目类型", value: "个人 Roguelike 生存 Demo" },
-  { label: "玩法方向", value: "战斗生存 + 成长路线选择" },
-  { label: "负责内容", value: "系统设计、PRD、功能拆分、原型推进" },
+  { label: "项目类型", value: "光子大赛 GameJam 作品" },
+  { label: "玩法方向", value: "2D 横版闯关 + 场景探索" },
+  { label: "负责内容", value: "主程序、关卡制作、Unity / C# 实现" },
+];
+
+const gameJamCovers = [
+  { src: gameJamCoverOne, alt: "森林关卡截图" },
+  { src: gameJamCoverTwo, alt: "天空与飞鸟关卡截图" },
+  { src: gameJamCoverThree, alt: "蓝色树影关卡截图" },
+  { src: gameJamCoverFour, alt: "室内关卡截图" },
 ];
 
 const projectImages: Record<string, string> = {
@@ -281,12 +291,15 @@ export default function App() {
             >
               <div className="grid gap-0 lg:grid-cols-[1.15fr_0.85fr]">
                 <div className="steam-featured-media min-h-[360px] overflow-hidden rounded-l-[24px]">
-                  <div className="steam-screenshot-placeholder relative h-full min-h-[320px] w-full overflow-hidden rounded-none border-0 bg-[#101822] shadow-none">
-                    <img
-                      src={roguelikeCover}
-                      alt={`${featuredProject.title} 项目封面`}
-                      className="h-full w-full object-contain object-center"
-                    />
+                  <div className="steam-screenshot-placeholder relative grid h-full min-h-[320px] w-full grid-cols-1 gap-2 overflow-hidden rounded-none border-0 bg-[#101822] p-2 shadow-none sm:grid-cols-2">
+                    {gameJamCovers.map((cover) => (
+                      <img
+                        key={cover.src}
+                        src={cover.src}
+                        alt={`${featuredProject.title} ${cover.alt}`}
+                        className="h-full min-h-[150px] w-full rounded-[12px] object-cover object-center"
+                      />
+                    ))}
                     <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(12,18,26,0.12),rgba(12,18,26,0)_18%,rgba(12,18,26,0)_82%,rgba(12,18,26,0.22)),linear-gradient(90deg,rgba(12,18,26,0.12),rgba(12,18,26,0)_12%,rgba(12,18,26,0)_88%,rgba(12,18,26,0.18))]" />
                   </div>
                 </div>
@@ -303,7 +316,7 @@ export default function App() {
                   <div className="space-y-3">
                     <h3 className="text-4xl font-bold tracking-tight text-white">{featuredProject.title}</h3>
                     <p className="max-w-2xl text-sm leading-7 text-slate-200">
-                      一款黑暗幻想风格的 Roguelike 生存 Demo。你将在持续升压的战场中决定坚守誓言，或主动拥抱代价更高的力量。
+                      这是一次以快速落地和完整体验为目标的 2D 闯关 GameJam 项目。我担任主程序，负责 Unity 与 C# 侧的核心实现，并独立完成全部关卡搭建，让角色移动、场景变化和关卡节奏形成可玩的完整流程。
                     </p>
                   </div>
 
@@ -329,9 +342,9 @@ export default function App() {
                   </div>
 
                   <div className="featured-flow-panel rounded-[20px] border border-white/10 bg-[#101822]/70 p-5">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">玩法流程</p>
+                    <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">制作流程</p>
                     <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                      {oathSteps.map((step, index) => (
+                      {gameJamSteps.map((step, index) => (
                         <div key={step} className="featured-flow-step interactive-lift flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
                           <div className="flex h-8 w-8 items-center justify-center rounded-full border border-[#ffd27a]/40 bg-[#f0ad2c]/10 text-xs font-bold text-[#ffd27a]">
                             0{index + 1}

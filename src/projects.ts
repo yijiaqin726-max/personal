@@ -17,28 +17,16 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "破誓圣骑士",
-    subtitle: "Roguelike 生存 Demo",
-    tags: ["Roguelike", "Unity", "C#"],
+    title: "光子大赛 GameJam",
+    subtitle: "2D 闯关游戏",
+    tags: ["GameJam", "2D Platformer", "Unity", "C#"],
     featured: true,
     highlights: [
-      "灵感来源于DND/博德之门，在潮水般涌来的敌人与高压生存节奏中，选择守誓或破誓，塑造完全不同的战斗成长路线。",
-      "腐化值会随着力量一同膨胀，每一次强化都可能让你更接近失控边缘，把贪婪变成真正的风险。",
-      "随机事件、路线分歧与战场压力持续叠加，让每一局都像在黑暗里赌上一场越来越危险的胜利。",
+      "作为主程序参与光子大赛 GameJam，使用 Unity 与 C# 搭建 2D 横版闯关的核心框架、角色控制、关卡触发与基础交互逻辑。",
+      "在紧凑赛程内独立完成所有关卡制作，围绕跳跃、探索、节奏变化与场景切换组织挑战曲线。",
+      "负责从功能实现到关卡落地的完整闭环，让美术氛围、角色移动手感和关卡节奏保持一致。",
     ],
-    links: [
-      {
-        label: "GitHub",
-        url: "https://github.com/yijiaqin726-max/roguelike_demo",
-        type: "github",
-      },
-      {
-        label: "在线演示",
-        url: "#",
-        type: "demo",
-        disabled: true,
-      },
-    ],
+    links: [],
   },
   {
     title: "自律 Quest",
