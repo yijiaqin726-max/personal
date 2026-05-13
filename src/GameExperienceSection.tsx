@@ -40,69 +40,73 @@ export function GameExperienceSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: index * 0.05 }}
-              className="game-insight-card interactive-lift relative flex h-full min-h-[560px] flex-col overflow-hidden rounded-[24px] p-6 md:min-h-[580px] md:p-7"
+              className="game-insight-card interactive-lift flex h-full flex-col overflow-hidden rounded-[24px]"
             >
               {category.backgroundImage ? (
-                <div
-                  className="game-insight-backdrop"
-                  style={{ backgroundImage: `url(${category.backgroundImage})` }}
-                />
+                <div className="game-insight-media">
+                  <img src={category.backgroundImage} alt={`${category.title} 类型视觉图`} />
+                  <div className="game-insight-media-badge">
+                    <Icon className="h-4 w-4" />
+                    <span>{category.subtitle}</span>
+                  </div>
+                </div>
               ) : null}
-              <div className="game-insight-overlay" />
 
-              <div className="relative z-10 flex min-h-[112px] flex-col justify-between gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/8 backdrop-blur-sm">
-                    <Icon className="h-[18px] w-[18px] text-[#8fd7ff]" />
+              <div className="game-insight-body">
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-start gap-3">
+                    <div className="game-insight-icon">
+                      <Icon className="h-[18px] w-[18px]" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold tracking-tight text-white">{category.title}</h3>
+                      <p className="text-sm text-slate-300">{category.subtitle}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-bold tracking-tight text-white">{category.title}</h3>
-                    <p className="text-sm text-slate-300">{category.subtitle}</p>
+
+                  <div className="flex min-h-[36px] flex-wrap content-start gap-2">
+                    {category.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="game-tag rounded-full border border-white/10 px-3 py-1 text-[11px] font-bold tracking-[0.14em] text-slate-100"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
-                <div className="flex min-h-[56px] flex-wrap content-start gap-2">
-                  {category.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="game-tag rounded-full border border-white/10 px-3 py-1 text-[11px] font-bold tracking-[0.14em] text-slate-100"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
+                <div className="game-info-grid">
+                  <div className="game-chip-panel">
+                    <p className="game-panel-label">代表作品</p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {category.representativeGames.map((game) => (
+                        <span key={game} className="game-pill-primary">
+                          {game}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
 
-              <div className="relative z-10 mt-6 grid items-stretch gap-4 md:grid-cols-2">
-                <div className="game-chip-panel flex min-h-[132px] w-full content-start flex-wrap items-start gap-2 rounded-[18px] border border-white/10 bg-white/5 p-3 backdrop-blur-sm">
-                  {category.representativeGames.map((game) => (
-                    <span
-                      key={game}
-                      className="game-pill-primary rounded-full border border-white/14 bg-[#102030]/76 px-3 py-1.5 text-sm font-medium text-slate-100 backdrop-blur-sm"
-                    >
-                      {game}
-                    </span>
-                  ))}
+                  <div className="game-chip-panel">
+                    <p className="game-panel-label">观察角度</p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {category.observationAngles.map((point) => (
+                        <span key={point} className="game-pill-secondary">
+                          {point}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
-                <div className="game-chip-panel flex min-h-[132px] w-full content-start flex-wrap items-start gap-2 rounded-[18px] border border-white/10 bg-white/5 p-3 backdrop-blur-sm">
-                  {category.observationAngles.map((point) => (
-                    <span
-                      key={point}
-                      className="game-pill-secondary rounded-full border border-white/12 bg-white/8 px-3 py-1.5 text-sm text-slate-100 backdrop-blur-sm"
-                    >
-                      {point}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="relative z-10 mt-6 flex flex-1 flex-col justify-end space-y-4">
-                <div className="game-copy-panel flex min-h-[116px] w-full items-center rounded-[20px] border border-white/10 bg-[#0d1722]/72 p-5 backdrop-blur-sm">
-                  <p className="text-sm leading-7 text-slate-100">{category.summary}</p>
-                </div>
-                <div className="game-copy-panel flex min-h-[116px] w-full items-center rounded-[20px] border border-white/10 bg-[#111c28]/68 p-5 backdrop-blur-sm">
-                  <p className="text-sm leading-7 text-slate-200">{category.designFocus}</p>
+                <div className="flex flex-1 flex-col justify-end space-y-4">
+                  <div className="game-copy-panel">
+                    <p className="text-sm leading-7 text-slate-100">{category.summary}</p>
+                  </div>
+                  <div className="game-copy-panel">
+                    <p className="text-sm leading-7 text-slate-200">{category.designFocus}</p>
+                  </div>
                 </div>
               </div>
             </motion.article>

@@ -31,8 +31,8 @@ import profileCover from "../简介图_ 三比二比例.jpg";
 const navItems = [
   { label: "首页", href: "#home" },
   { label: "作品", href: "#projects" },
-  { label: "游戏体验", href: "#game-experience" },
   { label: "策划拆解", href: "#planning-cases" },
+  { label: "游戏体验", href: "#game-experience" },
   { label: "技能", href: "#skills" },
   { label: "联系", href: "#contact" },
 ];
@@ -361,8 +361,8 @@ export default function App() {
               })}
             </div>
 
-            <GameExperienceSection />
             <PlanningCaseSection />
+            <GameExperienceSection />
 
             <section id="skills" className="space-y-8 pt-12">
               <div className="section-heading">
