@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import {
   ArrowUpRight,
@@ -6,14 +5,13 @@ import {
   ExternalLink,
   Gamepad2,
   Github,
+  Languages,
   Layout,
   Mail,
   MapPin,
-  Moon,
   Phone,
   Server,
   Sparkles,
-  Sun,
   Swords,
   Wrench,
 } from "lucide-react";
@@ -40,22 +38,27 @@ const skills = [
   {
     category: "游戏策划",
     icon: Gamepad2,
-    items: ["系统策划", "玩法循环设计", "Roguelike 机制设计", "PRD 撰写", "功能拆分", "版本规划"],
+    items: ["系统拆解", "玩法循环", "成长反馈", "任务设计", "PRD 撰写", "版本节奏"],
   },
   {
     category: "原型与交互",
     icon: Layout,
-    items: ["Unity", "C#", "UI 展示思路", "玩家反馈设计", "交互原型", "前端实现协同"],
+    items: ["Unity", "C#", "交互原型", "反馈节奏", "UI 信息层级", "玩家路径"],
   },
   {
     category: "开发协同",
     icon: Server,
-    items: ["跨职能协作", "需求落地", "Node.js", "React", "Vue3", "数据可视化表达"],
+    items: ["需求拆分", "实现成本沟通", "Node.js", "React", "Vue3", "数据表达"],
   },
   {
     category: "工具",
     icon: Wrench,
-    items: ["Git", "GitHub", "Figma", "Notion", "GitHub Pages", "Chrome DevTools"],
+    items: ["Git", "GitHub", "Figma", "Notion", "Excel 思维", "Chrome DevTools"],
+  },
+  {
+    category: "英语沟通",
+    icon: Languages,
+    items: ["英语国家留学 4 年", "听说能力强", "英文资料阅读", "跨文化沟通", "英文文档理解"],
   },
 ];
 
@@ -66,12 +69,12 @@ const contactInfo = [
   { label: "所在地", value: "上海 / 新加坡", href: "#contact", icon: MapPin },
 ];
 
-const gameJamSteps = ["角色移动与跳跃手感", "场景机关与关卡触发", "全部关卡制作与调试", "节奏打磨与提交整合"];
+const gameJamSteps = ["确定核心操作", "搭建触发规则", "铺设关卡节奏", "压缩反馈闭环"];
 
 const featuredSignals = [
-  { label: "项目类型", value: "光子大赛 GameJam 作品" },
-  { label: "玩法方向", value: "2D 横版闯关 + 场景探索" },
-  { label: "负责内容", value: "主程序、关卡制作、Unity / C# 实现" },
+  { label: "项目定位", value: "48h 内跑通核心体验的 GameJam 作品" },
+  { label: "系统关注", value: "移动手感、关卡节奏、场景触发与反馈闭环" },
+  { label: "负责内容", value: "主程序 + 全部关卡搭建 + Unity / C# 实现" },
 ];
 
 const gameJamCovers = [
@@ -115,20 +118,7 @@ function renderLinks(projectTitle: string, links: (typeof projects)[number]["lin
 }
 
 export default function App() {
-  const [theme, setTheme] = useState<"dark" | "light">(() => {
-    if (typeof window === "undefined") {
-      return "light";
-    }
-
-    const savedTheme = window.localStorage.getItem("portfolio-theme");
-    return savedTheme === "dark" ? "dark" : "light";
-  });
   const [featuredProject, ...otherProjects] = projects;
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme;
-    window.localStorage.setItem("portfolio-theme", theme);
-  }, [theme]);
 
   return (
     <div className="page-shell min-h-screen font-body text-on-surface">
@@ -154,14 +144,6 @@ export default function App() {
               简历
               <ArrowUpRight className="h-3.5 w-3.5" />
             </a>
-            <button
-              type="button"
-              onClick={() => setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark"))}
-              className="theme-toggle-button"
-              aria-label={theme === "dark" ? "切换到日间模式" : "切换到夜间模式"}
-            >
-              {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-            </button>
           </div>
         </div>
       </nav>
@@ -177,7 +159,7 @@ export default function App() {
             <div className="hero-content">
               <div className="space-y-7">
                 <div className="space-y-4">
-                  <p className="eyebrow text-primary">Game Systems / AI Portfolio</p>
+                  <p className="eyebrow text-primary">System Design Portfolio</p>
                   <div className="hero-title-row">
                     <h1 className="hero-title">秦艺家</h1>
                     <div className="hero-portrait-wrap">
@@ -194,7 +176,7 @@ export default function App() {
                     </div>
                   </div>
                   <p className="hero-subtitle">
-                    游戏策划方向作品集。关注系统设计、玩法循环、玩家反馈与 AI 工具化落地，把技术实现和体验拆解连接成可执行方案。
+                    想做能把“好玩”拆成规则、反馈和长期目标的系统策划。这里收集了我做过的原型、拆过的系统，以及从玩家体验里提炼出的设计判断。
                   </p>
                 </div>
 
@@ -272,7 +254,7 @@ export default function App() {
                 <div className="space-y-3">
                   <h3>{featuredProject.title}</h3>
                   <p>
-                    这是一次以快速落地和完整体验为目标的 2D 闯关 GameJam 项目。我担任主程序，负责 Unity 与 C# 侧的核心实现，并独立完成全部关卡搭建，让角色移动、场景变化和关卡节奏形成可玩的完整流程。
+                    一次从 0 到可玩的 2D 闯关原型。我负责核心实现和全部关卡，把角色手感、触发器、场景节奏和失败反馈串成一个完整体验。它不大，但很能暴露策划最常见的问题：规则能跑，不等于玩家愿意继续玩。
                   </p>
                 </div>
 

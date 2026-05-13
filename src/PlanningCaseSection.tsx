@@ -39,7 +39,7 @@ export function PlanningCaseSection() {
               {planningCase.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="dark-chip rounded-full border border-white/10 bg-[#1f2f42] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-slate-100"
+                  className="neon-chip rounded-full border border-white/10 bg-[#1f2f42] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-slate-100"
                 >
                   {tag}
                 </span>

@@ -15,10 +15,10 @@ export interface PlanningCase {
 export const planningCases: PlanningCase[] = [
   {
     title: "洛克王国：世界拆解案",
-    subtitle: "在线文档链接待补充",
+    subtitle: "开放世界宠物养成方向观察",
     description:
-      "预留用于放置《洛克王国：世界》的游戏策划拆解文档入口，后续可替换为在线文档链接。",
-    tags: ["游戏策划", "系统拆解", "玩法分析", "文档占位"],
+      "准备用来拆《洛克王国：世界》的核心系统：宠物收集、养成目标、开放世界探索和长期留存。重点会放在“童年 IP 怎么变成可持续游玩的现代系统”。",
+    tags: ["系统拆解", "宠物养成", "开放世界", "长期目标"],
     link: {
       label: "文档链接待补充",
       url: "#",

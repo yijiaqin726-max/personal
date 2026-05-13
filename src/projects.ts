@@ -18,21 +18,21 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "光子大赛 GameJam",
-    subtitle: "2D 闯关游戏",
+    subtitle: "2D 闯关原型",
     tags: ["GameJam", "2D Platformer", "Unity", "C#"],
     featured: true,
     highlights: [
-      "作为主程序参与光子大赛 GameJam，使用 Unity 与 C# 搭建 2D 横版闯关的核心框架、角色控制、关卡触发与基础交互逻辑。",
-      "在紧凑赛程内独立完成所有关卡制作，围绕跳跃、探索、节奏变化与场景切换组织挑战曲线。",
-      "负责从功能实现到关卡落地的完整闭环，让美术氛围、角色移动手感和关卡节奏保持一致。",
+      "用 Unity / C# 搭建角色控制、关卡触发、场景切换和基础交互，保证核心循环能被真实游玩验证。",
+      "独立完成关卡搭建，把跳跃距离、探索路线和场景节奏调整成可理解、可失败、可再试的挑战曲线。",
+      "从实现反推体验问题：哪里需要即时反馈，哪里需要放慢节奏，哪里不能只靠玩家自己猜。",
     ],
     links: [],
   },
   {
     title: "自律 Quest",
-    subtitle: "游戏化人生管理系统",
+    subtitle: "任务成长系统原型",
     description:
-      "基于 Vue3 + Pinia 构建多页面前端应用，完成任务看板、连续打卡统计、经验值增长与技能升级等核心模块。通过游戏化反馈机制增强用户参与感，加入动画反馈、成长可视化与任务联动记录。",
+      "把日常任务改造成一套轻量成长系统：任务完成给经验，连续打卡给反馈，技能升级给长期目标。重点不是“做待办”，而是设计一个让用户愿意回来看的反馈循环。",
     tags: ["Vue3", "Pinia", "Vue Router", "Vite"],
     links: [
       {
@@ -49,9 +49,9 @@ export const projects: Project[] = [
   },
   {
     title: "AI 智能记账助手",
-    subtitle: "未完成开发中，演示中只有前端",
+    subtitle: "AI 输入到结构化结果",
     description:
-      "基于 Prompt 和 JSON Schema 约束，将用户自由文本解析为金额、日期、消费类别等结构化字段。构建 React 前端、Node.js 中间层和 OpenAI API 的完整链路，前端渲染分类统计与月度支出趋势图表。",
+      "把一句随手记账的话拆成金额、日期、类别和统计结果。这个项目更像一次系统策划练习：如何定义输入规则、容错边界和结果反馈，让 AI 不只是聊天，而是进入可管理的流程。",
     tags: ["React", "Node.js", "OpenAI API", "Prompt Engineering"],
     links: [
       {
@@ -68,9 +68,9 @@ export const projects: Project[] = [
   },
   {
     title: "NoteFlow",
-    subtitle: "Markdown 笔记应用",
+    subtitle: "复杂信息管理工具",
     description:
-      "实现双栏 Markdown 编辑器，支持可拖拽分隔线调整宽度。构建无限层级文件夹系统，支持嵌套、展开/折叠、双击重命名、右键菜单递归删除。包含格式化工具栏与一键 PDF 导出，自动保存与实时字数统计。",
+      "围绕“写作时不被工具打断”设计编辑、目录、拖拽、重命名、导出和自动保存。它展示的是我对复杂操作流的拆解能力：哪些功能必须一步到位，哪些反馈要安静但可靠。",
     tags: ["React", "Zustand", "Vite", "react-markdown"],
     links: [
       {

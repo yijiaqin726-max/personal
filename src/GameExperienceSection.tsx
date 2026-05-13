@@ -3,7 +3,6 @@ import { Crosshair, MessagesSquare, Shield, Swords } from "lucide-react";
 import {
   gameExperienceCategories,
   gameExperienceIntro,
-  gameExperienceSummary,
 } from "./gameExperience";
 
 const iconMap = [Crosshair, Shield, MessagesSquare, Swords, Crosshair, Shield];
@@ -102,10 +101,11 @@ export function GameExperienceSection() {
 
                 <div className="flex flex-1 flex-col justify-end space-y-4">
                   <div className="game-copy-panel">
-                    <p className="text-sm leading-7 text-slate-100">{category.summary}</p>
-                  </div>
-                  <div className="game-copy-panel">
-                    <p className="text-sm leading-7 text-slate-200">{category.designFocus}</p>
+                    <div className="space-y-3">
+                      <p className="text-sm leading-7 text-slate-100">{category.summary}</p>
+                      <p className="text-sm leading-7 text-slate-200">{category.designFocus}</p>
+                      <p className="text-sm leading-7 text-slate-200">{category.example}</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -113,16 +113,6 @@ export function GameExperienceSection() {
           );
         })}
       </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 14 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.4 }}
-        className="steam-card rounded-[24px] p-6 md:p-7"
-      >
-        <p className="max-w-5xl text-sm leading-8 text-slate-200 md:text-base">{gameExperienceSummary}</p>
-      </motion.div>
     </section>
   );
 }
