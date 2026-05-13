@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CREATIVE_DEV | 个人作品集</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1a1c1d",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-bright": "#f9f9fa",
+                        "secondary": "#006a6a",
+                        "on-tertiary-container": "#043300",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#ffabf3",
+                        "surface-tint": "#a900a9",
+                        "secondary-fixed": "#00fbfb",
+                        "surface-container-highest": "#e2e2e3",
+                        "tertiary-container": "#1da900",
+                        "surface-variant": "#e2e2e3",
+                        "surface-container": "#eeeeef",
+                        "primary-fixed": "#ffd7f5",
+                        "background": "#f9f9fa",
+                        "secondary-fixed-dim": "#00dddd",
+                        "tertiary-fixed-dim": "#2ae500",
+                        "secondary-container": "#00f8f8",
+                        "surface": "#f9f9fa",
+                        "inverse-primary": "#ffabf3",
+                        "outline-variant": "#dcbed4",
+                        "on-primary-fixed": "#380038",
+                        "on-secondary-fixed-variant": "#004f4f",
+                        "on-surface-variant": "#564052",
+                        "primary": "#a900a9",
+                        "on-secondary-fixed": "#002020",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#106e00",
+                        "on-primary-fixed-variant": "#810081",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#095300",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#022100",
+                        "primary-container": "#ff00ff",
+                        "surface-container-high": "#e8e8e9",
+                        "tertiary-fixed": "#79ff5b",
+                        "outline": "#897083",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2f3132",
+                        "on-secondary-container": "#006e6e",
+                        "on-primary-container": "#510051",
+                        "surface-dim": "#d9dadb",
+                        "on-surface": "#1a1c1d",
+                        "surface-container-low": "#f3f3f4",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "0.5rem",
+                        "stack-md": "1.5rem",
+                        "container-max": "1280px",
+                        "gutter": "2rem",
+                        "margin-desktop": "4rem",
+                        "stack-lg": "4rem",
+                        "margin-mobile": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display-xl": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "display-xl": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #f9f9fa;
+            color: #1a1c1d;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .neon-glow-primary:hover {
+            box-shadow: 0 0 20px rgba(169, 0, 169, 0.3);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 bg-white/70 dark:bg-surface/70 backdrop-blur-xl border-b border-white/20 dark:border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.04)]">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-gutter py-4">
+<span class="font-display-lg text-display-lg font-extrabold tracking-tighter text-primary dark:text-primary-fixed">CREATIVE_DEV</span>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed border-b-2 border-primary pb-1" href="#">Portfolio</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Design Docs</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Journey</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Expertise</a>
+<button class="ml-4 px-6 py-2 bg-primary-container text-on-primary-container rounded-full font-label-md text-label-md scale-95 active:scale-90 transition-transform">Hire Me</button>
+</div>
+<button class="md:hidden material-symbols-outlined text-primary">menu</button>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-gutter py-stack-lg space-y-stack-lg">
+<!-- Part 1: Hero Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-7 space-y-stack-md">
+<div class="space-y-stack-sm">
+<h1 class="font-display-xl text-display-xl text-on-background">秦艺家</h1>
+<p class="font-headline-lg text-headline-lg text-on-surface-variant">游戏策划方向作品集</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="p-4 bg-white rounded-xl shadow-sm border border-outline-variant/20">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined">school</span>
+<span class="font-label-md text-label-md">硕士</span>
+</div>
+<p class="font-body-md text-body-md font-bold">南洋理工大学-计算机控制与自动化</p>
+</div>
+<div class="p-4 bg-white rounded-xl shadow-sm border border-outline-variant/20">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-md text-label-md">本科</span>
+</div>
+<p class="font-body-md text-body-md font-bold">安徽大学-数字媒体技术（计算机方向）</p>
+<p class="text-xs text-on-surface-variant">美国信息系统交换生</p>
+</div>
+<div class="p-4 bg-white rounded-xl shadow-sm border border-outline-variant/20">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined">rocket_launch</span>
+<span class="font-label-md text-label-md">期望职位</span>
+</div>
+<p class="font-body-md text-body-md font-bold">系统策划 / AI</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="flex items-center gap-2 px-6 py-3 bg-surface-container-high rounded-full font-label-md hover:bg-primary/5 transition-all">
+<span class="material-symbols-outlined">terminal</span> GitHub
+                    </button>
+<button class="flex items-center gap-2 px-6 py-3 bg-surface-container-high rounded-full font-label-md hover:bg-primary/5 transition-all">
+                        联系我
+                    </button>
+</div>
+</div>
+<div class="lg:col-span-5 relative group">
+<div class="absolute inset-0 bg-primary/10 rounded-[2rem] blur-3xl group-hover:bg-primary/20 transition-all"></div>
+<div class="relative bg-white p-2 rounded-[2rem] shadow-xl overflow-hidden aspect-[4/3]">
+<img alt="Profile" class="w-full h-full object-cover rounded-[1.8rem]" data-alt="A professional high-quality portrait of a young creative professional with a modern and confident expression. The lighting is soft and studio-quality, emphasizing a professional light-mode aesthetic. The background is a clean, minimalist studio setting that complements the modern UI's airy and expansive vibe. The overall atmosphere is professional, intelligent, and technologically forward-thinking, aligned with a high-end personal portfolio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_QQW_Yb0irsAVDIxddI9LadFdftwxdWemKDmPNy8dZZ35YNhmdnMBeTwy6wYFw_cCOVn3ZCVKNjy4jCXcBGxuI7KoYA3EIlmWAnqW0Foct6dVD3P4JUow5_Ck53bW-QQZ3g-f7vEMDhWyMtaXOSuYSiAhR-nl9cTj6dz0E0xs2F9SmDMSu_gxoeHo92o8zeFsRtoiFoy_WS9FJBFJz93GM8XNQH1u2LA0RFtf_UbSfOr6Bpe_nYte6VHgKAKBg8cEwP4-jFPP3Mop"/>
+<div class="absolute bottom-6 right-6 px-4 py-2 bg-white/80 backdrop-blur-md rounded-lg shadow-sm border border-white/40">
+<p class="font-label-md text-[10px] text-on-surface-variant uppercase tracking-widest">Student Card</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-primary text-sm">qr_code_2</span>
+<span class="font-bold text-xs">ID: QIN YIJIA</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Part 2: Featured Portfolio -->
+<section class="space-y-stack-md">
+<div class="flex justify-between items-end">
+<div>
+<p class="font-label-md text-primary tracking-widest uppercase">Portfolio</p>
+<h2 class="font-headline-lg text-headline-lg">精选作品 / PROJECT PORTFOLIO</h2>
+</div>
+<p class="font-label-md text-on-surface-variant">RECENT PROJECT</p>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter">
+<!-- Main Featured Project Card -->
+<div class="xl:col-span-12 glass-card rounded-[2.5rem] p-gutter overflow-hidden grid lg:grid-cols-2 gap-gutter shadow-sm">
+<div class="space-y-stack-md">
+<div class="grid grid-cols-3 gap-4">
+<img class="rounded-2xl h-48 w-full object-cover border border-white/20 shadow-sm" data-alt="A stylized 2D game landscape illustration with a vibrant color palette of greens and teals. The art style is minimalist and clean, featuring layered forest elements and a small, charming character wandering through the woods. The mood is tranquil and adventurous, reflecting high-end creative game design for a GameJam project." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGsrt6-aDMeE9JPPhheUERAwWpXsxZ-Q37K0LrnF_BgfxakVBltJftCm8A5D-s9WyCARod9SXoFc3MIVvCB2HBDjtdOMkcnqH4SqSqCuHR--e6OL-9xMmlyEIU9X-A_0QJYiV_9HKjcVmDkwjzUSWbazqGl9rV4mIc6Ndp-IExbcU2HsnbbznqD_D3MzDmcfnUdEGE97MfwOA7OFxpcQp7ysDYWEQ64hAsmPo7DB5K-J3ZX_WUCpWAXvnhQ8pRzn0__jQ-nJPSxpPc"/>
+<img class="rounded-2xl h-48 w-full object-cover border border-white/20 shadow-sm" data-alt="A close-up shot of stylized digital game environment details, showing mechanical elements and lush greenery in a high-contrast art style. The lighting is bright and cheerful, echoing the optimistic digital light aesthetic of the UI. The composition is balanced and editorial, highlighting professional game asset design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV-3jycI1oMOT9iXYnzV8fE0yQMjES2jBMSniuPCkVpJ9Jn_CAcIOrLvsufyr3ZqyoRuoBqQzdl8t0PhGpeDen_q0uPJFypfNWQ2Z3hACZkpMN2UCxcDb8_spwrFKLZgBI0osVKn--J7fZvL7W2ol5Rvizly0mgd5rzc5dROCmiSf1LOvP-FxNDIh40Aq_w1YrlundMkWg3TecUw-VpCEdI2FcohWc2eKNnNgP2Dvx8qRljXsaJ_XkLczimVa6_022YFXprLwxFscC"/>
+<img class="rounded-2xl h-48 w-full object-cover border border-white/20 shadow-sm" data-alt="An ethereal nighttime game scene featuring a majestic, glowing tree under a starry sky. The colors are deep blues and neon purples, creating a magical and immersive atmosphere. The artistic style is painterly and detailed, showcasing environmental storytelling and visual depth in a gaming context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT1EqbC29MiIKj3cYX6bdohv_MhMcx0jqnD4nVaKWgoLfLJWwzJVfA3KhcYOEF3JpvMEZPLxNaDMmhrCHvoGemVyqYYSMRSi7R8AK6uO8ULeEvU_HIdL7SuSnhMNB0dGRlvB_yHZNMzhDLwORxW-IWlBLCDnAbrD8f6u-9mhKjmYC7qIWJoyhuOuEEgYR2RdqXnQLqek1tbNGVErLRp174mpe7mp8kdjjX1gqM-uBPqrI1L8mmLA5Gnq6x_woBNQygDmVZmHh399Ni"/>
+</div>
+<div class="space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full border border-primary/20">
+<span class="material-symbols-outlined text-sm text-primary">auto_awesome</span>
+<span class="text-xs font-bold text-primary uppercase">Featured Project</span>
+</div>
+<h3 class="font-display-lg text-headline-lg">光子大赛 GameJam</h3>
+<p class="font-body-md text-on-surface-variant">
+                                这是一个以快速落地和完整体验为目标的 2D 闯关 GameJam 项目。我担任主程序，负责 Unity 与 C# 侧的核心实现，并独立完成全部关卡搭建，让角色移动、场景变化和关卡节奏形成可玩的完整流程。
+                            </p>
+<div class="grid grid-cols-3 gap-2">
+<div class="p-3 bg-white/50 rounded-xl border border-outline-variant/30 text-center">
+<p class="text-[10px] text-on-surface-variant mb-1 uppercase">项目类型</p>
+<p class="font-bold text-sm">GameJam 作品</p>
+</div>
+<div class="p-3 bg-white/50 rounded-xl border border-outline-variant/30 text-center">
+<p class="text-[10px] text-on-surface-variant mb-1 uppercase">玩法方向</p>
+<p class="font-bold text-sm">2D 横版闯关</p>
+</div>
+<div class="p-3 bg-white/50 rounded-xl border border-outline-variant/30 text-center">
+<p class="text-[10px] text-on-surface-variant mb-1 uppercase">负责人</p>
+<p class="font-bold text-sm">主程序 / 关卡</p>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-stack-md lg:pl-gutter">
+<div class="space-y-4">
+<h4 class="font-label-md text-primary tracking-widest uppercase">项目亮点</h4>
+<ul class="space-y-3">
+<li class="flex gap-3 items-start">
+<div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+<p class="font-body-md text-sm">作为主程序参与光子大赛 GameJam，使用 Unity 与 C# 搭建 2D 横版闯关的核心框架、角色控制、关卡触发与基础交互逻辑。</p>
+</li>
+<li class="flex gap-3 items-start">
+<div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+<p class="font-body-md text-sm">在紧凑赛程内独立完成所有关卡制作，围绕跳跃、探索、节奏变化与场景切换组织训练挑战曲线。</p>
+</li>
+<li class="flex gap-3 items-start">
+<div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+<p class="font-body-md text-sm">负责从功能实现到关卡落地的完整闭环，让美术氛围、角色移动手感和关卡节奏保持一致。</p>
+</li>
+</ul>
+</div>
+<div class="p-6 bg-surface-container rounded-3xl space-y-4">
+<h4 class="font-label-md text-on-surface-variant uppercase text-center">制作流程</h4>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex items-center gap-3 p-3 bg-white rounded-xl shadow-sm">
+<span class="text-primary font-bold">01</span>
+<p class="text-xs font-semibold">角色移动与跳跃手感</p>
+</div>
+<div class="flex items-center gap-3 p-3 bg-white rounded-xl shadow-sm">
+<span class="text-primary font-bold">02</span>
+<p class="text-xs font-semibold">场景机关与关卡触发</p>
+</div>
+<div class="flex items-center gap-3 p-3 bg-white rounded-xl shadow-sm">
+<span class="text-primary font-bold">03</span>
+<p class="text-xs font-semibold">全部关卡制作与调试</p>
+</div>
+<div class="flex items-center gap-3 p-3 bg-white rounded-xl shadow-sm">
+<span class="text-primary font-bold">04</span>
+<p class="text-xs font-semibold">节奏打磨与提交整合</p>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-1.5 bg-white border border-outline-variant/30 rounded-full text-xs font-bold uppercase tracking-wider">GameJam</span>
+<span class="px-4 py-1.5 bg-white border border-outline-variant/30 rounded-full text-xs font-bold uppercase tracking-wider">2D Platformer</span>
+<span class="px-4 py-1.5 bg-white border border-outline-variant/30 rounded-full text-xs font-bold uppercase tracking-wider">Unity</span>
+<span class="px-4 py-1.5 bg-white border border-outline-variant/30 rounded-full text-xs font-bold uppercase tracking-wider">C#</span>
+</div>
+</div>
+</div>
+<!-- Secondary Project Cards -->
+<div class="xl:col-span-6 glass-card rounded-[2rem] p-6 space-y-4 shadow-sm">
+<div class="rounded-2xl overflow-hidden aspect-video border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="A professional dashboard UI screenshot displaying complex data visualizations and charts in a clean, modern interface. The design uses a sophisticated palette of white and gray with neon accents for active states. The layout is structured and intuitive, representing advanced software development and data visualization expertise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnMYcIDZCG-hco-SloddKy_Oqhh0rIEd_Q-MXfUZSk0h17OJZaWCkEVbi3boZduYpYFVHawGbRReU4Sbmk7wgiq_vGdMnMRpShOJLhzlQZexuT7V22mV6f_qu0ZH4Sw_UrLzgPciftmXV_qesLp7Hylv1Ueva_0-QmR5_IckoXXh_s1YZamesU0EjMTmyP43tlinlNL5i5Y0lLckrtXft0uWIFA91cibE8C9ZSVgvSG2EONreTsAHV856JL2DZ_jkR-Pr3mi7IxIwd"/>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-lg text-body-lg font-bold">自律 Quest <span class="text-sm font-normal text-on-surface-variant ml-2">游戏化人生管理系统</span></h3>
+</div>
+<p class="text-sm text-on-surface-variant line-clamp-3">基于 Vue3 + Pinia 构建多页面前端应用，完成任务看板、连续打卡统计、经验值增长与技能升级等核心模块。通过游戏化反馈机制增强用户参与感，加入动画反馈、成长可视化与任务联动记录。</p>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="px-3 py-1 bg-surface-container rounded-full text-[10px] font-bold uppercase">VUE3</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-[10px] font-bold uppercase">PINIA</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-[10px] font-bold uppercase">VITE</span>
+</div>
+<div class="flex gap-4 pt-4 text-xs font-bold text-primary">
+<a class="flex items-center gap-1 hover:underline" href="#"><span class="material-symbols-outlined text-sm">code</span> GitHub</a>
+<a class="flex items-center gap-1 hover:underline" href="#"><span class="material-symbols-outlined text-sm">visibility</span> 在线演示</a>
+</div>
+</div>
+</div>
+<div class="xl:col-span-6 glass-card rounded-[2rem] p-6 space-y-4 shadow-sm">
+<div class="rounded-2xl overflow-hidden aspect-video border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="A minimalist mobile application interface featuring a clean, dark-mode inspired aesthetic with glowing blue highlights. The UI displays an AI assistant screen with chat interactions and financial tracking features. The visual style is futuristic and clinical, highlighting technical proficiency in React and AI integration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu0SeD9YECzXU1NIqATjyhuR-yxit4qA8KEAExZgVsrHWNBzZUZyi0HEsC-ANVTLjI0ecDBbA1WXG7ocsr7CZSYnQixhuE5UE11iQF7ODHsL9cmdPpVUE6TGsxX1amYcpPEpwsecJRIKZzEMUHXcr2ZjWY5VLgQJXdRGV7cE26X1x4X_rorsS_juLKdZ_xf_mT4UXuptcI_odp1wx3q21Bl_UWSqfx0X8v-m03lvGxO5ss03Ev2BHi3NtAOILJYX1Lok7vdWOFq06f"/>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-lg text-body-lg font-bold">AI 智能记账助手 <span class="text-sm font-normal text-on-surface-variant ml-2">演示中只有前端</span></h3>
+</div>
+<p class="text-sm text-on-surface-variant line-clamp-3">基于 Prompt 和 JSON Schema 约束，将用户自由文本解析为金额、日期、消费类别等结构化字段。构建 React 前端、Node.js 中间层和 OpenAI API 的完整链路，前端渲染分类统计与月度支出趋势图表。</p>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="px-3 py-1 bg-surface-container rounded-full text-[10px] font-bold uppercase">REACT</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-[10px] font-bold uppercase">NODE.JS</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-[10px] font-bold uppercase">OPENAI API</span>
+</div>
+<div class="flex gap-4 pt-4 text-xs font-bold text-primary">
+<a class="flex items-center gap-1 hover:underline" href="#"><span class="material-symbols-outlined text-sm">code</span> GitHub</a>
+<a class="flex items-center gap-1 hover:underline" href="#"><span class="material-symbols-outlined text-sm">visibility</span> 在线演示</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Part 3: Design Docs & Analysis -->
+<section class="space-y-stack-md">
+<h2 class="font-headline-lg text-headline-lg">游戏策划拆解案 / ANALYSIS</h2>
+<div class="glass-card rounded-[2rem] p-gutter relative overflow-hidden">
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="flex flex-col md:flex-row items-start gap-gutter relative z-10">
+<div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-md border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary text-3xl">description</span>
+</div>
+<div class="flex-1 space-y-4">
+<div>
+<h3 class="font-display-lg text-headline-lg">洛克王国：世界拆解案</h3>
+<p class="font-label-md text-on-surface-variant mt-1">在线文档链接待补充</p>
+</div>
+<p class="font-body-md text-on-surface-variant">
+                            预留用于放置《洛克王国：世界》的游戏策划拆解文档入口，后续可替换为在线文档链接。包括系统分析、数值平衡、核心战斗机制以及玩法创新点的深度解析。
+                        </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-1.5 bg-surface-container rounded-full text-xs font-bold">游戏策划</span>
+<span class="px-4 py-1.5 bg-surface-container rounded-full text-xs font-bold">系统拆解</span>
+<span class="px-4 py-1.5 bg-surface-container rounded-full text-xs font-bold">玩法分析</span>
+<span class="px-4 py-1.5 bg-surface-container rounded-full text-xs font-bold">文档占位</span>
+</div>
+<button class="flex items-center gap-2 px-6 py-2 border-2 border-primary text-primary rounded-full font-label-md hover:bg-primary/5 transition-all">
+<span class="material-symbols-outlined text-sm">link</span> 文档链接待补充
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Part 4: Game Life/Experience Section -->
+<section class="space-y-stack-md">
+<div class="text-center py-stack-md">
+<h2 class="font-display-xl text-display-xl tracking-tighter">体验过的游戏类型</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- FPS -->
+<div class="glass-card rounded-[2.5rem] p-8 space-y-6 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-orange-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-orange-500">ads_click</span>
+<h3 class="font-headline-lg text-headline-lg">FPS / 竞技射击</h3>
+</div>
+<p class="text-sm text-on-surface-variant">长期体验最深的核方向</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-white/50 border border-outline-variant/30 rounded-full text-[10px] font-bold">FPS / 竞技</span>
+<span class="px-3 py-1 bg-white/50 border border-outline-variant/30 rounded-full text-[10px] font-bold">角色分工</span>
+<span class="px-3 py-1 bg-white/50 border border-outline-variant/30 rounded-full text-[10px] font-bold">地图博弈</span>
+<span class="px-3 py-1 bg-white/50 border border-outline-variant/30 rounded-full text-[10px] font-bold">商业化观察</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-white/40 rounded-2xl border border-white/60 space-y-2">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase">代表作</p>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 bg-white rounded-lg text-xs shadow-sm">守望先锋</span>
+<span class="px-2 py-1 bg-white rounded-lg text-xs shadow-sm">Valorant</span>
+<span class="px-2 py-1 bg-white rounded-lg text-xs shadow-sm">CS:GO</span>
+</div>
+</div>
+<div class="p-4 bg-white/40 rounded-2xl border border-white/60 space-y-2">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase">关注点</p>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 bg-white rounded-lg text-xs shadow-sm">角色定位</span>
+<span class="px-2 py-1 bg-white rounded-lg text-xs shadow-sm">竞技反馈</span>
+</div>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                        FPS 是我理解最深的品类之一。相比单纯游玩，我更关注竞技游戏中的角色分工、地图结构、数值平衡、击杀反馈、排位压力和长期留存逻辑。
+                    </p>
+</div>
+<!-- Multiplayer / Survival -->
+<div class="glass-card rounded-[2.5rem] p-8 space-y-6 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-500">groups</span>
+<h3 class="font-headline-lg text-headline-lg">多人联机 / 生存合作</h3>
+</div>
+<p class="text-sm text-on-surface-variant">关注玩法闭环和玩家互动关系</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-white/50 border border-outline-variant/30 rounded-full text-[10px] font-bold">多人合作 / 生存</span>
+<span class="px-3 py-1 bg-white/50 border border-outline-variant/30 rounded-full text-[10px] font-bold">资源循环</span>
+<span class="px-3 py-1 bg-white/50 border border-outline-variant/30 rounded-full text-[10px] font-bold">信息差</span>
+<span class="px-3 py-1 bg-white/50 border border-outline-variant/30 rounded-full text-[10px] font-bold">团队分工</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-white/40 rounded-2xl border border-white/60 space-y-2">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase">代表作</p>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 bg-white rounded-lg text-xs shadow-sm">Raft</span>
+<span class="px-2 py-1 bg-white rounded-lg text-xs shadow-sm">The Forest</span>
+<span class="px-2 py-1 bg-white rounded-lg text-xs shadow-sm">Grounded</span>
+</div>
+</div>
+<div class="p-4 bg-white/40 rounded-2xl border border-white/60 space-y-2">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase">关注点</p>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 bg-white rounded-lg text-xs shadow-sm">目标设计</span>
+<span class="px-2 py-1 bg-white rounded-lg text-xs shadow-sm">节奏控制</span>
+</div>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                        我对多人合作和生存类游戏的兴趣主要集中在协作关系、资源分配、信息不对称和局内节奏设计上。这类游戏让我更关注玩法闭环和玩家互动如何共同驱动体验。
+                    </p>
+</div>
+</div>
+<div class="p-8 glass-card rounded-[2rem] text-center italic text-on-surface-variant/80 font-body-md">
+                这些内容更像是我基于长期体验做的玩法观察和设计拆解，而不是单纯的游玩记录。对我来说，持续体验重点品类的过程，也是不断训练自己如何理解玩家感受、分析系统结构和提炼设计问题的过程。
+            </div>
+</section>
+<!-- Part 5: Personal Skills -->
+<section class="space-y-stack-md">
+<h2 class="font-headline-lg text-headline-lg">个人技能 / SKILLS</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Game Planning -->
+<div class="p-8 bg-white rounded-3xl border border-outline-variant/20 shadow-sm space-y-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">videogame_asset</span>
+<h3 class="font-bold">游戏策划</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">系统策划</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">玩法循环设计</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">Roguelike 机制设计</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">PRD 撰写</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">功能拆解</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">版本规划</span>
+</div>
+</div>
+<!-- Prototyping & Interaction -->
+<div class="p-8 bg-white rounded-3xl border border-outline-variant/20 shadow-sm space-y-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">layers</span>
+<h3 class="font-bold">原型与交互</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">Unity</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">C#</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">UI 展示思路</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">玩家反馈设计</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">交互原型</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">前端实现协同</span>
+</div>
+</div>
+<!-- Development Collaboration -->
+<div class="p-8 bg-white rounded-3xl border border-outline-variant/20 shadow-sm space-y-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">groups_2</span>
+<h3 class="font-bold">开发协同</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">跨职能协作</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">需求落地</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">Node.js</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">React</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">Vue3</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">数据可视化表达</span>
+</div>
+</div>
+<!-- Tools -->
+<div class="p-8 bg-white rounded-3xl border border-outline-variant/20 shadow-sm space-y-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">build</span>
+<h3 class="font-bold">工具</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">Git</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">GitHub</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">Figma</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">Notion</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">GitHub Pages</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold">Chrome DevTools</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Info -->
+<section class="space-y-stack-md pt-stack-lg border-t border-outline-variant/30">
+<h2 class="font-headline-lg text-headline-lg uppercase">联系方式 / CONTACT</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="p-6 bg-white rounded-2xl border border-outline-variant/20 shadow-sm">
+<p class="text-[10px] text-on-surface-variant font-bold uppercase mb-1">邮箱</p>
+<p class="font-bold text-primary">YIJIA012@e.ntu.edu.sg</p>
+</div>
+<div class="p-6 bg-white rounded-2xl border border-outline-variant/20 shadow-sm">
+<p class="text-[10px] text-on-surface-variant font-bold uppercase mb-1">电话</p>
+<p class="font-bold">19355179852</p>
+</div>
+<div class="p-6 bg-white rounded-2xl border border-outline-variant/20 shadow-sm">
+<p class="text-[10px] text-on-surface-variant font-bold uppercase mb-1">GITHUB</p>
+<p class="font-bold text-primary">github.com/yijiaqin726-max</p>
+</div>
+<div class="p-6 bg-white rounded-2xl border border-outline-variant/20 shadow-sm">
+<p class="text-[10px] text-on-surface-variant font-bold uppercase mb-1">所在地</p>
+<p class="font-bold">上海 / 新加坡</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-bright dark:bg-surface-dim border-t border-outline-variant/30 w-full py-stack-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md max-w-container-max mx-auto px-gutter">
+<div class="space-y-4">
+<span class="font-headline-lg text-headline-lg text-on-surface dark:text-inverse-on-surface">CREATIVE_DEV</span>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 Creative Developer. Built for high-octane performance.</p>
+</div>
+<div class="flex flex-wrap gap-8 md:justify-end items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">GitHub</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Lark Docs</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Itch.io</a>
+</div>
+</div>
+</footer>
+</body></html>

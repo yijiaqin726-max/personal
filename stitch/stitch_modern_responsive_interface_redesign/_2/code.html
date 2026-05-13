@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>个人主页 - 移动端 (霓虹定制版)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f3f3f4",
+                        "on-tertiary-container": "#043300",
+                        "on-secondary-fixed": "#002020",
+                        "surface": "#f9f9fa",
+                        "on-surface-variant": "#564052",
+                        "surface-tint": "#a900a9",
+                        "on-tertiary-fixed": "#022100",
+                        "on-secondary-container": "#006e6e",
+                        "tertiary-fixed-dim": "#2ae500",
+                        "tertiary": "#106e00",
+                        "surface-variant": "#e2e2e3",
+                        "on-tertiary-fixed-variant": "#095300",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#810081",
+                        "primary-fixed": "#ffd7f5",
+                        "secondary-container": "#00f8f8",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#ffabf3",
+                        "secondary": "#006a6a",
+                        "on-secondary-fixed-variant": "#004f4f",
+                        "surface-container-highest": "#e2e2e3",
+                        "on-background": "#1a1c1d",
+                        "primary-fixed-dim": "#ffabf3",
+                        "inverse-surface": "#2f3132",
+                        "tertiary-fixed": "#79ff5b",
+                        "on-error-container": "#93000a",
+                        "primary": "#a900a9",
+                        "outline-variant": "#dcbed4",
+                        "on-surface": "#1a1c1d",
+                        "secondary-fixed-dim": "#00dddd",
+                        "surface-container-high": "#e8e8e9",
+                        "outline": "#897083",
+                        "background": "#f9f9fa",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d9dadb",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container": "#eeeeef",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#f9f9fa",
+                        "primary-container": "#ff00ff",
+                        "on-primary-container": "#510051",
+                        "tertiary-container": "#1da900",
+                        "secondary-fixed": "#00fbfb",
+                        "on-primary-fixed": "#380038",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "stack-md": "1.5rem",
+                        "stack-sm": "0.5rem",
+                        "stack-lg": "4rem",
+                        "margin-mobile": "1.5rem",
+                        "margin-desktop": "4rem",
+                        "gutter": "2rem"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "display-xl": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-xl": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neon-glow-primary:hover {
+            box-shadow: 0 0 15px rgba(169, 0, 169, 0.4);
+        }
+        .neon-glow-secondary:hover {
+            box-shadow: 0 0 15px rgba(0, 248, 248, 0.4);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24">
+<!-- Top AppBar -->
+<header class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-white/20 dark:border-on-surface/10 shadow-sm flex justify-between items-center w-full px-margin-mobile py-4">
+<span class="font-display-lg text-headline-lg tracking-tighter text-on-surface dark:text-on-surface">DESIGNER.DEV</span>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="dark_mode">dark_mode</span>
+<span class="material-symbols-outlined text-on-surface" data-icon="menu">menu</span>
+</div>
+</header>
+<main class="px-margin-mobile space-y-stack-lg pt-stack-md">
+<!-- Section 1: Intro -->
+<section class="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary-fixed to-secondary-container p-6" id="intro">
+<div class="relative z-10 flex flex-col gap-4">
+<div class="flex items-center gap-4">
+<div class="w-20 h-20 rounded-full border-4 border-white shadow-lg overflow-hidden">
+<img alt="Profile" data-alt="A professional portrait of a female creative lead with a modern aesthetic, set against a soft, bright studio background. The lighting is high-key and flattering, emphasizing a professional yet approachable demeanor. Her style is contemporary and minimalist, aligning with the clean, airy design language of the portfolio. The overall color palette is bright and optimistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjQLox3iTVf41nsdverNAyf-hQeZJMiOapPTib1b62jTr_hFoR5HfOrz-PpUJehFpqXvhlAoKCRy5ZO_cWZq9iYEa2FwidSEqoA5UQOKNoBB3MiyI-lH2t0ASNGIYn8kgztTBuFDKOMoDhLtJZ8CiejFbaUjMPYsaGAK9fQYoQ7QLdu9IV9Vuvc-zfKFTjfZRzpnLy9Fw1NOEV8XNrn9wvLPO8GHiqVm4ITZx0CYKl9stvJJZQadD8qAr1Sf6KhoykvDanFDwbhVJc"/>
+</div>
+<div>
+<h1 class="font-headline-lg text-headline-lg-mobile text-on-primary-fixed">Creative Lead</h1>
+<p class="font-label-md text-label-md text-on-primary-fixed-variant">Game Systems &amp; UI Designer</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-background/80 leading-relaxed">
+                    专注于创造沉浸式游戏体验与直观的系统设计。将技术严谨性与创意活力相结合，打造具有“数字光感”的未来派界面。
+                </p>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="px-3 py-1 bg-white/50 backdrop-blur-sm rounded-full text-primary font-bold text-xs border border-white/30">硕士 · 南洋理工大学</span>
+<span class="px-3 py-1 bg-white/50 backdrop-blur-sm rounded-full text-secondary font-bold text-xs border border-white/30">本科 · 安徽大学</span>
+</div>
+</div>
+<!-- Decorative Glows -->
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/20 blur-3xl rounded-full"></div>
+<div class="absolute -bottom-10 -left-10 w-32 h-32 bg-secondary/20 blur-3xl rounded-full"></div>
+</section>
+<!-- Section 2: Portfolio -->
+<section class="space-y-stack-md" id="portfolio">
+<div class="flex justify-between items-end">
+<h2 class="font-headline-lg text-headline-lg-mobile text-primary">精选作品</h2>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Projects</span>
+</div>
+<!-- Bento Grid Portfolio -->
+<div class="grid grid-cols-1 gap-4">
+<!-- Large Featured Card -->
+<div class="glass-card rounded-xl overflow-hidden shadow-sm group">
+<div class="aspect-video relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vibrant 2D game environment showcasing a lush, stylized forest with glowing flora and neon accents. The scene is bright and airy, with soft sunlight filtering through geometric tree canopies. A small, glowing character stands in the center, creating a sense of adventure and wonder. The visual style is minimalist yet highly detailed, featuring a neon-cyan and pink color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAANEEG90FEMxk2qC7SL-TEA4EI-Hd68q0ZBii_EnSYQbRmiOmhQutlDgPZKaUvsG-ZaylC-tiQt2FW_DpVj3sfIJdj5FSWXg0t4MZWOAaqrP7E2HzTHeRA7BTPHD8Y2wIkAgQbIBVxNUvu6SHU4cwUUKDPSMU6PpsEz5AuVUo8eV4tWRPYp0sqH0P8UBx3d5Sgjqt_-PZYhv7QoddnWVERmuv6XQ9XvvS84Bk2egfvvJYGDYRhntTc-QpBWW4dmpyc650Ya_OkA1F"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-xs font-bold shadow-lg">FEATURED</span>
+</div>
+</div>
+<div class="p-5 space-y-3">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-lg text-xl text-on-surface">光子大赛 GameJam</h3>
+<span class="text-xs text-on-surface-variant">2D 闯关游戏</span>
+</div>
+<p class="text-sm text-on-surface-variant line-clamp-2">基于 Unity 与 C# 搭建的核心框架，包含角色控制、关卡触发与基础交互逻辑的完整闭环。</p>
+<div class="flex flex-wrap gap-2">
+<span class="text-[10px] px-2 py-1 bg-surface-variant rounded font-bold">UNITY</span>
+<span class="text-[10px] px-2 py-1 bg-surface-variant rounded font-bold">C#</span>
+<span class="text-[10px] px-2 py-1 bg-surface-variant rounded font-bold">2D PLATFORMER</span>
+</div>
+</div>
+</div>
+<!-- Split Grid -->
+<div class="grid grid-cols-2 gap-4">
+<div class="glass-card rounded-xl p-4 space-y-3 flex flex-col justify-between">
+<div>
+<h3 class="font-bold text-on-surface">自律 Quest</h3>
+<p class="text-[10px] text-on-surface-variant mt-1">游戏化人生管理系统</p>
+</div>
+<div class="aspect-square bg-surface-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="task_alt">task_alt</span>
+</div>
+<div class="flex gap-1 overflow-hidden">
+<span class="text-[9px] bg-primary/10 text-primary px-1 rounded">VUE3</span>
+<span class="text-[9px] bg-primary/10 text-primary px-1 rounded">VITE</span>
+</div>
+</div>
+<div class="glass-card rounded-xl p-4 space-y-3 flex flex-col justify-between">
+<div>
+<h3 class="font-bold text-on-surface">AI 智能记账</h3>
+<p class="text-[10px] text-on-surface-variant mt-1">Prompt 驱动记账助手</p>
+</div>
+<div class="aspect-square bg-surface-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div class="flex gap-1 overflow-hidden">
+<span class="text-[9px] bg-secondary/10 text-secondary px-1 rounded">REACT</span>
+<span class="text-[9px] bg-secondary/10 text-secondary px-1 rounded">AI</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: GDD & Analysis -->
+<section class="space-y-stack-md" id="analysis">
+<h2 class="font-headline-lg text-headline-lg-mobile text-secondary">策划与拆解</h2>
+<div class="space-y-3">
+<div class="glass-card p-5 rounded-xl border-l-4 border-secondary flex items-start gap-4 neon-glow-secondary transition-all">
+<div class="bg-secondary/10 p-3 rounded-lg text-secondary">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</div>
+<div class="flex-1 space-y-1">
+<h4 class="font-bold text-on-surface">洛克王国：世界 拆解方案</h4>
+<p class="text-xs text-on-surface-variant">在线文档链接持续补充 · 玩法分析与文档占位</p>
+<div class="pt-3">
+<button class="bg-secondary text-white px-4 py-2 rounded-lg text-xs font-bold flex items-center gap-2 group transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm" data-icon="link">link</span>
+                                查看飞书文档
+                            </button>
+</div>
+</div>
+</div>
+<div class="glass-card p-5 rounded-xl border-l-4 border-primary flex items-start gap-4 neon-glow-primary transition-all">
+<div class="bg-primary/10 p-3 rounded-lg text-primary">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</div>
+<div class="flex-1 space-y-1">
+<h4 class="font-bold text-on-surface">系统设计：数值与成长曲线</h4>
+<p class="text-xs text-on-surface-variant">基于 Excel 的数值模拟与 GDD 核心逻辑拆解</p>
+<div class="pt-3">
+<button class="border-2 border-primary text-primary px-4 py-2 rounded-lg text-xs font-bold flex items-center gap-2 transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+                                浏览分析报告
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Gaming Experience -->
+<section class="space-y-stack-md" id="gaming">
+<h2 class="font-headline-lg text-headline-lg-mobile text-on-surface">游戏体验之旅</h2>
+<div class="grid grid-cols-2 gap-3">
+<!-- Game 1 -->
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover" data-alt="A cinematic, high-fantasy landscape inspired by dark fantasy RPGs. Looming Gothic architecture is shrouded in mist and dramatic moonlight, creating a sense of epic scale and mystery. The color palette is dominated by deep blues, grays, and silver highlights, evoking the mood of games like Elden Ring. The atmosphere is quiet, intense, and awe-inspiring." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy1cVrJvKK5xH4XMaGefeDnsN1iFn5uyH3ZzR_XkOXVhSzOhVEVX3kWFjYt15okZUy0FrnAhOdH9c4IHq95bYzjQtJl7KLtVOqBJc_oaLlvWgmLmnBrTaXILKiTyMEFqVnKsTUcgFJhdo7fgiid93hEPvGKv2OHHwkIax0X-n50LeQvoSBCi7sCkdZ46EtxU3duLxiWHVW5e2pzBolRq5kLx-puyVHt3lqnuCIquEGMNetdfKas0YIU6n2hD1I7jrNrSX5HSiXqlSD"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-3">
+<span class="text-white font-bold text-sm">Elden Ring</span>
+<div class="flex gap-1 mt-1">
+<span class="text-[8px] text-white/70 px-1 border border-white/30 rounded">RPG</span>
+<span class="text-[8px] text-white/70 px-1 border border-white/30 rounded">OPEN WORLD</span>
+</div>
+</div>
+</div>
+<!-- Game 2 -->
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover" data-alt="A futuristic cyberpunk street scene at night, filled with neon-soaked rainy asphalt and glowing holographic signs in vibrant pink and cyan. The scene captures the high-tech, low-life aesthetic with dense urban details and atmospheric lighting. High contrast and hyper-saturated colors define the visual style, reflecting the vibe of Cyberpunk 2077." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZKtzmxdoj2K8PUW1RGvk4ocwPM5z1aT-lg208nUwNvwl2l7CDZGDDBDc6p9qtm5mtsrbQI8nMdwvYCM_RizmZlLuShi80ezxFcoJmAv8POpjKRW_PFKnQUEW6GyjI2yiGmTOUVgog1F9--TKpKCpBX5i_kRlGYhpVaHqVFZ8VwKgKGCzoOXM-tc6YRCVKnZRzfDtUMII1hBppQ6g0nzsStJNzAc3oYavAxARiagXCXkx0zROUz2TLDQXtcMVXtjgLSS5qyt4C8qT1"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-3">
+<span class="text-white font-bold text-sm">Cyberpunk 2077</span>
+<div class="flex gap-1 mt-1">
+<span class="text-[8px] text-white/70 px-1 border border-white/30 rounded">FPS</span>
+<span class="text-[8px] text-white/70 px-1 border border-white/30 rounded">ACTION</span>
+</div>
+</div>
+</div>
+<!-- Game 3 -->
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover" data-alt="A highly stylized digital art piece representing a rogue-like dungeon crawl. Glowing, geometric magma-like rivers flow through a dark, ancient obsidian-walled chamber. The lighting is dominated by fiery oranges and deep purples, creating a sense of heat and constant danger. The aesthetic is clean but energetic, reminiscent of the vibrant art style in Hades." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD16QFUvZdB18b44wGR8QDM30cSnn6Lf1Q1zPOIFTk7wQoL81wOvNfpiFFyPrFXLTWjkSEWd6pbwFdWkXms8zVBBcbJDSLU5Aj-iQacFBEMqX0RK-CId10WfZ78-y8xDF4HegbYmVNBlzAL1M0o-ECNzLY3mULsyMNAdB7_zGbLF2bRizT0t0s63G93KYoX0u1Ax_Ffw-yUD-Z-1sSNlZwhy_EaCCQrErvrFU9haWZrSoxTQwC5Qoe2beYSvGNGSlhSBqTLOvlrIMqR"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-3">
+<span class="text-white font-bold text-sm">Hades</span>
+<div class="flex gap-1 mt-1">
+<span class="text-[8px] text-white/70 px-1 border border-white/30 rounded">ROGUE-LIKE</span>
+<span class="text-[8px] text-white/70 px-1 border border-white/30 rounded">INDIE</span>
+</div>
+</div>
+</div>
+<!-- Game 4 -->
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist isometric representation of a strategy game interface. Floating geometric tiles in various shades of blue and white represent terrain, with glowing data-stream lines connecting them. The mood is clinical and highly analytical, representing strategic depth and system complexity. The palette is professional, using high-contrast whites and neon blues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGqNoMp4-Th2CSK8oR-x3Or2LPYWU7mjvEpprvbiA77zOEoNCk6dYeso8kBa9jCnq9JQPZITyq3VVpQIT6uyP32E58f2BGvIV26l99a4PUI3GU1APxp60jRxIRhRlyBKz5hCuBFlb_FmxjpRLX2OcysVshVNeP_Mum_mD-3a20S9OCc08pVzvJqlPVcyGvIWV75stgPyDYNGlhjR_GuTHQwk3zQ7Y-RB6HjxnvVS9SNhzJ-nv3FbXOu9h8lRdxeCZENoHwwTnPKmW6"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-3">
+<span class="text-white font-bold text-sm">Baldur's Gate 3</span>
+<div class="flex gap-1 mt-1">
+<span class="text-[8px] text-white/70 px-1 border border-white/30 rounded">CRPG</span>
+<span class="text-[8px] text-white/70 px-1 border border-white/30 rounded">STRATEGY</span>
+</div>
+</div>
+</div>
+</div>
+<div class="glass-card p-4 rounded-xl">
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                    这些作品不仅是我的游玩记录，更是我作为设计者对玩法观察和设计拆解的源泉。在每一个关卡中寻找玩家情绪的波动点。
+                </p>
+</div>
+</section>
+<!-- Section 5: Skills -->
+<section class="space-y-stack-md pb-stack-md" id="skills">
+<h2 class="font-headline-lg text-headline-lg-mobile text-primary">个人技能</h2>
+<div class="grid grid-cols-1 gap-4">
+<!-- Group 1 -->
+<div class="glass-card p-4 rounded-xl border-t-2 border-primary">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="sports_esports">sports_esports</span>
+<h3 class="font-bold text-on-surface">游戏策划</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="text-[11px] px-3 py-1 bg-surface-container-high rounded-full border border-outline-variant/30">系统策划</span>
+<span class="text-[11px] px-3 py-1 bg-surface-container-high rounded-full border border-outline-variant/30">关卡设计</span>
+<span class="text-[11px] px-3 py-1 bg-surface-container-high rounded-full border border-outline-variant/30">Roguelike 机制</span>
+<span class="text-[11px] px-3 py-1 bg-surface-container-high rounded-full border border-outline-variant/30">PRD 撰写</span>
+</div>
+</div>
+<!-- Group 2 -->
+<div class="glass-card p-4 rounded-xl border-t-2 border-secondary">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="terminal">terminal</span>
+<h3 class="font-bold text-on-surface">原型与开发</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="text-[11px] px-3 py-1 bg-surface-container-high rounded-full border border-outline-variant/30">Unity / C#</span>
+<span class="text-[11px] px-3 py-1 bg-surface-container-high rounded-full border border-outline-variant/30">React / Vue3</span>
+<span class="text-[11px] px-3 py-1 bg-surface-container-high rounded-full border border-outline-variant/30">UI 原型设计</span>
+<span class="text-[11px] px-3 py-1 bg-surface-container-high rounded-full border border-outline-variant/30">前端实现</span>
+</div>
+</div>
+<!-- Group 3 -->
+<div class="glass-card p-4 rounded-xl border-t-2 border-on-surface">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-on-surface text-xl" data-icon="build">build</span>
+<h3 class="font-bold text-on-surface">效率工具</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="text-[11px] px-3 py-1 bg-surface-container-high rounded-full border border-outline-variant/30">Figma</span>
+<span class="text-[11px] px-3 py-1 bg-surface-container-high rounded-full border border-outline-variant/30">Notion</span>
+<span class="text-[11px] px-3 py-1 bg-surface-container-high rounded-full border border-outline-variant/30">Git / GitHub</span>
+<span class="text-[11px] px-3 py-1 bg-surface-container-high rounded-full border border-outline-variant/30">Chrome DevTools</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-dim full-width border-t border-outline-variant/30 flex flex-col items-center py-stack-lg px-margin-mobile text-center space-y-stack-sm">
+<span class="font-display-lg text-secondary">DESIGNER.DEV</span>
+<p class="font-label-md text-label-md text-on-surface-variant">© 2024 DESIGNER.DEV • CRAFTED WITH PASSION</p>
+<div class="flex gap-4 pt-2">
+<span class="font-label-md text-label-md text-secondary hover:text-primary transition-all">GitHub</span>
+<span class="font-label-md text-label-md text-secondary hover:text-primary transition-all">LinkedIn</span>
+<span class="font-label-md text-label-md text-secondary hover:text-primary transition-all">Itch.io</span>
+</div>
+</footer>
+<!-- BottomNavBar -->
+<nav class="bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-2xl docked full-width bottom-0 fixed z-50 rounded-t-xl border-t border-white/30 dark:border-white/10 shadow-[0_-10px_40px_rgba(0,0,0,0.04)] fixed bottom-0 left-0 w-full flex justify-around items-center h-16 pb-safe px-4">
+<a class="flex flex-col items-center justify-center text-primary dark:text-secondary-fixed-dim font-bold drop-shadow-[0_0_8px_rgba(169,0,169,0.4)] scale-110 duration-200" href="#intro">
+<span class="material-symbols-outlined" data-icon="sports_esports">sports_esports</span>
+<span class="font-label-md text-[10px]">Work</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity" href="#analysis">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-label-md text-[10px]">Docs</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity" href="#skills">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<span class="font-label-md text-[10px]">Skills</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity" href="#contact">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="font-label-md text-[10px]">Contact</span>
+</a>
+</nav>
+</body></html>

@@ -12,6 +12,7 @@ import {
   Moon,
   Phone,
   Server,
+  Sparkles,
   Sun,
   Swords,
   Wrench,
@@ -26,6 +27,15 @@ import gameJamCoverTwo from "../光子大赛GameJam封面2.png";
 import gameJamCoverThree from "../光子大赛GameJam封面3.png";
 import gameJamCoverFour from "../光子大赛GameJam封面4.png";
 import profileCover from "../简介图_ 三比二比例.jpg";
+
+const navItems = [
+  { label: "首页", href: "#home" },
+  { label: "作品", href: "#projects" },
+  { label: "游戏体验", href: "#game-experience" },
+  { label: "策划拆解", href: "#planning-cases" },
+  { label: "技能", href: "#skills" },
+  { label: "联系", href: "#contact" },
+];
 
 const skills = [
   {
@@ -51,18 +61,13 @@ const skills = [
 ];
 
 const contactInfo = [
-  { label: "邮箱", value: "YIJIA012@e.ntu.edu.sg", icon: Mail },
-  { label: "电话", value: "19355179852", icon: Phone },
-  { label: "GitHub", value: "github.com/yijiaqin726-max", icon: Github },
-  { label: "所在地", value: "上海 / 新加坡", icon: MapPin },
+  { label: "邮箱", value: "YIJIA012@e.ntu.edu.sg", href: "mailto:YIJIA012@e.ntu.edu.sg", icon: Mail },
+  { label: "电话", value: "19355179852", href: "tel:19355179852", icon: Phone },
+  { label: "GitHub", value: "github.com/yijiaqin726-max", href: "https://github.com/yijiaqin726-max", icon: Github },
+  { label: "所在地", value: "上海 / 新加坡", href: "#contact", icon: MapPin },
 ];
 
-const gameJamSteps = [
-  "角色移动与跳跃手感",
-  "场景机关与关卡触发",
-  "全部关卡制作与调试",
-  "节奏打磨与提交整合",
-];
+const gameJamSteps = ["角色移动与跳跃手感", "场景机关与关卡触发", "全部关卡制作与调试", "节奏打磨与提交整合"];
 
 const featuredSignals = [
   { label: "项目类型", value: "光子大赛 GameJam 作品" },
@@ -83,35 +88,30 @@ const projectImages: Record<string, string> = {
 };
 
 function renderLinks(projectTitle: string, links: (typeof projects)[number]["links"]) {
+  if (links.length === 0) {
+    return null;
+  }
+
   return (
-    <div className="flex items-center gap-3">
-      {links.map((link, linkIndex) => (
-        <span key={`${projectTitle}-${link.label}`} className="flex items-center gap-3">
-          {linkIndex > 0 && <span className="h-3 w-px bg-slate-200" />}
-          {link.disabled ? (
-            <span className="flex cursor-default items-center gap-1 text-xs font-bold text-slate-300">
-              {link.label}
-              {link.type === "demo" && <ArrowUpRight className="h-3 w-3" />}
-              {link.type === "github" && <ExternalLink className="h-3 w-3" />}
-            </span>
-          ) : (
-            <a
-              href={link.url}
-              target="_blank"
-              rel="noreferrer"
-              className={`flex items-center gap-1 text-xs font-bold ${
-                link.type === "demo"
-                  ? "text-secondary underline-offset-4 hover:underline"
-                  : "text-slate-400 transition-colors hover:text-slate-100"
-              }`}
-            >
-              {link.label}
-              {link.type === "demo" && <ArrowUpRight className="h-3 w-3" />}
-              {link.type === "github" && <ExternalLink className="h-3 w-3" />}
-            </a>
-          )}
-        </span>
-      ))}
+    <div className="flex flex-wrap items-center gap-2">
+      {links.map((link) =>
+        link.disabled ? (
+          <span key={`${projectTitle}-${link.label}`} className="portfolio-link portfolio-link-disabled">
+            {link.label}
+          </span>
+        ) : (
+          <a
+            key={`${projectTitle}-${link.label}`}
+            href={link.url}
+            target="_blank"
+            rel="noreferrer"
+            className={link.type === "demo" ? "portfolio-link portfolio-link-primary" : "portfolio-link"}
+          >
+            {link.label}
+            {link.type === "demo" ? <ArrowUpRight className="h-3.5 w-3.5" /> : <ExternalLink className="h-3.5 w-3.5" />}
+          </a>
+        ),
+      )}
     </div>
   );
 }
@@ -133,141 +133,98 @@ export default function App() {
   }, [theme]);
 
   return (
-    <div className={`page-shell theme-${theme} min-h-screen font-body text-on-surface`}>
-      <div className="pointer-events-none fixed inset-0 overflow-hidden">
-        <div className="ambient-orb ambient-orb-left" />
-        <div className="ambient-orb ambient-orb-right" />
-        <div className="ambient-grid" />
-      </div>
+    <div className="page-shell min-h-screen font-body text-on-surface">
+      <div className="site-backdrop" aria-hidden="true" />
 
-      <nav className="fixed top-0 z-50 flex w-full justify-center border-b border-white/10 bg-[#1b2838]/88 px-6 py-4 backdrop-blur-xl">
-        <div className="flex w-full max-w-[1280px] items-center justify-between">
+      <nav className="portfolio-nav fixed top-0 z-50 flex w-full justify-center px-4 py-3 md:px-6">
+        <div className="nav-inner flex w-full max-w-[1280px] items-center justify-between">
+          <a href="#home" className="brand-lockup" aria-label="回到首页">
+            <span className="brand-dot" />
+            <span>QIN YIJIA</span>
+          </a>
+
+          <div className="hidden items-center gap-7 md:flex">
+            {navItems.slice(1).map((item) => (
+              <a key={item.href} href={item.href} className="nav-link">
+                {item.label}
+              </a>
+            ))}
+          </div>
+
           <div className="flex items-center gap-2">
-            <span className="Manrope text-lg font-bold tracking-tight text-slate-100">
-              秦艺家
-              <span className="ml-1 text-sm font-normal uppercase text-[#66c0f4]">Portfolio</span>
-            </span>
+            <a href="/秦艺家_ai应用开发_resume.pdf" target="_blank" rel="noreferrer" className="nav-cta hidden sm:inline-flex">
+              简历
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </a>
             <button
               type="button"
               onClick={() => setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark"))}
-              className="theme-toggle-button inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold"
+              className="theme-toggle-button"
               aria-label={theme === "dark" ? "切换到日间模式" : "切换到夜间模式"}
             >
               {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-              <span>{theme === "dark" ? "日间" : "夜间"}</span>
             </button>
-          </div>
-          <div className="hidden items-center space-x-10 md:flex">
-            <a href="#home" className="text-sm font-medium text-slate-100 transition-colors hover:text-secondary">
-              首页
-            </a>
-            <a href="#projects" className="text-sm font-medium text-slate-400 transition-colors hover:text-secondary">
-              作品
-            </a>
-            <a href="#game-experience" className="text-sm font-medium text-slate-400 transition-colors hover:text-secondary">
-              体验过的游戏
-            </a>
-            <a href="#planning-cases" className="text-sm font-medium text-slate-400 transition-colors hover:text-secondary">
-              策划拆解案
-            </a>
-            <a href="#skills" className="text-sm font-medium text-slate-400 transition-colors hover:text-secondary">
-              技能
-            </a>
-            <a href="#contact" className="text-sm font-medium text-slate-400 transition-colors hover:text-secondary">
-              联系方式
-            </a>
           </div>
         </div>
       </nav>
 
-      <main className="relative mx-auto max-w-[1280px] px-6 pb-24 pt-28">
-        <section id="home" className="space-y-10">
+      <main className="relative mx-auto max-w-[1280px] px-4 pb-24 pt-24 md:px-8 md:pt-28">
+        <section id="home" className="space-y-12 md:space-y-16">
           <motion.section
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55 }}
-            className="steam-hero interactive-lift rounded-[28px] p-8 md:p-10"
+            className="stitch-hero"
           >
-            <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-              <div className="space-y-6">
-                <div className="space-y-3">
-                  <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#66c0f4]">Game Portfolio</p>
-                  <h1 className="font-headline text-5xl font-extrabold tracking-tight text-white md:text-6xl">秦艺家</h1>
-                  <p className="max-w-2xl text-base leading-8 text-slate-200">
-                    游戏策划方向作品集。
+            <div className="hero-content">
+              <div className="space-y-7">
+                <div className="space-y-4">
+                  <p className="eyebrow text-primary">Game Systems / AI Portfolio</p>
+                  <h1 className="hero-title">秦艺家</h1>
+                  <p className="hero-subtitle">
+                    游戏策划方向作品集。关注系统设计、玩法循环、玩家反馈与 AI 工具化落地，把技术实现和体验拆解连接成可执行方案。
                   </p>
                 </div>
 
-                <div className="grid gap-3 sm:grid-cols-3">
-                  <div className="profile-stat-card interactive-lift rounded-2xl border border-white/10 bg-black/15 p-4">
-                    <div className="flex items-center gap-2 text-xs text-slate-300">
-                      <Calendar className="h-3.5 w-3.5" />
-                      <span>硕士</span>
-                    </div>
-                    <p className="mt-3 text-sm font-semibold text-white">南洋理工大学-计算机控制与自动化</p>
+                <div className="hero-stat-grid">
+                  <div className="info-tile">
+                    <Calendar className="h-4 w-4 text-primary" />
+                    <p className="tile-label">硕士</p>
+                    <p className="tile-value">南洋理工大学 · 计算机控制与自动化</p>
                   </div>
-                  <div className="profile-stat-card interactive-lift rounded-2xl border border-white/10 bg-black/15 p-4">
-                    <p className="text-xs text-slate-300">本科</p>
-                    <p className="mt-3 text-sm font-semibold text-white"> 安徽大学-数字媒体技术（计算机方向）</p>
-                    <p className="mt-1 text-xs text-slate-400">美国信息系统交换生</p>
+                  <div className="info-tile">
+                    <Sparkles className="h-4 w-4 text-secondary" />
+                    <p className="tile-label">本科</p>
+                    <p className="tile-value">安徽大学 · 数字媒体技术</p>
+                    <p className="tile-note">美国信息系统交换生</p>
                   </div>
-                  <div className="profile-stat-card interactive-lift rounded-2xl border border-white/10 bg-black/15 p-4">
-                    <div className="flex items-center gap-2 text-xs text-slate-300">
-                      <MapPin className="h-3.5 w-3.5" />
-                      <span>期望职位</span>
-                    </div>
-                    <p className="mt-3 text-sm font-semibold text-white">系统策划/AI </p>
+                  <div className="info-tile">
+                    <MapPin className="h-4 w-4 text-tertiary" />
+                    <p className="tile-label">期望职位</p>
+                    <p className="tile-value">系统策划 / AI 产品方向</p>
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-3 pt-2">
-                  <a
-                    href="https://github.com/yijiaqin726-max"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="steam-button-primary flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold"
-                  >
+                <div className="flex flex-wrap gap-3">
+                  <a href="https://github.com/yijiaqin726-max" target="_blank" rel="noreferrer" className="primary-action">
                     <Github className="h-4 w-4" />
                     GitHub
                   </a>
-                  <a
-                    href="#contact"
-                    className="steam-button-secondary rounded-md px-5 py-3 text-sm font-semibold"
-                  >
+                  <a href="#projects" className="secondary-action">
+                    查看作品
+                  </a>
+                  <a href="#contact" className="secondary-action">
                     联系我
-                  </a>
-                  <a
-                    href="#game-experience"
-                    className="steam-button-secondary rounded-md px-5 py-3 text-sm font-semibold"
-                  >
-                    体验过的游戏
-                  </a>
-                  <a
-                    href="#planning-cases"
-                    className="steam-button-secondary rounded-md px-5 py-3 text-sm font-semibold"
-                  >
-                    策划拆解案
                   </a>
                 </div>
               </div>
 
-              <div className="steam-cover-placeholder interactive-lift h-fit self-center justify-self-center rounded-[20px] p-2 lg:w-[72%]">
-                <div className="student-id-card relative w-full overflow-hidden rounded-[16px] border border-white/10 shadow-[0_14px_30px_rgba(8,16,28,0.26)]">
-                  <img
-                    src={profileCover}
-                    alt="个人简介配图"
-                    className="block aspect-[3/2] w-full object-cover object-center"
-                  />
-                  <div className="pointer-events-none absolute inset-x-0 top-0 flex items-start justify-between p-3">
-                    <span className="rounded-full border border-white/25 bg-white/8 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-white shadow-[0_4px_16px_rgba(8,16,28,0.22)] backdrop-blur-sm">
-                      ID: Qin Yijia
-                    </span>
-                  </div>
-                  <div className="pointer-events-none absolute bottom-3 right-3 flex flex-col items-end gap-1">
-                    <div className="student-id-barcode h-8 w-24 rounded-sm opacity-95" />
-                    <span className="text-[8px] font-medium uppercase tracking-[0.28em] text-white/88">
-                      Student Card
-                    </span>
+              <div className="hero-portrait-wrap">
+                <div className="hero-portrait">
+                  <img src={profileCover} alt="秦艺家个人简介配图" className="h-full w-full object-cover object-center" />
+                  <div className="portrait-badge">
+                    <span>Student Card</span>
+                    <strong>ID: QIN YIJIA</strong>
                   </div>
                 </div>
               </div>
@@ -275,11 +232,12 @@ export default function App() {
           </motion.section>
 
           <section id="projects" className="space-y-8">
-            <div className="flex items-center justify-between border-b border-white/10 pb-4">
-              <h2 className="font-headline text-xs font-bold uppercase tracking-[0.24em] text-slate-300">
-                精选作品 / Project Portfolio
-              </h2>
-              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[#66c0f4]">Recent Project</span>
+            <div className="section-heading">
+              <div>
+                <p className="eyebrow text-primary">Portfolio</p>
+                <h2>精选作品 / Project Portfolio</h2>
+              </div>
+              <span>Recent Project</span>
             </div>
 
             <motion.article
@@ -287,132 +245,118 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="steam-featured interactive-lift overflow-hidden rounded-[24px]"
+              className="featured-project"
             >
-              <div className="grid gap-0 lg:grid-cols-[1.15fr_0.85fr]">
-                <div className="steam-featured-media min-h-[360px] overflow-hidden rounded-l-[24px]">
-                  <div className="steam-screenshot-placeholder relative flex h-full min-h-[320px] w-full flex-col gap-3 overflow-hidden rounded-none border-0 bg-[#101822] p-3 shadow-none">
-                    {gameJamCovers.map((cover) => (
-                      <img
-                        key={cover.src}
-                        src={cover.src}
-                        alt={`${featuredProject.title} ${cover.alt}`}
-                        className="aspect-video w-full rounded-[12px] object-cover object-center shadow-[0_14px_28px_rgba(8,16,28,0.34)]"
-                      />
-                    ))}
-                  </div>
+              <div className="featured-media-grid">
+                {gameJamCovers.map((cover, index) => (
+                  <img
+                    key={cover.src}
+                    src={cover.src}
+                    alt={`${featuredProject.title} ${cover.alt}`}
+                    className={index === 0 ? "featured-media-large" : ""}
+                  />
+                ))}
+              </div>
+
+              <div className="featured-copy">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="featured-badge">
+                    <Swords className="h-3.5 w-3.5" />
+                    Featured Project
+                  </span>
+                  <span className="project-subtitle">{featuredProject.subtitle}</span>
                 </div>
 
-                <div className="space-y-6 p-8 md:p-10">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span className="inline-flex items-center gap-2 rounded-full border border-[#e7a843]/40 bg-[#f0ad2c]/12 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-[#ffd27a]">
-                      <Swords className="h-3.5 w-3.5" />
-                      Featured Project
-                    </span>
-                    <span className="text-sm font-medium text-slate-300">{featuredProject.subtitle}</span>
-                  </div>
+                <div className="space-y-3">
+                  <h3>{featuredProject.title}</h3>
+                  <p>
+                    这是一次以快速落地和完整体验为目标的 2D 闯关 GameJam 项目。我担任主程序，负责 Unity 与 C# 侧的核心实现，并独立完成全部关卡搭建，让角色移动、场景变化和关卡节奏形成可玩的完整流程。
+                  </p>
+                </div>
 
-                  <div className="space-y-3">
-                    <h3 className="text-4xl font-bold tracking-tight text-white">{featuredProject.title}</h3>
-                    <p className="max-w-2xl text-sm leading-7 text-slate-200">
-                      这是一次以快速落地和完整体验为目标的 2D 闯关 GameJam 项目。我担任主程序，负责 Unity 与 C# 侧的核心实现，并独立完成全部关卡搭建，让角色移动、场景变化和关卡节奏形成可玩的完整流程。
-                    </p>
-                  </div>
+                <div className="signal-grid">
+                  {featuredSignals.map((signal) => (
+                    <div key={signal.label} className="signal-tile">
+                      <p>{signal.label}</p>
+                      <strong>{signal.value}</strong>
+                    </div>
+                  ))}
+                </div>
 
-                  <div className="grid gap-3 md:grid-cols-3">
-                    {featuredSignals.map((signal) => (
-                      <div key={signal.label} className="featured-signal-card interactive-lift rounded-2xl border border-white/10 bg-[#16202d] p-4">
-                        <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-400">{signal.label}</p>
-                        <p className="mt-2 text-sm font-medium leading-6 text-white">{signal.value}</p>
+                <div className="space-y-3">
+                  <p className="mini-heading">项目亮点</p>
+                  <ul className="space-y-3">
+                    {featuredProject.highlights?.map((highlight) => (
+                      <li key={highlight} className="highlight-row">
+                        <span />
+                        <p>{highlight}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="process-panel">
+                  <p className="mini-heading">制作流程</p>
+                  <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                    {gameJamSteps.map((step, index) => (
+                      <div key={step} className="process-step">
+                        <span>0{index + 1}</span>
+                        <p>{step}</p>
                       </div>
                     ))}
                   </div>
-
-                  <div className="space-y-3">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">项目亮点</p>
-                    <ul className="space-y-3 text-sm leading-7 text-slate-100">
-                      {featuredProject.highlights?.map((highlight) => (
-                        <li key={highlight} className="flex gap-3">
-                          <span className="mt-2 h-2 w-2 rounded-full bg-[#ffd27a] shadow-[0_0_12px_rgba(255,210,122,0.45)]" />
-                          <span>{highlight}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="featured-flow-panel rounded-[20px] border border-white/10 bg-[#101822]/70 p-5">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">制作流程</p>
-                    <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                      {gameJamSteps.map((step, index) => (
-                        <div key={step} className="featured-flow-step interactive-lift flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-                          <div className="flex h-8 w-8 items-center justify-center rounded-full border border-[#ffd27a]/40 bg-[#f0ad2c]/10 text-xs font-bold text-[#ffd27a]">
-                            0{index + 1}
-                          </div>
-                          <div className="text-sm text-slate-100">{step}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="flex flex-wrap gap-2">
-                    {featuredProject.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="dark-chip rounded-full border border-white/10 bg-[#1f2f42] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-slate-100"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {renderLinks(featuredProject.title, featuredProject.links)}
                 </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {featuredProject.tags.map((tag) => (
+                    <span key={tag} className="neon-chip">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {renderLinks(featuredProject.title, featuredProject.links)}
               </div>
             </motion.article>
 
-            <div className="grid gap-6 lg:grid-cols-2">
+            <div className="project-grid">
               {otherProjects.map((project, index) => {
                 const projectImage = projectImages[project.title];
 
                 return (
-                <motion.article
-                  key={project.title}
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.45, delay: index * 0.08 }}
-                  className="steam-card interactive-lift overflow-hidden rounded-[20px]"
-                >
-                  {projectImage ? (
-                    <div className="steam-card-media p-4">
-                      <div className="relative aspect-[16/9] overflow-hidden rounded-[18px] border border-white/10 bg-[#101822] shadow-[0_18px_36px_rgba(8,16,28,0.34)]">
-                        <img
-                          src={projectImage}
-                          alt={`${project.title} 项目封面`}
-                          className="h-full w-full object-cover object-center"
-                        />
+                  <motion.article
+                    key={project.title}
+                    initial={{ opacity: 0, y: 18 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.45, delay: index * 0.08 }}
+                    className="project-card"
+                  >
+                    {projectImage ? (
+                      <div className="project-card-media">
+                        <img src={projectImage} alt={`${project.title} 项目封面`} className="h-full w-full object-cover object-center" />
                       </div>
+                    ) : (
+                      <div className="project-card-empty">
+                        <Sparkles className="h-10 w-10" />
+                      </div>
+                    )}
+                    <div className="space-y-4 p-5 md:p-6">
+                      <div className="flex flex-wrap items-center gap-3">
+                        <h3>{project.title}</h3>
+                        <span>{project.subtitle}</span>
+                      </div>
+                      {project.description ? <p>{project.description}</p> : null}
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.map((tag) => (
+                          <span key={tag} className="neon-chip">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      {renderLinks(project.title, project.links)}
                     </div>
-                  ) : null}
-                  <div className="space-y-4 p-6">
-                    <div className="flex flex-wrap items-center gap-3">
-                      <h3 className="text-2xl font-bold text-white">{project.title}</h3>
-                      <span className="text-sm font-medium text-slate-400">{project.subtitle}</span>
-                    </div>
-                    {project.description ? <p className="text-sm leading-7 text-slate-200">{project.description}</p> : null}
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="dark-chip rounded-full border border-white/10 bg-[#1f2f42] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-slate-100"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    {renderLinks(project.title, project.links)}
-                  </div>
-                </motion.article>
+                  </motion.article>
                 );
               })}
             </div>
@@ -420,13 +364,14 @@ export default function App() {
             <GameExperienceSection />
             <PlanningCaseSection />
 
-            <div id="skills" className="space-y-8 pt-12">
-              <div className="border-b border-white/10 pb-4">
-                <h2 className="font-headline text-xs font-bold uppercase tracking-[0.24em] text-slate-300">
-                  个人技能 / Skills
-                </h2>
+            <section id="skills" className="space-y-8 pt-12">
+              <div className="section-heading">
+                <div>
+                  <p className="eyebrow text-secondary">Expertise</p>
+                  <h2>个人技能 / Skills</h2>
+                </div>
               </div>
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <div className="skill-grid">
                 {skills.map((skill, index) => (
                   <motion.div
                     key={skill.category}
@@ -434,18 +379,17 @@ export default function App() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.08 }}
-                    className="steam-card interactive-lift rounded-[20px] p-6"
+                    className="skill-card"
                   >
-                    <div className="mb-4 flex items-center gap-2">
-                      <skill.icon className="h-4 w-4 text-[#66c0f4]" />
-                      <p className="text-sm font-bold text-white">{skill.category}</p>
+                    <div className="mb-4 flex items-center gap-3">
+                      <div className="skill-icon">
+                        <skill.icon className="h-4 w-4" />
+                      </div>
+                      <p>{skill.category}</p>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {skill.items.map((item) => (
-                        <span
-                          key={item}
-                          className="dark-chip rounded-full border border-white/10 bg-[#1f2f42] px-3 py-1 text-[11px] font-semibold text-slate-100"
-                        >
+                        <span key={item} className="neon-chip">
                           {item}
                         </span>
                       ))}
@@ -453,49 +397,51 @@ export default function App() {
                   </motion.div>
                 ))}
               </div>
-            </div>
+            </section>
 
-            <div id="contact" className="space-y-8 pt-12">
-              <div className="border-b border-white/10 pb-4">
-                <h2 className="font-headline text-xs font-bold uppercase tracking-[0.24em] text-slate-300">
-                  联系方式 / Contact
-                </h2>
+            <section id="contact" className="space-y-8 pt-12">
+              <div className="section-heading">
+                <div>
+                  <p className="eyebrow text-primary">Contact</p>
+                  <h2>联系方式</h2>
+                </div>
               </div>
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <div className="contact-grid">
                 {contactInfo.map((info, index) => (
-                  <motion.div
+                  <motion.a
                     key={`${info.label}-${index}`}
-                    className="steam-card interactive-lift rounded-[20px] p-5"
+                    href={info.href}
+                    target={info.href.startsWith("http") ? "_blank" : undefined}
+                    rel={info.href.startsWith("http") ? "noreferrer" : undefined}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.35, delay: index * 0.05 }}
+                    className="contact-card"
                   >
-                    <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">{info.label}</p>
-                    <p className="text-sm font-medium text-white">{info.value}</p>
-                  </motion.div>
+                    <info.icon className="h-5 w-5" />
+                    <span>{info.label}</span>
+                    <strong>{info.value}</strong>
+                  </motion.a>
                 ))}
               </div>
-            </div>
+            </section>
           </section>
         </section>
       </main>
 
-      <footer className="relative mt-20 border-t border-white/10 bg-[#0f1923]/72 py-16 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-[1200px] flex-col items-center justify-between gap-6 px-8 md:flex-row">
-          <div className="text-xs font-bold uppercase tracking-[0.3em] text-slate-100">QIN YIJIA</div>
-          <p className="text-xs text-slate-400">© 2025 Qin Yijia. Built with design, systems, and interactive thinking.</p>
-          <div className="flex space-x-6 text-xs font-semibold uppercase tracking-widest text-slate-400">
-            <a
-              href="https://github.com/yijiaqin726-max"
-              target="_blank"
-              rel="noreferrer"
-              className="transition-colors hover:text-slate-100"
-            >
+      <footer className="site-footer">
+        <div className="mx-auto flex max-w-[1280px] flex-col items-center justify-between gap-5 px-8 md:flex-row">
+          <div className="brand-lockup">
+            <span className="brand-dot" />
+            <span>QIN YIJIA</span>
+          </div>
+          <p>© 2026 Qin Yijia. Built with design, systems, and interactive thinking.</p>
+          <div className="flex gap-5">
+            <a href="https://github.com/yijiaqin726-max" target="_blank" rel="noreferrer">
               GitHub
             </a>
-            <a href="mailto:YIJIA012@e.ntu.edu.sg" className="transition-colors hover:text-slate-100">
-              Email
-            </a>
-            <a href="#" className="transition-colors hover:text-slate-100">
-              LinkedIn
-            </a>
+            <a href="mailto:YIJIA012@e.ntu.edu.sg">Email</a>
           </div>
         </div>
       </footer>
