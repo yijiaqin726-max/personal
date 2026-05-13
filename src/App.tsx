@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import {
   ArrowUpRight,
@@ -118,6 +119,28 @@ function renderLinks(projectTitle: string, links: (typeof projects)[number]["lin
 }
 
 export default function App() {
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-30% 0px -50% 0px" },
+    );
+
+    navItems.forEach((item) => {
+      const el = document.getElementById(item.href.slice(1));
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const [featuredProject, ...otherProjects] = projects;
 
   return (
@@ -429,6 +452,19 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      <aside className="floating-nav">
+        {navItems.map((item) => (
+          <a
+            key={item.href}
+            href={item.href}
+            className={`floating-nav-item${activeSection === item.href.slice(1) ? " active" : ""}`}
+          >
+            <span className="floating-nav-dot" />
+            {item.label}
+          </a>
+        ))}
+      </aside>
     </div>
   );
 }
