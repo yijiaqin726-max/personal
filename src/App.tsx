@@ -25,7 +25,6 @@ import selfDisciplineQuestCover from "../自律首页图.jpg";
 import gameJamCoverOne from "../光子大赛GameJam封面1.png";
 import gameJamCoverTwo from "../光子大赛GameJam封面2.png";
 import gameJamCoverThree from "../光子大赛GameJam封面3.png";
-import gameJamCoverFour from "../光子大赛GameJam封面4.png";
 import profileCover from "../简介图_ 三比二比例.jpg";
 
 const navItems = [
@@ -79,7 +78,6 @@ const gameJamCovers = [
   { src: gameJamCoverOne, alt: "森林关卡截图" },
   { src: gameJamCoverTwo, alt: "天空与飞鸟关卡截图" },
   { src: gameJamCoverThree, alt: "蓝色树影关卡截图" },
-  { src: gameJamCoverFour, alt: "室内关卡截图" },
 ];
 
 const projectImages: Record<string, string> = {
@@ -180,7 +178,21 @@ export default function App() {
               <div className="space-y-7">
                 <div className="space-y-4">
                   <p className="eyebrow text-primary">Game Systems / AI Portfolio</p>
-                  <h1 className="hero-title">秦艺家</h1>
+                  <div className="hero-title-row">
+                    <h1 className="hero-title">秦艺家</h1>
+                    <div className="hero-portrait-wrap">
+                      <div className="hero-portrait">
+                        <img src={profileCover} alt="秦艺家个人简介配图" className="h-full w-full object-cover object-center" />
+                        <div className="portrait-badge">
+                          <div className="portrait-qr" aria-hidden="true" />
+                          <div>
+                            <span>Student Card</span>
+                            <strong>ID: QIN YIJIA</strong>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <p className="hero-subtitle">
                     游戏策划方向作品集。关注系统设计、玩法循环、玩家反馈与 AI 工具化落地，把技术实现和体验拆解连接成可执行方案。
                   </p>
@@ -216,16 +228,6 @@ export default function App() {
                   <a href="#contact" className="secondary-action">
                     联系我
                   </a>
-                </div>
-              </div>
-
-              <div className="hero-portrait-wrap">
-                <div className="hero-portrait">
-                  <img src={profileCover} alt="秦艺家个人简介配图" className="h-full w-full object-cover object-center" />
-                  <div className="portrait-badge">
-                    <span>Student Card</span>
-                    <strong>ID: QIN YIJIA</strong>
-                  </div>
                 </div>
               </div>
             </div>
