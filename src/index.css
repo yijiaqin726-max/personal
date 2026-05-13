@@ -108,7 +108,7 @@
 
 .nav-link:hover {
   color: #a900a9;
-  transform: translateY(-1px);
+  transform: translateY(-1px) scale(1.05);
 }
 
 .nav-cta,
@@ -230,7 +230,7 @@
 .steam-button-primary:hover,
 .steam-button-secondary:hover,
 .nav-cta:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.03);
 }
 
 .primary-action:hover,
@@ -762,7 +762,7 @@
 .skill-card:hover,
 .steam-card:hover,
 .game-insight-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-3px) scale(1.02);
   box-shadow: 0 28px 60px rgba(26, 28, 29, 0.12);
 }
 
@@ -814,7 +814,7 @@
 }
 
 .interactive-lift:hover {
-  transform: translateY(-3px);
+  transform: translateY(-3px) scale(1.02);
 }
 
 .panel-soft,
@@ -1037,7 +1037,7 @@
 
 .game-pill-primary:hover,
 .game-pill-secondary:hover {
-  transform: translateY(-1px);
+  transform: translateY(-1px) scale(1.06);
 }
 
 .game-pill-primary {
@@ -1097,6 +1097,88 @@
 .border-white\/12,
 .border-white\/14 {
   border-color: rgba(220, 190, 212, 0.58) !important;
+}
+
+/* ── Hover Scale ── */
+.neon-chip,
+.game-tag,
+.featured-badge,
+.portrait-badge,
+.game-insight-media-badge,
+.process-step,
+.process-panel,
+.game-chip-panel,
+.game-copy-panel,
+.info-tile,
+.signal-tile,
+.skill-icon,
+.game-insight-icon,
+.highlight-row span,
+.hero-portrait {
+  transition: transform 200ms ease;
+}
+
+.hero-title,
+.section-heading h2,
+.featured-copy h3,
+.project-card h3 {
+  transition: transform 200ms ease;
+  transform-origin: left center;
+}
+
+.neon-chip:hover,
+.game-tag:hover {
+  transform: scale(1.1);
+}
+
+.featured-badge:hover,
+.portrait-badge:hover,
+.game-insight-media-badge:hover {
+  transform: scale(1.12);
+}
+
+.info-tile:hover,
+.signal-tile:hover {
+  transform: scale(1.04);
+}
+
+.process-step:hover {
+  transform: scale(1.05);
+}
+
+.process-panel:hover {
+  transform: scale(1.02);
+}
+
+.skill-icon:hover,
+.game-insight-icon:hover {
+  transform: scale(1.2);
+}
+
+.game-chip-panel:hover,
+.game-copy-panel:hover {
+  transform: scale(1.03);
+}
+
+.highlight-row span:hover {
+  transform: scale(1.4);
+}
+
+.hero-portrait:hover {
+  transform: scale(1.02);
+}
+
+.hero-title:hover {
+  transform: scale(1.03);
+}
+
+.section-heading h2:hover {
+  transform: scale(1.04);
+}
+
+.featured-copy h3:hover,
+.project-card h3:hover {
+  transform: scale(1.04);
 }
 
 @media (max-width: 640px) {

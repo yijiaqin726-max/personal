@@ -15,10 +15,10 @@ export function PlanningCaseSection() {
         {planningCases.map((planningCase, index) => (
           <motion.article
             key={planningCase.title}
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -60, scale: 0.96 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.45, delay: index * 0.08 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
             className="planning-case-card steam-card interactive-lift rounded-[20px] p-6 md:p-7"
           >
             <div className="flex items-start justify-between gap-4">

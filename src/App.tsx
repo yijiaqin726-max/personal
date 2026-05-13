@@ -151,9 +151,9 @@ export default function App() {
       <main className="relative mx-auto max-w-[1280px] px-4 pb-24 pt-24 md:px-8 md:pt-28">
         <section id="home" className="space-y-12 md:space-y-16">
           <motion.section
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55 }}
+            initial={{ opacity: 0, x: -100, scale: 0.95 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.7 }}
             className="stitch-hero"
           >
             <div className="hero-content">
@@ -225,10 +225,10 @@ export default function App() {
             </div>
 
             <motion.article
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -80, scale: 0.96 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.65 }}
               className="featured-project"
             >
               <div className="featured-media-grid">
@@ -310,10 +310,10 @@ export default function App() {
                 return (
                   <motion.article
                     key={project.title}
-                    initial={{ opacity: 0, y: 18 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: -60, scale: 0.96 }}
+                    whileInView={{ opacity: 1, x: 0, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.45, delay: index * 0.08 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="project-card"
                   >
                     {projectImage ? (
@@ -359,10 +359,10 @@ export default function App() {
                 {skills.map((skill, index) => (
                   <motion.div
                     key={skill.category}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: -50, scale: 0.96 }}
+                    whileInView={{ opacity: 1, x: 0, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.08 }}
+                    transition={{ duration: 0.45, delay: index * 0.1 }}
                     className="skill-card"
                   >
                     <div className="mb-4 flex items-center gap-3">
@@ -397,10 +397,10 @@ export default function App() {
                     href={info.href}
                     target={info.href.startsWith("http") ? "_blank" : undefined}
                     rel={info.href.startsWith("http") ? "noreferrer" : undefined}
-                    initial={{ opacity: 0, y: 12 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: -50, scale: 0.96 }}
+                    whileInView={{ opacity: 1, x: 0, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.35, delay: index * 0.05 }}
+                    transition={{ duration: 0.4, delay: index * 0.08 }}
                     className="contact-card"
                   >
                     <info.icon className="h-5 w-5" />

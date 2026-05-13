@@ -17,10 +17,10 @@ export function GameExperienceSection() {
       </div>
 
       <motion.section
-        initial={{ opacity: 0, y: 18 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, x: -80, scale: 0.96 }}
+        whileInView={{ opacity: 1, x: 0, scale: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.6 }}
         className="steam-featured flex min-h-[116px] items-center justify-center rounded-[26px] p-8 text-center md:p-10"
       >
         <h3 className="font-headline text-4xl font-extrabold tracking-tight text-white md:text-5xl">
@@ -35,10 +35,10 @@ export function GameExperienceSection() {
           return (
             <motion.article
               key={category.title}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -60, scale: 0.96 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: index * 0.05 }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
               className="game-insight-card interactive-lift flex h-full flex-col overflow-hidden rounded-[24px]"
             >
               {category.backgroundImage ? (
