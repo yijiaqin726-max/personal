@@ -22,7 +22,7 @@ export const projects: Project[] = [
     tags: ["GameJam", "2D Platformer", "Unity", "C#"],
     featured: true,
     highlights: [
-      "用 Unity / C# 搭建角色控制、关卡触发、场景切换和基础交互，保证核心循环能被真实游玩验证。",
+      "用 Unity 与 C# 搭建角色控制、关卡触发、场景切换和基础交互，保证核心循环能被真实游玩验证。",
       "独立完成关卡搭建，把跳跃距离、探索路线和场景节奏调整成可理解、可失败、可再试的挑战曲线。",
       "从实现反推体验问题：哪里需要即时反馈，哪里需要放慢节奏，哪里不能只靠玩家自己猜。",
     ],
@@ -63,26 +63,6 @@ export const projects: Project[] = [
         label: "在线演示",
         url: "https://yijiaqin726-max.github.io/AI-/",
         type: "demo",
-      },
-    ],
-  },
-  {
-    title: "NoteFlow",
-    subtitle: "复杂信息管理工具",
-    description:
-      "围绕“写作时不被工具打断”设计编辑、目录、拖拽、重命名、导出和自动保存。它展示的是我对复杂操作流的拆解能力：哪些功能必须一步到位，哪些反馈要安静但可靠。",
-    tags: ["React", "Zustand", "Vite", "react-markdown"],
-    links: [
-      {
-        label: "GitHub",
-        url: "https://github.com/yijiaqin726-max",
-        type: "github",
-      },
-      {
-        label: "在线演示",
-        url: "#",
-        type: "demo",
-        disabled: true,
       },
     ],
   },

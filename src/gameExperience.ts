@@ -1,9 +1,9 @@
-import fpsBackground from "../fps板块背景图.png";
-import multiplayerBackground from "../多人联机背景图.png";
-import daughterBackground from "../火山的女儿背景图.png";
-import raisingBackground from "../培育类背景图.png";
-import textBackground from "../文字游戏背景图.png";
-import singleplayerBackground from "../单机板块封面图.png";
+import fpsBackground from "../assets/images/fps板块背景图.png";
+import multiplayerBackground from "../assets/images/多人联机背景图.png";
+import daughterBackground from "../assets/images/火山的女儿背景图.png";
+import raisingBackground from "../assets/images/培育类背景图.png";
+import textBackground from "../assets/images/文字游戏背景图.png";
+import singleplayerBackground from "../assets/images/单机板块封面图.png";
 
 export interface GameExperienceCategory {
   title: string;
@@ -30,9 +30,9 @@ export const gameExperienceIntro = {
 
 export const gameExperienceCategories: GameExperienceCategory[] = [
   {
-    title: "FPS / 竞技射击",
+    title: "竞技射击",
     subtitle: "长期体验最深的核心方向",
-    tags: ["FPS / 竞技", "角色分工", "地图博弈", "商业化观察"],
+    tags: ["FPS 竞技", "角色分工", "地图博弈", "商业化观察"],
     representativeGames: ["《守望先锋》", "《Counter-Strike 2》", "《Apex Legends》", "《VALORANT》"],
     summary:
       "FPS 最吸引我的是“每秒都在做选择”：站位、枪线、技能、信息差和团队节奏会一起决定玩家是否觉得公平、紧张、还想再来一局。",
@@ -44,9 +44,9 @@ export const gameExperienceCategories: GameExperienceCategory[] = [
     backgroundImage: fpsBackground,
   },
   {
-    title: "多人联机 / 生存合作",
+    title: "多人合作生存",
     subtitle: "关注玩法闭环和玩家互动关系",
-    tags: ["多人合作 / 生存", "资源循环", "信息差", "团队分工"],
+    tags: ["多人合作", "生存循环", "资源循环", "信息差", "团队分工"],
     representativeGames: ["《Raft》", "《The Forest》", "《Sons Of The Forest》", "《Grounded》", "《Project Winter》", "《鹅鸭杀》"],
     summary:
       "多人游戏好玩的地方常常不在系统本身，而在系统把玩家推到一起之后，会发生多少计划外的合作、争吵和临场决策。",
@@ -58,9 +58,9 @@ export const gameExperienceCategories: GameExperienceCategory[] = [
     backgroundImage: multiplayerBackground,
   },
   {
-    title: "养成 / 叙事 / 情感驱动",
+    title: "养成叙事",
     subtitle: "偏轻数值与陪伴感体验",
-    tags: ["养成 / 叙事", "事件反馈", "情绪价值", "角色塑造"],
+    tags: ["养成叙事", "事件反馈", "情绪价值", "角色塑造"],
     representativeGames: ["《火山的女儿》", "《中国式家长》", "《主播女孩重度依赖》"],
     summary:
       "养成类的关键不是数值涨了多少，而是玩家有没有觉得“这是我养出来的结果”。系统要给目标，也要给情绪回声。",
@@ -72,9 +72,9 @@ export const gameExperienceCategories: GameExperienceCategory[] = [
     backgroundImage: daughterBackground,
   },
   {
-    title: "单机 / 角色扮演 / 强叙事",
+    title: "单机角色扮演",
     subtitle: "关注选择反馈与沉浸感建立",
-    tags: ["RPG / 选择驱动", "世界观表达", "角色关系", "沉浸感"],
+    tags: ["RPG", "选择驱动", "世界观表达", "角色关系", "沉浸感"],
     representativeGames: ["《Undertale》", "《博德之门3》"],
     summary:
       "强叙事游戏让我在意“选择有没有重量”。玩家不一定要改变世界，但至少要感觉系统记得自己做过什么。",
@@ -86,10 +86,10 @@ export const gameExperienceCategories: GameExperienceCategory[] = [
     backgroundImage: singleplayerBackground,
   },
   {
-    title: "培育 / 模拟经营 / 怪物养成",
+    title: "培育经营",
     subtitle: "长期目标与收集驱动的观察",
-    tags: ["模拟经营 / 收集养成", "生态设计", "收集反馈", "长期目标"],
-    representativeGames: ["《Monster Hunter Stories 2: Wings of Ruin》", "《宝可梦 朱 / 紫》", "《宝可梦传说 阿尔宙斯》", "《动物园之星》"],
+    tags: ["模拟经营", "收集养成", "生态设计", "收集反馈", "长期目标"],
+    representativeGames: ["《Monster Hunter Stories 2: Wings of Ruin》", "《宝可梦 朱、紫》", "《宝可梦传说 阿尔宙斯》", "《动物园之星》"],
     summary:
       "收集和培育的魅力在于长期目标：玩家今天多抓一只、多升一级，都像是在给未来的自己铺路。",
     designFocus:
@@ -100,9 +100,9 @@ export const gameExperienceCategories: GameExperienceCategory[] = [
     backgroundImage: raisingBackground,
   },
   {
-    title: "文字 / 文本驱动游戏",
+    title: "文字叙事",
     subtitle: "有限资源下的表达效率",
-    tags: ["文字游戏 / 氛围表达", "文案节奏", "设定呈现", "低成本叙事"],
+    tags: ["文字游戏", "氛围表达", "文案节奏", "设定呈现", "低成本叙事"],
     representativeGames: ["《文字化化》", "《异次元》"],
     summary:
       "文字游戏资源少，但很考验信息投放。一个词、一段停顿、一次选择，都可能承担系统提示和情绪表达的双重任务。",
