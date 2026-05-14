@@ -26,7 +26,18 @@ export const projects: Project[] = [
       "独立完成关卡搭建，把跳跃距离、探索路线和场景节奏调整成可理解、可失败、可再试的挑战曲线。",
       "从实现反推体验问题：哪里需要即时反馈，哪里需要放慢节奏，哪里不能只靠玩家自己猜。",
     ],
-    links: [],
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/yijiaqin726-max/gamejam-2d-platformer",
+        type: "github",
+      },
+      {
+        label: "Demo 实机演示",
+        url: "https://www.bilibili.com/video/BV1MM5h6uEzp/?share_source=copy_web&vd_source=fda7f7dd824966172ef9f440cfc4a4cd",
+        type: "video",
+      },
+    ],
   },
   {
     title: "自律 Quest",
